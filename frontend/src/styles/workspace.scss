@@ -1,0 +1,455 @@
+/**
+ * 工作台样式变量 - 亮色/暗色主题
+ *
+ * AI 智能测试平台 - 工作台专用样式
+ * 支持亮色模式和暗色模式切换
+ */
+
+// ========================================
+// 亮色模式（默认）
+// ========================================
+
+:root {
+  // 主题色 - 绿色系
+  --workspace-color-primary: #22C55E;
+  --workspace-color-primary-light-3: #4ADE80;
+  --workspace-color-primary-light-5: #86EFAC;
+  --workspace-color-primary-light-7: #A7F3D0;
+  --workspace-color-primary-light-8: #D1FAE5;
+  --workspace-color-primary-light-9: #ECFDF5;
+  --workspace-color-primary-dark-2: #16A34A;
+
+  // 功能色
+  --workspace-color-success: #22C55E;
+  --workspace-color-warning: #FBBF24;
+  --workspace-color-danger: #EF4444;
+  --workspace-color-info: #06B6D4;
+
+  // 背景色 - 亮色模式
+  --workspace-bg-page: #F7FEF9;
+  --workspace-bg-component: #ffffff;
+  --workspace-bg-overlay: rgba(255, 255, 255, 0.9);
+
+  // 文字颜色 - 亮色模式
+  --workspace-text-primary: #14532D;
+  --workspace-text-regular: #374151;
+  --workspace-text-secondary: #6B7280;
+  --workspace-text-placeholder: #9CA3AF;
+  --workspace-text-disabled: #D1D5DB;
+
+  // 边框颜色 - 亮色模式
+  --workspace-border-color: #D1FAE5;
+  --workspace-border-color-light: #DCFCE7;
+  --workspace-border-color-lighter: #ECFDF5;
+  --workspace-border-color-extra-light: #F0FDF4;
+
+  // 填充颜色 - 亮色模式
+  --workspace-fill-color: #F0FDF4;
+  --workspace-fill-color-light: #F7FEF9;
+  --workspace-fill-color-lighter: #ECFDF5;
+  --workspace-fill-color-extra-light: #F7FEF9;
+  --workspace-fill-color-dark: #D1FAE5;
+  --workspace-fill-color-darker: #A7F3D0;
+
+  // 阴影 - 亮色模式
+  --workspace-shadow-xs: 0 2px 4px rgba(34, 197, 94, 0.04);
+  --workspace-shadow-sm: 0 2px 8px rgba(34, 197, 94, 0.06);
+  --workspace-shadow-md: 0 4px 16px rgba(34, 197, 94, 0.08);
+  --workspace-shadow-lg: 0 8px 24px rgba(34, 197, 94, 0.1);
+
+  // 侧边栏 - 亮色模式
+  --workspace-sidebar-bg: #ffffff;
+  --workspace-sidebar-border: #DCFCE7;
+  --workspace-sidebar-text: #374151;
+  --workspace-sidebar-text-hover: #22C55E;
+  --workspace-sidebar-bg-active: #22C55E;
+  --workspace-sidebar-text-active: #ffffff;
+
+  // 顶部栏 - 亮色模式
+  --workspace-header-bg: #ffffff;
+  --workspace-header-border: #DCFCE7;
+  --workspace-header-text: #14532D;
+
+  // 卡片 - 亮色模式
+  --workspace-card-bg: #ffffff;
+  --workspace-card-border: #DCFCE7;
+  --workspace-card-shadow: 0 2px 8px rgba(34, 197, 94, 0.04);
+  --workspace-card-shadow-hover: 0 4px 16px rgba(34, 197, 94, 0.08);
+
+  // 表格 - 亮色模式
+  --workspace-table-header-bg: #F7FEF9;
+  --workspace-table-header-text: #374151;
+  --workspace-table-border: #DCFCE7;
+  --workspace-row-hover-bg: #F0FDF4;
+
+  // 标签 - 亮色模式
+  --workspace-tag-default-bg: #ECFDF5;
+  --workspace-tag-default-text: #16A34A;
+  --workspace-tag-success-bg: #ECFDF5;
+  --workspace-tag-success-text: #16A34A;
+  --workspace-tag-warning-bg: #FFFBEB;
+  --workspace-tag-warning-text: #D97706;
+  --workspace-tag-danger-bg: #FEF2F2;
+  --workspace-tag-danger-text: #DC2626;
+  --workspace-tag-info-bg: #ECFEFF;
+  --workspace-tag-info-text: #0891B2;
+}
+
+// ========================================
+// 暗色模式
+// ========================================
+
+[data-theme='dark'] {
+  // 主题色 - 绿色系
+  --workspace-color-primary: #22C55E;
+  --workspace-color-primary-light-3: #4ADE80;
+  --workspace-color-primary-light-5: #86EFAC;
+  --workspace-color-primary-light-7: #A7F3D0;
+  --workspace-color-primary-light-8: #064E3B;
+  --workspace-color-primary-light-9: #052E2B;
+  --workspace-color-primary-dark-2: #16A34A;
+
+  // 功能色
+  --workspace-color-success: #22C55E;
+  --workspace-color-warning: #FBBF24;
+  --workspace-color-danger: #EF4444;
+  --workspace-color-info: #06B6D4;
+
+  // 背景色 - 暗色模式
+  --workspace-bg-page: #12141A;
+  --workspace-bg-component: #1A1D23;
+  --workspace-bg-overlay: rgba(26, 29, 35, 0.9);
+
+  // 文字颜色 - 暗色模式
+  --workspace-text-primary: #F1F3F5;
+  --workspace-text-regular: #C9CDD4;
+  --workspace-text-secondary: #8B929E;
+  --workspace-text-placeholder: #5C6370;
+  --workspace-text-disabled: #3A3F4B;
+
+  // 边框颜色 - 暗色模式
+  --workspace-border-color: #2A2E36;
+  --workspace-border-color-light: #22252C;
+  --workspace-border-color-lighter: #1E2028;
+  --workspace-border-color-extra-light: #1A1D23;
+
+  // 填充颜色 - 暗色模式
+  --workspace-fill-color: #22252C;
+  --workspace-fill-color-light: #1E2028;
+  --workspace-fill-color-lighter: #1A1D23;
+  --workspace-fill-color-extra-light: #16181E;
+  --workspace-fill-color-dark: #2A2E36;
+  --workspace-fill-color-darker: #3A3F4B;
+
+  // 阴影 - 暗色模式
+  --workspace-shadow-xs: 0 2px 4px rgba(0, 0, 0, 0.2);
+  --workspace-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.25);
+  --workspace-shadow-md: 0 4px 16px rgba(0, 0, 0, 0.3);
+  --workspace-shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.35);
+
+  // 侧边栏 - 暗色模式
+  --workspace-sidebar-bg: #16181E;
+  --workspace-sidebar-border: #2A2E36;
+  --workspace-sidebar-text: #C9CDD4;
+  --workspace-sidebar-text-hover: #2DD478;
+  --workspace-sidebar-bg-active: #22C55E;
+  --workspace-sidebar-text-active: #ffffff;
+
+  // 顶部栏 - 暗色模式
+  --workspace-header-bg: #16181E;
+  --workspace-header-border: #2A2E36;
+  --workspace-header-text: #F1F3F5;
+
+  // 卡片 - 暗色模式
+  --workspace-card-bg: #1A1D23;
+  --workspace-card-border: #2A2E36;
+  --workspace-card-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  --workspace-card-shadow-hover: 0 4px 16px rgba(0, 0, 0, 0.3);
+
+  // 表格 - 暗色模式
+  --workspace-table-header-bg: #1E2028;
+  --workspace-table-header-text: #C9CDD4;
+  --workspace-table-border: #2A2E36;
+  --workspace-row-hover-bg: #22252C;
+
+  // 标签 - 暗色模式
+  --workspace-tag-default-bg: #0A2E1C;
+  --workspace-tag-default-text: #4ADE8E;
+  --workspace-tag-success-bg: #052E16;
+  --workspace-tag-success-text: #34D399;
+  --workspace-tag-warning-bg: #2A1F0A;
+  --workspace-tag-warning-text: #FBBF24;
+  --workspace-tag-danger-bg: #2A0F0F;
+  --workspace-tag-danger-text: #F87171;
+  --workspace-tag-info-bg: #0F1F3A;
+  --workspace-tag-info-text: #60A5FA;
+}
+
+// ========================================
+// Element Plus 变量覆盖 - 亮色模式
+// ========================================
+
+:root {
+  --el-color-primary: #22C55E;
+  --el-color-primary-light-3: #4ADE80;
+  --el-color-primary-light-5: #86EFAC;
+  --el-color-primary-light-7: #A7F3D0;
+  --el-color-primary-light-8: #D1FAE5;
+  --el-color-primary-light-9: #ECFDF5;
+  --el-color-primary-dark-2: #16A34A;
+  --el-color-primary-rgb: 34, 197, 94;
+
+  --el-text-color-primary: #14532D;
+  --el-text-color-regular: #374151;
+  --el-text-color-secondary: #6B7280;
+
+  --el-bg-color-page: #F7FEF9;
+  --el-bg-color: #ffffff;
+
+  --el-border-color: #D1FAE5;
+  --el-border-color-light: #DCFCE7;
+  --el-border-color-lighter: #ECFDF5;
+}
+
+// ========================================
+// Element Plus 变量覆盖 - 暗色模式
+// ========================================
+
+[data-theme='dark'] {
+  --el-color-primary: #22C55E;
+  --el-color-primary-light-3: #4ADE80;
+  --el-color-primary-light-5: #86EFAC;
+  --el-color-primary-light-7: #A7F3D0;
+  --el-color-primary-light-8: #064E3B;
+  --el-color-primary-light-9: #052E2B;
+  --el-color-primary-dark-2: #16A34A;
+  --el-color-primary-rgb: 34, 197, 94;
+
+  --el-text-color-primary: #F1F3F5;
+  --el-text-color-regular: #C9CDD4;
+  --el-text-color-secondary: #8B929E;
+
+  --el-bg-color-page: #12141A;
+  --el-bg-color: #1A1D23;
+
+  --el-border-color: #2A2E36;
+  --el-border-color-light: #22252C;
+  --el-border-color-lighter: #1E2028;
+
+  --el-fill-color-light: #22252C;
+  --el-fill-color-lighter: #1E2028;
+  --el-fill-color-extra-light: #1A1D23;
+
+  --el-box-shadow-light: 0 2px 8px rgba(0, 0, 0, 0.2);
+  --el-box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  --el-box-shadow-dark: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+// ========================================
+// 主题过渡动画
+// ========================================
+
+* {
+  transition: background-color 0.3s ease,
+              border-color 0.3s ease,
+              color 0.3s ease,
+              box-shadow 0.3s ease;
+}
+
+// 禁用过渡的元素
+.no-theme-transition,
+*:not(.theme-transition-enabled) {
+  transition: none !important;
+}
+
+// ========================================
+// 自动生成颜色别名
+// 业务样式禁止直接写颜色值；新增颜色请先在主题源中定义变量。
+// ========================================
+:root {
+  --theme-primary-darker: #15803D;
+  --theme-white: #FFFFFF;
+  --theme-black: #000000;
+  --theme-transparent: transparent;
+  --theme-text-strong: #111827;
+  --theme-info-bg: #ECFEFF;
+  --theme-warning-bg: #FFFBEB;
+  --theme-danger-bg: #FEF2F2;
+  --theme-info-neutral-bg: #F4F4F5;
+  --theme-rgb-primary: 34, 197, 94;
+  --theme-rgb-primary-light: 74, 222, 128;
+  --theme-rgb-white: 255, 255, 255;
+  --theme-rgb-black: 0, 0, 0;
+  --theme-rgb-text-strong: 17, 24, 39;
+  --theme-rgb-text-regular: 55, 65, 81;
+  --theme-rgb-success: 34, 197, 94;
+  --theme-rgb-warning: 251, 191, 36;
+  --theme-rgb-danger: 239, 68, 68;
+  --theme-rgb-info: 6, 182, 212;
+  --theme-color-005f73: #005F73;
+  --theme-color-00758f: #00758F;
+  --theme-color-0099cc: #0099CC;
+  --theme-color-00be50: #00BE50;
+  --theme-color-00c6ff: #00C6FF;
+  --theme-color-00d4ff: #00D4FF;
+  --theme-color-00ed64: #00ED64;
+  --theme-color-059669: #059669;
+  --theme-color-065f46: #065F46;
+  --theme-color-0891b2: #0891B2;
+  --theme-color-0a0e27: #0A0E27;
+  --theme-color-16213e: #16213E;
+  --theme-color-1677ff: #1677FF;
+  --theme-color-1a1a2e: #1A1A2E;
+  --theme-color-1a7f37: #1A7F37;
+  --theme-color-1e1e1e: #1E1E1E;
+  --theme-color-1e1e2e: #1E1E2E;
+  --theme-color-2563eb: #2563EB;
+  --theme-color-282c34: #282C34;
+  --theme-color-285374: #285374;
+  --theme-color-2c313c: #2C313C;
+  --theme-color-306998: #306998;
+  --theme-color-323330: #323330;
+  --theme-color-336791: #336791;
+  --theme-color-3b82f6: #3B82F6;
+  --theme-color-3d8f31: #3D8F31;
+  --theme-color-3e4451: #3E4451;
+  --theme-color-4c1d95: #4C1D95;
+  --theme-color-4db33d: #4DB33D;
+  --theme-color-528bff: #528BFF;
+  --theme-color-52c41a: #52C41A;
+  --theme-color-555555: #555555;
+  --theme-color-56b6c2: #56B6C2;
+  --theme-color-5c6370: #5C6370;
+  --theme-color-60a5fa: #60A5FA;
+  --theme-color-61afef: #61AFEF;
+  --theme-color-6366f1: #6366F1;
+  --theme-color-666666: #666666;
+  --theme-color-667eea: #667EEA;
+  --theme-color-66b1ff: #66B1FF;
+  --theme-color-66b3ff: #66B3FF;
+  --theme-color-6e8eff: #6E8EFF;
+  --theme-color-764ba2: #764BA2;
+  --theme-color-7a8ba0: #7A8BA0;
+  --theme-color-888888: #888888;
+  --theme-color-8896ab: #8896AB;
+  --theme-color-8c8c8c: #8C8C8C;
+  --theme-color-9030d1: #9030D1;
+  --theme-color-94a3b8: #94A3B8;
+  --theme-color-98c379: #98C379;
+  --theme-color-9b59b6: #9B59B6;
+  --theme-color-a03729: #A03729;
+  --theme-color-a0aec0: #A0AEC0;
+  --theme-color-a3211f: #A3211F;
+  --theme-color-a5b4fc: #A5B4FC;
+  --theme-color-a8a8a8: #A8A8A8;
+  --theme-color-abb2bf: #ABB2BF;
+  --theme-color-b0231a: #B0231A;
+  --theme-color-b3d8fd: #B3D8FD;
+  --theme-color-b71c1c: #B71C1C;
+  --theme-color-b87ed9: #B87ED9;
+  --theme-color-b88230: #B88230;
+  --theme-color-bfdbfe: #BFDBFE;
+  --theme-color-c1c1c1: #C1C1C1;
+  --theme-color-c2e7a9: #C2E7A9;
+  --theme-color-c4730d: #C4730D;
+  --theme-color-c49e2e: #C49E2E;
+  --theme-color-c678dd: #C678DD;
+  --theme-color-c74634: #C74634;
+  --theme-color-c7d2fe: #C7D2FE;
+  --theme-color-cc2927: #CC2927;
+  --theme-color-cc5555: #CC5555;
+  --theme-color-cc5629: #CC5629;
+  --theme-color-cf222e: #CF222E;
+  --theme-color-d19a66: #D19A66;
+  --theme-color-d4d4d4: #D4D4D4;
+  --theme-color-d4d4d8: #D4D4D8;
+  --theme-color-d82c20: #D82C20;
+  --theme-color-d9d9d9: #D9D9D9;
+  --theme-color-d9ecff: #D9ECFF;
+  --theme-color-e06c75: #E06C75;
+  --theme-color-e0f0ff: #E0F0FF;
+  --theme-color-e11d48: #E11D48;
+  --theme-color-e1f3d8: #E1F3D8;
+  --theme-color-e3edff: #E3EDFF;
+  --theme-color-e4e8ed: #E4E8ED;
+  --theme-color-e5c07b: #E5C07B;
+  --theme-color-e6f2ff: #E6F2FF;
+  --theme-color-e6f7ed: #E6F7ED;
+  --theme-color-e8eaff: #E8EAFF;
+  --theme-color-e8ecf1: #E8ECF1;
+  --theme-color-e8f4ff: #E8F4FF;
+  --theme-color-e8fdf0: #E8FDF0;
+  --theme-color-ecf5ff: #ECF5FF;
+  --theme-color-ede8ff: #EDE8FF;
+  --theme-color-eef0f6: #EEF0F6;
+  --theme-color-eff6ff: #EFF6FF;
+  --theme-color-f0f0f0: #F0F0F0;
+  --theme-color-f0f1ff: #F0F1FF;
+  --theme-color-f0f2f5: #F0F2F5;
+  --theme-color-f0f3f7: #F0F3F7;
+  --theme-color-f0f5ff: #F0F5FF;
+  --theme-color-f0f7ff: #F0F7FF;
+  --theme-color-f0f9eb: #F0F9EB;
+  --theme-color-f0fff4: #F0FFF4;
+  --theme-color-f1f1f1: #F1F1F1;
+  --theme-color-f29111: #F29111;
+  --theme-color-f2f6fc: #F2F6FC;
+  --theme-color-f3f0ff: #F3F0FF;
+  --theme-color-f5dab1: #F5DAB1;
+  --theme-color-f5e6d3: #F5E6D3;
+  --theme-color-f5f0ff: #F5F0FF;
+  --theme-color-f5f5f5: #F5F5F5;
+  --theme-color-f5f7ff: #F5F7FF;
+  --theme-color-f5f9ff: #F5F9FF;
+  --theme-color-f6ffed: #F6FFED;
+  --theme-color-f7c13a: #F7C13A;
+  --theme-color-f7df1e: #F7DF1E;
+  --theme-color-f7f8fa: #F7F8FA;
+  --theme-color-f7faff: #F7FAFF;
+  --theme-color-f8f7ff: #F8F7FF;
+  --theme-color-f8f9fa: #F8F9FA;
+  --theme-color-f8f9ff: #F8F9FF;
+  --theme-color-f9f9f9: #F9F9F9;
+  --theme-color-faecd8: #FAECD8;
+  --theme-color-fafafe: #FAFAFE;
+  --theme-color-fafbfc: #FAFBFC;
+  --theme-color-fafbff: #FAFBFF;
+  --theme-color-fde2e2: #FDE2E2;
+  --theme-color-ff6b35: #FF6B35;
+  --theme-color-ff6b6b: #FF6B6B;
+  --theme-color-ffcb6b: #FFCB6B;
+  --theme-color-ffd43b: #FFD43B;
+  --theme-color-fff3d6: #FFF3D6;
+  --theme-color-fff5f5: #FFF5F5;
+  --theme-color-fff8e6: #FFF8E6;
+  --theme-color-fffbfb: #FFFBFB;
+  --theme-rgb-0-212-255: 0, 212, 255;
+  --theme-rgb-102-126-234: 102, 126, 234;
+  --theme-rgb-103-194-58: 103, 194, 58;
+  --theme-rgb-144-147-153: 144, 147, 153;
+  --theme-rgb-148-163-184: 148, 163, 184;
+  --theme-rgb-15-23-42: 15, 23, 42;
+  --theme-rgb-230-162-60: 230, 162, 60;
+  --theme-rgb-245-108-108: 245, 108, 108;
+  --theme-rgb-250-204-21: 250, 204, 21;
+  --theme-rgb-251-191-36: 251, 191, 36;
+  --theme-rgb-30-30-30: 30, 30, 30;
+  --theme-rgb-59-130-246: 59, 130, 246;
+  --theme-rgb-64-158-255: 64, 158, 255;
+  --theme-rgb-82-196-26: 82, 196, 26;
+  --theme-rgb-99-102-241: 99, 102, 241;
+}
+
+[data-theme='dark'] {
+  --theme-text-strong: #DCFCE7;
+  --theme-info-bg: #082F49;
+  --theme-warning-bg: #2F2A1A;
+  --theme-danger-bg: #2F1A1A;
+  --theme-info-neutral-bg: #2D2F3A;
+  /* 浅灰区块/渐变背景（详情页标题条等）深色下用比卡片稍亮的深灰 */
+  --theme-color-f8f9fa: #22262D;
+  /* 滚动条：深色下轨道近透明、滑块中性半透明白（这三个变量仅滚动条使用，覆盖安全） */
+  --theme-color-f1f1f1: rgba(255, 255, 255, 0.04);
+  --theme-color-c1c1c1: rgba(255, 255, 255, 0.16);
+  --theme-color-a8a8a8: rgba(255, 255, 255, 0.28);
+}

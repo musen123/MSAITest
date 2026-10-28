@@ -1,0 +1,48 @@
+<svg viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg" fill="none">
+  <defs>
+    <linearGradient id="pw-window" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#E8FBF1"/>
+    </linearGradient>
+    <linearGradient id="pw-frame" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5DDE9C"/>
+      <stop offset="100%" stop-color="#00B96B"/>
+    </linearGradient>
+    <linearGradient id="pw-chart" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#A78BFA"/>
+      <stop offset="100%" stop-color="#8B5CF6"/>
+    </linearGradient>
+  </defs>
+  <!-- 装饰 -->
+  <circle cx="78" cy="18" r="3" fill="#00B96B" opacity="0.3"/>
+  <circle cx="18" cy="80" r="3" fill="#8B5CF6" opacity="0.3"/>
+  <!-- 浏览器框 -->
+  <rect x="12" y="18" width="72" height="56" rx="6" fill="url(#pw-frame)"/>
+  <rect x="16" y="22" width="64" height="48" rx="3" fill="url(#pw-window)"/>
+  <!-- 顶栏 -->
+  <rect x="16" y="22" width="64" height="10" rx="3" fill="#E8FBF1"/>
+  <rect x="16" y="29" width="64" height="3" fill="#E8FBF1"/>
+  <!-- 红黄绿按钮 -->
+  <circle cx="22" cy="27" r="2" fill="#EF4444"/>
+  <circle cx="29" cy="27" r="2" fill="#FBBF24"/>
+  <circle cx="36" cy="27" r="2" fill="#10B981"/>
+  <!-- 地址栏 -->
+  <rect x="44" y="24" width="32" height="6" rx="3" fill="#C9F4DD"/>
+  <!-- 图表区 -->
+  <g transform="translate(20, 38)">
+    <line x1="0" y1="26" x2="56" y2="26" stroke="#94E9BD" stroke-width="1.5"/>
+    <line x1="0" y1="0" x2="0" y2="26" stroke="#94E9BD" stroke-width="1.5"/>
+    <!-- 柱图 -->
+    <rect x="4" y="18" width="6" height="8" rx="1" fill="#00B96B" opacity="0.5"/>
+    <rect x="14" y="12" width="6" height="14" rx="1" fill="#00B96B" opacity="0.7"/>
+    <rect x="24" y="6" width="6" height="20" rx="1" fill="#00B96B"/>
+    <rect x="34" y="14" width="6" height="12" rx="1" fill="#00B96B" opacity="0.7"/>
+    <!-- 折线 -->
+    <path d="M44 18 L48 12 L52 6" stroke="#8B5CF6" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <circle cx="44" cy="18" r="2" fill="url(#pw-chart)"/>
+    <circle cx="48" cy="12" r="2" fill="url(#pw-chart)"/>
+    <circle cx="52" cy="6" r="2.5" fill="url(#pw-chart)"/>
+  </g>
+  <!-- 指针/光标 -->
+  <path d="M64 56 L64 70 L68 66 L70 72 L73 71 L71 65 L76 65 Z" fill="#00B96B" stroke="#FFFFFF" stroke-width="1.2" stroke-linejoin="round"/>
+</svg>

@@ -1,0 +1,150 @@
+<svg viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg" fill="none">
+  <defs>
+    <linearGradient id="tp-gauge" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#10B981"/>
+      <stop offset="50%" stop-color="#FBBF24"/>
+      <stop offset="100%" stop-color="#EF4444"/>
+    </linearGradient>
+    <linearGradient id="tp-dial-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#F3F4F6"/>
+    </linearGradient>
+    <linearGradient id="tp-bar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5DDE9C"/>
+      <stop offset="100%" stop-color="#00B96B"/>
+    </linearGradient>
+    <radialGradient id="tp-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#00B96B" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#00B96B" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="tp-shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="5"/>
+      <feOffset dx="0" dy="4"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.2"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- 辉光 -->
+  <circle cx="240" cy="180" r="200" fill="url(#tp-glow)"/>
+
+  <!-- 装饰 -->
+  <circle cx="70" cy="80" r="6" fill="#00B96B" opacity="0.3"/>
+  <circle cx="410" cy="90" r="8" fill="#00B96B" opacity="0.22"/>
+  <circle cx="60" cy="290" r="5" fill="#00B96B" opacity="0.3"/>
+  <circle cx="420" cy="290" r="7" fill="#00B96B" opacity="0.25"/>
+  <g fill="#5DDE9C" opacity="0.7">
+    <path d="M120 130 L122 137 L129 139 L122 141 L120 148 L118 141 L111 139 L118 137 Z"/>
+    <path d="M380 230 L382 237 L389 239 L382 241 L380 248 L378 241 L371 239 L378 237 Z"/>
+  </g>
+
+  <!-- 落地阴影 -->
+  <ellipse cx="240" cy="320" rx="160" ry="14" fill="#00B96B" opacity="0.1"/>
+
+  <!-- ============ 中央仪表盘 ============ -->
+  <g transform="translate(240, 200)" filter="url(#tp-shadow)">
+    <!-- 主圆 -->
+    <circle cx="0" cy="0" r="82" fill="url(#tp-dial-bg)" stroke="#E5E7EB" stroke-width="2"/>
+    <circle cx="0" cy="0" r="80" fill="none" stroke="#FFFFFF" stroke-width="1" opacity="0.5"/>
+
+    <!-- 半圆刻度弧 -->
+    <path d="M -68 16 A 70 70 0 1 1 68 16"
+          fill="none" stroke="url(#tp-gauge)" stroke-width="14" stroke-linecap="round" opacity="0.9"/>
+    <!-- 内圆 -->
+    <circle cx="0" cy="0" r="46" fill="#FFFFFF"/>
+
+    <!-- 刻度小标 -->
+    <g stroke="#6B7280" stroke-width="2" stroke-linecap="round">
+      <line x1="-60" y1="14" x2="-54" y2="13"/>
+      <line x1="-44" y1="-28" x2="-39" y2="-26"/>
+      <line x1="0" y1="-46" x2="0" y2="-40"/>
+      <line x1="44" y1="-28" x2="39" y2="-26"/>
+      <line x1="60" y1="14" x2="54" y2="13"/>
+    </g>
+
+    <!-- 刻度数值 -->
+    <g font-family="sans-serif" font-size="8" fill="#6B7280" text-anchor="middle">
+      <text x="-66" y="32">0</text>
+      <text x="-50" y="-32">25</text>
+      <text x="0" y="-52">50</text>
+      <text x="50" y="-32">75</text>
+      <text x="66" y="32">100</text>
+    </g>
+
+    <!-- 指针 (指向 75% / 右上) -->
+    <g transform="rotate(50)">
+      <path d="M -3 4 L 0 -52 L 3 4 Z" fill="#1F2937"/>
+      <circle cx="0" cy="0" r="6" fill="#1F2937"/>
+      <circle cx="0" cy="0" r="3" fill="#5DDE9C"/>
+    </g>
+
+    <!-- 中央数值 -->
+    <text x="0" y="20" font-family="Arial Black, Arial" font-size="22" font-weight="900" fill="#00B96B" text-anchor="middle">75%</text>
+    <text x="0" y="34" font-family="sans-serif" font-size="9" font-weight="600" fill="#9CA3AF" text-anchor="middle">CPU 负载</text>
+  </g>
+
+  <!-- ============ 左侧数据卡 ============ -->
+  <g transform="translate(50, 100)" filter="url(#tp-shadow)">
+    <rect x="0" y="0" width="110" height="60" rx="10" fill="#FFFFFF" stroke="#00B96B" stroke-opacity="0.3"/>
+    <text x="10" y="16" font-size="8" font-weight="600" fill="#6B7280">QPS</text>
+    <text x="10" y="36" font-family="Arial Black" font-size="20" font-weight="900" fill="#00B96B">8,420</text>
+    <!-- mini chart -->
+    <g transform="translate(10, 44)">
+      <path d="M0 12 L12 8 L24 14 L36 6 L48 10 L60 4 L72 8 L84 2"
+            stroke="url(#tp-bar)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M0 12 L12 8 L24 14 L36 6 L48 10 L60 4 L72 8 L84 2 L84 16 L0 16 Z"
+            fill="url(#tp-bar)" opacity="0.2"/>
+    </g>
+    <text x="100" y="14" font-size="8" font-weight="700" fill="#10B981" text-anchor="end">↑ 8.3%</text>
+  </g>
+
+  <g transform="translate(50, 175)" filter="url(#tp-shadow)">
+    <rect x="0" y="0" width="110" height="60" rx="10" fill="#FFFFFF" stroke="#00B96B" stroke-opacity="0.3"/>
+    <text x="10" y="16" font-size="8" font-weight="600" fill="#6B7280">响应时间</text>
+    <text x="10" y="36" font-family="Arial Black" font-size="20" font-weight="900" fill="#F59E0B">126ms</text>
+    <!-- mini chart (波动) -->
+    <g transform="translate(10, 44)">
+      <path d="M0 8 L12 12 L24 6 L36 14 L48 4 L60 10 L72 6 L84 12"
+            stroke="#F59E0B" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <text x="100" y="14" font-size="8" font-weight="700" fill="#EF4444" text-anchor="end">↑ 5.2%</text>
+  </g>
+
+  <!-- ============ 右侧数据卡 ============ -->
+  <g transform="translate(320, 100)" filter="url(#tp-shadow)">
+    <rect x="0" y="0" width="110" height="60" rx="10" fill="#FFFFFF" stroke="#00B96B" stroke-opacity="0.3"/>
+    <text x="10" y="16" font-size="8" font-weight="600" fill="#6B7280">并发用户</text>
+    <text x="10" y="36" font-family="Arial Black" font-size="20" font-weight="900" fill="#00B96B">2,560</text>
+    <!-- 柱状 -->
+    <g transform="translate(10, 44)">
+      <rect x="0" y="10" width="6" height="6" rx="1" fill="#00B96B" opacity="0.4"/>
+      <rect x="10" y="6" width="6" height="10" rx="1" fill="#00B96B" opacity="0.6"/>
+      <rect x="20" y="2" width="6" height="14" rx="1" fill="#00B96B"/>
+      <rect x="30" y="4" width="6" height="12" rx="1" fill="#00B96B" opacity="0.8"/>
+      <rect x="40" y="0" width="6" height="16" rx="1" fill="url(#tp-bar)"/>
+      <rect x="50" y="6" width="6" height="10" rx="1" fill="#00B96B" opacity="0.6"/>
+      <rect x="60" y="2" width="6" height="14" rx="1" fill="#00B96B"/>
+      <rect x="70" y="4" width="6" height="12" rx="1" fill="#00B96B" opacity="0.8"/>
+    </g>
+    <text x="100" y="14" font-size="8" font-weight="700" fill="#10B981" text-anchor="end">↑ 12.5%</text>
+  </g>
+
+  <g transform="translate(320, 175)" filter="url(#tp-shadow)">
+    <rect x="0" y="0" width="110" height="60" rx="10" fill="#FFFFFF" stroke="#00B96B" stroke-opacity="0.3"/>
+    <text x="10" y="16" font-size="8" font-weight="600" fill="#6B7280">错误率</text>
+    <text x="10" y="36" font-family="Arial Black" font-size="20" font-weight="900" fill="#10B981">0.02%</text>
+    <g transform="translate(10, 44)">
+      <path d="M0 14 L12 12 L24 14 L36 10 L48 12 L60 8 L72 10 L84 6"
+            stroke="#10B981" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <text x="100" y="14" font-size="8" font-weight="700" fill="#10B981" text-anchor="end">↓ 0.8%</text>
+  </g>
+
+  <!-- 顶部速度感闪线 -->
+  <g stroke="#00B96B" stroke-width="2" stroke-linecap="round" opacity="0.6">
+    <line x1="200" y1="80" x2="190" y2="80"/>
+    <line x1="220" y1="68" x2="208" y2="68"/>
+    <line x1="270" y1="68" x2="282" y2="68"/>
+    <line x1="290" y1="80" x2="280" y2="80"/>
+  </g>
+</svg>

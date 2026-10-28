@@ -1,0 +1,219 @@
+<svg viewBox="0 0 600 480" xmlns="http://www.w3.org/2000/svg" fill="none">
+  <defs>
+    <!-- 立方体顶面渐变 -->
+    <linearGradient id="cubeTop" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#5DDE9C"/>
+      <stop offset="100%" stop-color="#00B96B"/>
+    </linearGradient>
+    <linearGradient id="cubeLeft" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#00A05E"/>
+      <stop offset="100%" stop-color="#008550"/>
+    </linearGradient>
+    <linearGradient id="cubeRight" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#008550"/>
+      <stop offset="100%" stop-color="#006B40"/>
+    </linearGradient>
+    <!-- 玻璃卡片渐变 -->
+    <linearGradient id="glassCard" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.98"/>
+      <stop offset="100%" stop-color="#E8FBF1" stop-opacity="0.92"/>
+    </linearGradient>
+    <!-- 背景径向辉光 -->
+    <radialGradient id="bgGlow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#00B96B" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#00B96B" stop-opacity="0"/>
+    </radialGradient>
+    <!-- 软阴影滤镜 -->
+    <filter id="softShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="6"/>
+      <feOffset dx="0" dy="4"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.18"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- 背景辉光 -->
+  <circle cx="300" cy="240" r="280" fill="url(#bgGlow)"/>
+
+  <!-- 装饰小球 -->
+  <circle cx="70" cy="100" r="6" fill="#00B96B" opacity="0.3"/>
+  <circle cx="540" cy="140" r="10" fill="#00B96B" opacity="0.2"/>
+  <circle cx="510" cy="380" r="5" fill="#00B96B" opacity="0.35"/>
+  <circle cx="60" cy="380" r="8" fill="#00B96B" opacity="0.22"/>
+  <circle cx="100" cy="60" r="3" fill="#5DDE9C" opacity="0.6"/>
+  <circle cx="450" cy="80" r="4" fill="#5DDE9C" opacity="0.5"/>
+
+  <!-- 闪光星 -->
+  <g fill="#5DDE9C" opacity="0.7">
+    <path d="M150 70 L153 80 L163 83 L153 86 L150 96 L147 86 L137 83 L147 80 Z"/>
+    <path d="M460 200 L462 207 L469 209 L462 211 L460 218 L458 211 L451 209 L458 207 Z"/>
+    <path d="M520 280 L522 286 L528 288 L522 290 L520 296 L518 290 L512 288 L518 286 Z"/>
+  </g>
+
+  <!-- 落地阴影 -->
+  <ellipse cx="300" cy="430" rx="190" ry="18" fill="#00B96B" opacity="0.08"/>
+
+  <!-- ============ 中央 3D 立方体 ============ -->
+  <g transform="translate(300, 280)">
+    <!-- 立方体光晕 -->
+    <ellipse cx="0" cy="40" rx="120" ry="60" fill="#00B96B" opacity="0.15" filter="url(#softShadow)"/>
+    <!-- 顶面 -->
+    <path d="M0 -60 L85 -20 L0 20 L-85 -20 Z" fill="url(#cubeTop)"/>
+    <!-- 顶面纹路 (电路感) -->
+    <g stroke="#FFFFFF" stroke-width="1.5" opacity="0.35" fill="none">
+      <path d="M-40 -30 L-20 -40 L20 -40 L40 -30"/>
+      <path d="M-30 0 L0 -15 L30 0"/>
+      <circle cx="0" cy="-20" r="3" fill="#FFFFFF" opacity="0.6"/>
+      <circle cx="-30" cy="-25" r="2" fill="#FFFFFF" opacity="0.6"/>
+      <circle cx="30" cy="-25" r="2" fill="#FFFFFF" opacity="0.6"/>
+    </g>
+    <!-- AI 字样 -->
+    <text x="0" y="-5" font-family="Arial Black, Arial" font-weight="900" font-size="22" fill="#FFFFFF" text-anchor="middle" opacity="0.95">AI</text>
+
+    <!-- 左面 -->
+    <path d="M-85 -20 L0 20 L0 100 L-85 60 Z" fill="url(#cubeLeft)"/>
+    <!-- 右面 -->
+    <path d="M0 20 L85 -20 L85 60 L0 100 Z" fill="url(#cubeRight)"/>
+    <!-- 右面装饰 (代码窗口) -->
+    <g transform="translate(15, 0)">
+      <rect x="10" y="0" width="55" height="40" rx="3" fill="#FFFFFF" opacity="0.18"/>
+      <rect x="14" y="6" width="20" height="3" rx="1.5" fill="#FFFFFF" opacity="0.6"/>
+      <rect x="14" y="14" width="35" height="3" rx="1.5" fill="#FFFFFF" opacity="0.4"/>
+      <rect x="14" y="22" width="28" height="3" rx="1.5" fill="#FFFFFF" opacity="0.4"/>
+      <rect x="14" y="30" width="18" height="3" rx="1.5" fill="#FFFFFF" opacity="0.6"/>
+    </g>
+  </g>
+
+  <!-- ============ 漂浮卡片 1: Test Cases (左上) ============ -->
+  <g transform="translate(80, 140) rotate(-4)" filter="url(#softShadow)">
+    <rect x="0" y="0" width="140" height="92" rx="14" fill="url(#glassCard)" stroke="#00B96B" stroke-opacity="0.35"/>
+    <rect x="12" y="12" width="38" height="6" rx="3" fill="#00B96B" opacity="0.8"/>
+    <rect x="12" y="22" width="22" height="3" rx="1.5" fill="#9CA3AF"/>
+    <!-- 三个 checkbox -->
+    <g transform="translate(12, 38)">
+      <rect x="0" y="0" width="12" height="12" rx="3" fill="#00B96B"/>
+      <path d="M3 6 L5 8 L9 4" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="18" y="2" width="80" height="4" rx="2" fill="#374151" opacity="0.8"/>
+      <rect x="18" y="9" width="60" height="3" rx="1.5" fill="#9CA3AF"/>
+    </g>
+    <g transform="translate(12, 58)">
+      <rect x="0" y="0" width="12" height="12" rx="3" fill="#00B96B"/>
+      <path d="M3 6 L5 8 L9 4" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="18" y="2" width="70" height="4" rx="2" fill="#374151" opacity="0.8"/>
+      <rect x="18" y="9" width="50" height="3" rx="1.5" fill="#9CA3AF"/>
+    </g>
+    <g transform="translate(12, 76)">
+      <rect x="0" y="0" width="12" height="12" rx="3" fill="#E5E7EB"/>
+      <rect x="18" y="2" width="55" height="4" rx="2" fill="#9CA3AF"/>
+    </g>
+  </g>
+  <!-- 卡片1 标签 -->
+  <g transform="translate(150, 132)">
+    <rect x="-22" y="-10" width="44" height="14" rx="7" fill="#00B96B"/>
+    <text x="0" y="0" font-family="sans-serif" font-size="9" font-weight="700" fill="#FFFFFF" text-anchor="middle">用例</text>
+  </g>
+
+  <!-- ============ 漂浮卡片 2: Report (右上) ============ -->
+  <g transform="translate(380, 130) rotate(3)" filter="url(#softShadow)">
+    <rect x="0" y="0" width="140" height="92" rx="14" fill="url(#glassCard)" stroke="#00B96B" stroke-opacity="0.35"/>
+    <rect x="12" y="12" width="35" height="6" rx="3" fill="#00B96B" opacity="0.8"/>
+    <!-- 圆环图 -->
+    <g transform="translate(40, 56)">
+      <circle r="22" fill="none" stroke="#E5E7EB" stroke-width="6"/>
+      <path d="M 0 -22 A 22 22 0 0 1 19 -10" fill="none" stroke="#00B96B" stroke-width="6" stroke-linecap="round"/>
+      <path d="M 19 -10 A 22 22 0 0 1 12 19" fill="none" stroke="#5DDE9C" stroke-width="6" stroke-linecap="round"/>
+      <text y="3" font-family="sans-serif" font-weight="800" font-size="13" fill="#00B96B" text-anchor="middle">98%</text>
+    </g>
+    <!-- 迷你柱状图 -->
+    <g transform="translate(76, 36)">
+      <rect x="0" y="28" width="7" height="14" rx="2" fill="#00B96B" opacity="0.4"/>
+      <rect x="11" y="20" width="7" height="22" rx="2" fill="#00B96B" opacity="0.6"/>
+      <rect x="22" y="10" width="7" height="32" rx="2" fill="#00B96B"/>
+      <rect x="33" y="16" width="7" height="26" rx="2" fill="#00B96B" opacity="0.7"/>
+      <rect x="44" y="6" width="7" height="36" rx="2" fill="#5DDE9C"/>
+    </g>
+  </g>
+  <g transform="translate(450, 122)">
+    <rect x="-22" y="-10" width="44" height="14" rx="7" fill="#00B96B"/>
+    <text x="0" y="0" font-family="sans-serif" font-size="9" font-weight="700" fill="#FFFFFF" text-anchor="middle">报告</text>
+  </g>
+
+  <!-- ============ 漂浮卡片 3: AI Agent (左下) ============ -->
+  <g transform="translate(50, 310) rotate(-3)" filter="url(#softShadow)">
+    <rect x="0" y="0" width="130" height="82" rx="14" fill="url(#glassCard)" stroke="#00B96B" stroke-opacity="0.35"/>
+    <!-- 机器人 -->
+    <g transform="translate(40, 14)">
+      <!-- 天线 -->
+      <line x1="25" y1="0" x2="25" y2="-6" stroke="#00B96B" stroke-width="2"/>
+      <circle cx="25" cy="-8" r="3" fill="#10B981"/>
+      <!-- 脸 -->
+      <rect x="5" y="0" width="40" height="38" rx="10" fill="#00B96B"/>
+      <rect x="5" y="0" width="40" height="14" rx="10" fill="#5DDE9C"/>
+      <!-- 眼睛 -->
+      <circle cx="17" cy="18" r="3.5" fill="#FFFFFF"/>
+      <circle cx="33" cy="18" r="3.5" fill="#FFFFFF"/>
+      <circle cx="17" cy="18" r="1.5" fill="#1F2937"/>
+      <circle cx="33" cy="18" r="1.5" fill="#1F2937"/>
+      <!-- 嘴 -->
+      <rect x="18" y="28" width="14" height="4" rx="2" fill="#FFFFFF"/>
+    </g>
+    <!-- 对话气泡 -->
+    <g transform="translate(85, 22)">
+      <rect x="0" y="0" width="36" height="22" rx="6" fill="#E8FBF1"/>
+      <circle cx="6" cy="11" r="1.5" fill="#00B96B"/>
+      <circle cx="14" cy="11" r="1.5" fill="#00B96B"/>
+      <circle cx="22" cy="11" r="1.5" fill="#00B96B"/>
+    </g>
+    <rect x="12" y="58" width="100" height="3" rx="1.5" fill="#9CA3AF" opacity="0.6"/>
+    <rect x="12" y="65" width="70" height="3" rx="1.5" fill="#9CA3AF" opacity="0.4"/>
+  </g>
+  <g transform="translate(115, 302)">
+    <rect x="-22" y="-10" width="44" height="14" rx="7" fill="#00B96B"/>
+    <text x="0" y="0" font-family="sans-serif" font-size="9" font-weight="700" fill="#FFFFFF" text-anchor="middle">Agent</text>
+  </g>
+
+  <!-- ============ 漂浮卡片 4: Workflow (右下) ============ -->
+  <g transform="translate(415, 310) rotate(4)" filter="url(#softShadow)">
+    <rect x="0" y="0" width="130" height="82" rx="14" fill="url(#glassCard)" stroke="#00B96B" stroke-opacity="0.35"/>
+    <!-- 工作流节点 -->
+    <g transform="translate(0, 16)">
+      <!-- 连线 -->
+      <g stroke="#00B96B" stroke-width="1.5" opacity="0.5">
+        <path d="M22 24 Q42 14 60 14" fill="none"/>
+        <path d="M22 24 Q42 34 60 34" fill="none"/>
+        <path d="M82 14 Q100 24 110 24" fill="none"/>
+        <path d="M82 34 Q100 24 110 24" fill="none"/>
+      </g>
+      <!-- 节点 -->
+      <g>
+        <circle cx="22" cy="24" r="10" fill="#FFFFFF" stroke="#00B96B" stroke-width="2"/>
+        <circle cx="22" cy="24" r="3" fill="#00B96B"/>
+      </g>
+      <g>
+        <circle cx="66" cy="14" r="10" fill="#FFFFFF" stroke="#5DDE9C" stroke-width="2"/>
+        <path d="M62 14 L65 17 L70 11" stroke="#00B96B" stroke-width="2" stroke-linecap="round" fill="none"/>
+      </g>
+      <g>
+        <circle cx="66" cy="34" r="10" fill="#FFFFFF" stroke="#5DDE9C" stroke-width="2"/>
+        <path d="M62 34 L65 37 L70 31" stroke="#00B96B" stroke-width="2" stroke-linecap="round" fill="none"/>
+      </g>
+      <g>
+        <circle cx="110" cy="24" r="10" fill="#00B96B"/>
+        <path d="M105 24 L108 27 L114 21" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" fill="none"/>
+      </g>
+    </g>
+    <rect x="12" y="62" width="90" height="3" rx="1.5" fill="#9CA3AF" opacity="0.6"/>
+  </g>
+  <g transform="translate(480, 302)">
+    <rect x="-28" y="-10" width="56" height="14" rx="7" fill="#00B96B"/>
+    <text x="0" y="0" font-family="sans-serif" font-size="9" font-weight="700" fill="#FFFFFF" text-anchor="middle">工作流</text>
+  </g>
+
+  <!-- ============ 卡片间虚线连接 ============ -->
+  <g stroke="#00B96B" stroke-width="1.5" stroke-dasharray="3 4" fill="none" opacity="0.35">
+    <path d="M220 200 Q260 230 285 260"/>
+    <path d="M380 200 Q340 230 315 260"/>
+    <path d="M180 330 Q230 320 270 310"/>
+    <path d="M415 330 Q360 320 330 310"/>
+  </g>
+</svg>

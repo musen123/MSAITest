@@ -1,0 +1,141 @@
+<svg viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg" fill="none">
+  <defs>
+    <linearGradient id="acg-brain" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5DDE9C"/>
+      <stop offset="100%" stop-color="#00B96B"/>
+    </linearGradient>
+    <linearGradient id="acg-card" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#E8FBF1"/>
+    </linearGradient>
+    <radialGradient id="acg-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#00B96B" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#00B96B" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="acg-shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="5"/>
+      <feOffset dx="0" dy="4"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.2"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="acg-blur-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8"/>
+    </filter>
+  </defs>
+
+  <!-- 辉光 -->
+  <circle cx="240" cy="180" r="220" fill="url(#acg-glow)"/>
+
+  <!-- 装饰 -->
+  <circle cx="70" cy="80" r="6" fill="#00B96B" opacity="0.3"/>
+  <circle cx="410" cy="90" r="8" fill="#00B96B" opacity="0.22"/>
+  <circle cx="60" cy="290" r="5" fill="#00B96B" opacity="0.3"/>
+  <circle cx="420" cy="290" r="7" fill="#00B96B" opacity="0.25"/>
+  <g fill="#5DDE9C" opacity="0.7">
+    <path d="M120 130 L122 137 L129 139 L122 141 L120 148 L118 141 L111 139 L118 137 Z"/>
+    <path d="M360 230 L362 237 L369 239 L362 241 L360 248 L358 241 L351 239 L358 237 Z"/>
+  </g>
+
+  <!-- 落地阴影 -->
+  <ellipse cx="240" cy="320" rx="140" ry="14" fill="#00B96B" opacity="0.1"/>
+
+  <!-- 大脑外发光 -->
+  <ellipse cx="180" cy="190" rx="80" ry="70" fill="#00B96B" opacity="0.15" filter="url(#acg-blur-glow)"/>
+
+  <!-- ============ 中央 AI 大脑 ============ -->
+  <g transform="translate(180, 190)" filter="url(#acg-shadow)">
+    <!-- 主体 -->
+    <path d="M-50 -30 Q-55 -55 -32 -60 Q-26 -75 -8 -70 Q0 -82 14 -72 Q34 -76 38 -56 Q56 -50 50 -28 Q60 -10 48 6 Q56 24 38 32 Q34 50 16 46 Q8 60 -6 52 Q-22 60 -32 44 Q-52 42 -48 22 Q-60 6 -50 -10 Z"
+          fill="url(#acg-brain)"/>
+    <!-- 高光 -->
+    <path d="M-40 -22 Q-44 -42 -28 -48" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" fill="none" opacity="0.4"/>
+    <!-- 脑沟纹路 -->
+    <g stroke="#FFFFFF" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.6">
+      <path d="M-30 -20 Q-10 -30 10 -20"/>
+      <path d="M-20 -8 Q0 -15 20 -8"/>
+      <path d="M-30 6 Q-10 -2 12 6"/>
+      <path d="M-25 22 Q0 14 22 22"/>
+      <path d="M-20 36 Q0 30 18 38"/>
+    </g>
+    <!-- 中央芯片 (电路) -->
+    <g transform="translate(0, 0)">
+      <rect x="-12" y="-12" width="24" height="24" rx="4" fill="#FFFFFF" opacity="0.95"/>
+      <text x="0" y="6" font-family="Arial Black" font-size="14" font-weight="900" fill="#00B96B" text-anchor="middle">AI</text>
+      <!-- 引脚 -->
+      <g stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" opacity="0.8">
+        <line x1="-16" y1="-6" x2="-22" y2="-6"/>
+        <line x1="-16" y1="0" x2="-22" y2="0"/>
+        <line x1="-16" y1="6" x2="-22" y2="6"/>
+        <line x1="16" y1="-6" x2="22" y2="-6"/>
+        <line x1="16" y1="0" x2="22" y2="0"/>
+        <line x1="16" y1="6" x2="22" y2="6"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- 大脑底部输入文档 -->
+  <g transform="translate(135, 280) rotate(-8)" filter="url(#acg-shadow)" opacity="0.85">
+    <rect x="0" y="0" width="56" height="36" rx="4" fill="#FFFFFF" stroke="#00B96B" stroke-opacity="0.4"/>
+    <rect x="6" y="6" width="20" height="3" rx="1.5" fill="#00B96B"/>
+    <rect x="6" y="13" width="44" height="2" rx="1" fill="#9CA3AF"/>
+    <rect x="6" y="19" width="36" height="2" rx="1" fill="#9CA3AF"/>
+    <rect x="6" y="25" width="40" height="2" rx="1" fill="#9CA3AF"/>
+  </g>
+  <text x="146" y="332" font-size="9" fill="#9CA3AF" text-anchor="middle">📄 需求文档</text>
+
+  <!-- ============ 右侧生成出的用例卡片 ============ -->
+  <!-- 输出箭头线 (从大脑发出，弧形扇出) -->
+  <g stroke="#00B96B" stroke-width="2" stroke-dasharray="3 4" fill="none" opacity="0.5">
+    <path d="M230 165 Q280 130 340 120"/>
+    <path d="M230 180 Q290 180 340 180"/>
+    <path d="M230 195 Q280 230 340 240"/>
+  </g>
+
+  <!-- 卡片 1 (右上) -->
+  <g transform="translate(340, 100)" filter="url(#acg-shadow)">
+    <rect x="0" y="0" width="110" height="44" rx="8" fill="url(#acg-card)" stroke="#00B96B" stroke-opacity="0.4"/>
+    <!-- 头部 P0 -->
+    <rect x="8" y="8" width="20" height="12" rx="3" fill="#FEE2E2"/>
+    <text x="18" y="17" font-size="7" font-weight="900" fill="#DC2626" text-anchor="middle">P0</text>
+    <rect x="32" y="10" width="50" height="4" rx="2" fill="#374151"/>
+    <rect x="32" y="17" width="40" height="2" rx="1" fill="#9CA3AF"/>
+    <!-- checkbox -->
+    <circle cx="14" cy="32" r="5" fill="#00B96B"/>
+    <path d="M11 32 L13 34 L17 30" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+    <rect x="24" y="29" width="60" height="3" rx="1.5" fill="#374151" opacity="0.8"/>
+    <rect x="24" y="35" width="44" height="2" rx="1" fill="#9CA3AF"/>
+  </g>
+
+  <!-- 卡片 2 (右中) -->
+  <g transform="translate(340, 158)" filter="url(#acg-shadow)">
+    <rect x="0" y="0" width="110" height="44" rx="8" fill="url(#acg-card)" stroke="#00B96B" stroke-opacity="0.4"/>
+    <rect x="8" y="8" width="20" height="12" rx="3" fill="#FEF3C7"/>
+    <text x="18" y="17" font-size="7" font-weight="900" fill="#D97706" text-anchor="middle">P1</text>
+    <rect x="32" y="10" width="48" height="4" rx="2" fill="#374151"/>
+    <rect x="32" y="17" width="36" height="2" rx="1" fill="#9CA3AF"/>
+    <circle cx="14" cy="32" r="5" fill="#00B96B"/>
+    <path d="M11 32 L13 34 L17 30" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+    <rect x="24" y="29" width="56" height="3" rx="1.5" fill="#374151" opacity="0.8"/>
+    <rect x="24" y="35" width="40" height="2" rx="1" fill="#9CA3AF"/>
+  </g>
+
+  <!-- 卡片 3 (右下) -->
+  <g transform="translate(340, 216)" filter="url(#acg-shadow)">
+    <rect x="0" y="0" width="110" height="44" rx="8" fill="url(#acg-card)" stroke="#00B96B" stroke-opacity="0.4"/>
+    <rect x="8" y="8" width="20" height="12" rx="3" fill="#DBEAFE"/>
+    <text x="18" y="17" font-size="7" font-weight="900" fill="#2563EB" text-anchor="middle">P2</text>
+    <rect x="32" y="10" width="44" height="4" rx="2" fill="#374151"/>
+    <rect x="32" y="17" width="32" height="2" rx="1" fill="#9CA3AF"/>
+    <circle cx="14" cy="32" r="5" fill="#00B96B"/>
+    <path d="M11 32 L13 34 L17 30" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+    <rect x="24" y="29" width="48" height="3" rx="1.5" fill="#374151" opacity="0.8"/>
+    <rect x="24" y="35" width="36" height="2" rx="1" fill="#9CA3AF"/>
+  </g>
+
+  <!-- 顶部闪光粒子 -->
+  <g fill="#5DDE9C" opacity="0.9">
+    <path d="M180 110 L182 116 L188 118 L182 120 L180 126 L178 120 L172 118 L178 116 Z"/>
+    <path d="M210 90 L212 96 L218 98 L212 100 L210 106 L208 100 L202 98 L208 96 Z"/>
+    <path d="M150 95 L152 101 L158 103 L152 105 L150 111 L148 105 L142 103 L148 101 Z"/>
+  </g>
+</svg>

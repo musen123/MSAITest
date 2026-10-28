@@ -1,0 +1,66 @@
+# ============================================================================
+# 前端构建上下文忽略清单 —— AI 智能测试平台（frontend/.dockerignore）
+#
+# 配套 frontend/Dockerfile 多阶段构建（契约 image_strategy / nginx 服务）：
+#   阶段一 builder：node:22-alpine + pnpm，COPY package.json pnpm-lock.yaml →
+#                   pnpm install --frozen-lockfile → COPY . . → pnpm build
+#   阶段二 runtime：nginx:alpine 托管 dist + 自带站点 conf
+#
+# 目的：把发送给 Docker daemon 的构建上下文裁到最小，
+#   ① 依赖由 lockfile 在镜像内重装 → 必须排除宿主 node_modules（平台不兼容 + 体积大）；
+#   ② 产物由镜像内 pnpm build 重新生成 → 必须排除宿主 dist（避免陈旧产物混入）；
+#   ③ 排除 .git / 编辑器 / 系统 / 日志 / 本地环境文件，缩短上传、防泄密、保证可复现。
+# 注意：本镜像即 compose 的 nginx 服务（build: ./frontend），上下文根为 frontend/。
+# ============================================================================
+
+# ---- 依赖目录（镜像内 pnpm install --frozen-lockfile 重装，绝不带入宿主版本）----
+node_modules
+**/node_modules
+
+# ---- 构建产物（镜像内 pnpm build 重新生成到 /app/dist，排除陈旧本地产物）----
+dist
+dist-ssr
+**/dist
+
+# ---- 版本控制与本地工具元数据 ----
+.git
+.gitignore
+.trae
+
+# ---- 日志 ----
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# ---- 本地环境与覆盖文件（前端走相对 /api，无需 build-arg；防本地配置/密钥进镜像）----
+# 保留 .env.example 作为模板可参考，但镜像构建并不读取任何 .env。
+.env
+.env.*
+!.env.example
+*.local
+
+# ---- 编辑器 / IDE 目录与文件 ----
+.vscode/*
+!.vscode/extensions.json
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# ---- 操作系统垃圾文件 ----
+.DS_Store
+**/.DS_Store
+Thumbs.db
+
+# ---- Docker 自身文件（无需进入构建上下文）----
+Dockerfile
+.dockerignore
+
+# ---- 文档（不参与前端构建）----
+README.md

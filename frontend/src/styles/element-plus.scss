@@ -1,0 +1,182 @@
+/**
+ * Element Plus 主题定制
+ *
+ * AI 智能测试平台 - 绿色系主题
+ */
+
+@forward 'element-plus/theme-chalk/src/common/var.scss' with (
+  // 主色
+  $colors: (
+    'primary': (
+      'base': #22C55E,
+      'light-3': #4ADE80,
+      'light-5': #86EFAC,
+      'light-7': #A7F3D0,
+      'light-8': #D1FAE5,
+      'light-9': #ECFDF5,
+      'dark-2': #16A34A,
+    ),
+    // 成功色
+    'success': (
+      'base': #22C55E,
+      'light-3': #4ADE80,
+      'light-5': #86EFAC,
+      'light-7': #A7F3D0,
+      'light-8': #D1FAE5,
+      'light-9': #ECFDF5,
+      'dark-2': #15803D,
+    ),
+    // 警告色
+    'warning': (
+      'base': #FBBF24,
+      'light-3': #FCD34D,
+      'light-5': #FDE68A,
+      'light-7': #FEF3C7,
+      'light-8': #FFF7ED,
+      'light-9': #FFFBEB,
+      'dark-2': #D97706,
+    ),
+    // 危险色
+    'danger': (
+      'base': #EF4444,
+      'light-3': #F87171,
+      'light-5': #FCA5A5,
+      'light-7': #FECACA,
+      'light-8': #FEE2E2,
+      'light-9': #FEF2F2,
+      'dark-2': #DC2626,
+    ),
+    // 错误色
+    'error': (
+      'base': #EF4444,
+      'light-3': #F87171,
+      'light-5': #FCA5A5,
+      'light-7': #FECACA,
+      'light-8': #FEE2E2,
+      'light-9': #FEF2F2,
+      'dark-2': #DC2626,
+    ),
+    // 信息色
+    'info': (
+      'base': #06B6D4,
+      'light-3': #22D3EE,
+      'light-5': #67E8F9,
+      'light-7': #A5F3FC,
+      'light-8': #CFFAFE,
+      'light-9': #ECFEFF,
+      'dark-2': #0891B2,
+    ),
+  ),
+  // 文本颜色
+  $text-color: (
+    'primary': #14532D,
+    'regular': #374151,
+    'secondary': #6B7280,
+    'placeholder': #9CA3AF,
+    'disabled': #E5E7EB,
+  ),
+  // 背景颜色
+  $bg-color: (
+    'page': #ECFDF5,
+    '': #FFFFFF,
+  ),
+  // 边框颜色
+  $border-color: (
+    '': #A7F3D0,
+    'light': #D1FAE5,
+    'lighter': #ECFDF5,
+    'extra-light': #F0FDF4,
+    'dark': #4ADE80,
+    'darker': #22C55E,
+  ),
+  // 填充颜色
+  $fill-color: (
+    '': #D1FAE5,
+    'light': #ECFDF5,
+    'lighter': #F0FDF4,
+    'extra-light': #F7FEF9,
+    'dark': #A7F3D0,
+    'darker': #4ADE80,
+    'blank': #FFFFFF,
+  ),
+  // 圆角
+  $border-radius: (
+    'base': 8px,
+    'small': 4px,
+    'large': 12px,
+    'round': 20px,
+    'circle': 50%,
+  ),
+  // 阴影
+  $box-shadow: (
+    'light': 0 2px 8px rgba(34, 197, 94, 0.08),
+    'lighter': 0 4px 16px rgba(34, 197, 94, 0.12),
+    'dark': 0 8px 32px rgba(34, 197, 94, 0.16),
+  ),
+);
+
+// 导入所有样式
+@use 'element-plus/theme-chalk/src/index.scss' as *;
+
+// 自定义样式补充
+:root {
+  --el-color-primary: #22C55E;
+  --el-color-primary-light-3: #4ADE80;
+  --el-color-primary-light-5: #86EFAC;
+  --el-color-primary-light-7: #A7F3D0;
+  --el-color-primary-light-8: #D1FAE5;
+  --el-color-primary-light-9: #ECFDF5;
+  --el-color-primary-dark-2: #16A34A;
+
+  --el-text-color-primary: #14532D;
+  --el-text-color-regular: #374151;
+  --el-text-color-secondary: #6B7280;
+
+  --el-bg-color-page: #ECFDF5;
+  --el-bg-color: #FFFFFF;
+
+  --el-border-color: #A7F3D0;
+  --el-border-color-light: #D1FAE5;
+  --el-border-color-lighter: #ECFDF5;
+
+  --el-border-radius-base: 8px;
+  --el-border-radius-small: 4px;
+  --el-border-radius-large: 12px;
+}
+
+// 玻璃态效果类
+.glass-card {
+  background: rgba(255, 255, 255, 0.8) !important;
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(167, 243, 208, 0.3) !important;
+  box-shadow: 0 8px 32px rgba(34, 197, 94, 0.1) !important;
+}
+
+.glass-button {
+  background: linear-gradient(135deg, #22C55E 0%, #4ADE80 100%) !important;
+  border: none !important;
+  box-shadow: 0 4px 16px rgba(34, 197, 94, 0.3) !important;
+
+  &:hover {
+    background: linear-gradient(135deg, #16A34A 0%, #4ADE80 100%) !important;
+    box-shadow: 0 6px 24px rgba(34, 197, 94, 0.4) !important;
+  }
+}
+
+.hover-lift {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(34, 197, 94, 0.2) !important;
+  }
+}
+
+// 渐变背景
+.gradient-bg {
+  background: linear-gradient(135deg, #22C55E 0%, #4ADE80 100%);
+}
+
+.gradient-bg-deep {
+  background: linear-gradient(135deg, #15803D 0%, #22C55E 100%);
+}

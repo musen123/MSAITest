@@ -1,0 +1,77 @@
+<svg viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg" fill="none">
+  <defs>
+    <linearGradient id="es-glass" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#E8FBF1"/>
+      <stop offset="100%" stop-color="#C9F4DD"/>
+    </linearGradient>
+    <radialGradient id="es-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#00B96B" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#00B96B" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="es-shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="5"/>
+      <feOffset dx="0" dy="4"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.18"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- 辉光 -->
+  <circle cx="240" cy="180" r="180" fill="url(#es-glow)"/>
+
+  <!-- 装饰 -->
+  <circle cx="80" cy="80" r="6" fill="#00B96B" opacity="0.3"/>
+  <circle cx="400" cy="100" r="8" fill="#00B96B" opacity="0.2"/>
+  <circle cx="100" cy="280" r="5" fill="#00B96B" opacity="0.3"/>
+  <circle cx="400" cy="270" r="7" fill="#00B96B" opacity="0.22"/>
+  <g fill="#5DDE9C" opacity="0.7">
+    <path d="M380 200 L382 207 L389 209 L382 211 L380 218 L378 211 L371 209 L378 207 Z"/>
+    <path d="M90 180 L92 186 L98 188 L92 190 L90 196 L88 190 L82 188 L88 186 Z"/>
+  </g>
+
+  <!-- 落地阴影 -->
+  <ellipse cx="240" cy="320" rx="130" ry="12" fill="#00B96B" opacity="0.1"/>
+
+  <!-- 散落的纸 -->
+  <g transform="translate(110, 230) rotate(-12)" filter="url(#es-shadow)">
+    <rect x="0" y="0" width="60" height="74" rx="4" fill="#FFFFFF"/>
+    <rect x="8" y="10" width="30" height="3" rx="1.5" fill="#D1D5DB"/>
+    <rect x="8" y="18" width="44" height="2" rx="1" fill="#E5E7EB"/>
+    <rect x="8" y="24" width="40" height="2" rx="1" fill="#E5E7EB"/>
+    <rect x="8" y="30" width="35" height="2" rx="1" fill="#E5E7EB"/>
+    <!-- ❌ -->
+    <line x1="42" y1="48" x2="52" y2="58" stroke="#EF4444" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+    <line x1="52" y1="48" x2="42" y2="58" stroke="#EF4444" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+  </g>
+  <g transform="translate(320, 240) rotate(15)" filter="url(#es-shadow)">
+    <rect x="0" y="0" width="60" height="74" rx="4" fill="#FFFFFF"/>
+    <rect x="8" y="10" width="36" height="3" rx="1.5" fill="#D1D5DB"/>
+    <rect x="8" y="18" width="44" height="2" rx="1" fill="#E5E7EB"/>
+    <rect x="8" y="24" width="40" height="2" rx="1" fill="#E5E7EB"/>
+    <rect x="8" y="30" width="32" height="2" rx="1" fill="#E5E7EB"/>
+    <line x1="42" y1="48" x2="52" y2="58" stroke="#EF4444" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+    <line x1="52" y1="48" x2="42" y2="58" stroke="#EF4444" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+  </g>
+
+  <!-- 中央大放大镜 -->
+  <g transform="translate(240, 170)" filter="url(#es-shadow)">
+    <!-- 镜柄 -->
+    <g transform="rotate(30)">
+      <rect x="-7" y="60" width="14" height="60" rx="7" fill="#00A05E"/>
+      <rect x="-5" y="60" width="2" height="55" fill="#FFFFFF" opacity="0.3"/>
+    </g>
+    <!-- 镜框 -->
+    <circle cx="0" cy="0" r="62" fill="url(#es-glass)" stroke="#00B96B" stroke-width="6"/>
+    <!-- 镜片高光 -->
+    <path d="M-30 -22 Q-40 -45 -8 -50" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" fill="none" opacity="0.9"/>
+    <path d="M-32 0 Q-40 -10 -36 -22" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/>
+    <!-- 中央大问号 -->
+    <text x="0" y="22" font-family="Arial Black, Arial" font-weight="900" font-size="80" fill="#00B96B" text-anchor="middle" opacity="0.6">?</text>
+  </g>
+
+  <!-- 漂浮搜索符号 -->
+  <g fill="#00B96B" opacity="0.5">
+    <circle cx="170" cy="120" r="3"/>
+    <circle cx="320" cy="105" r="3"/>
+  </g>
+</svg>

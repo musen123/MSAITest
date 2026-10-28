@@ -1,0 +1,173 @@
+<svg viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg" fill="none">
+  <defs>
+    <linearGradient id="akg-center" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5DDE9C"/>
+      <stop offset="100%" stop-color="#00B96B"/>
+    </linearGradient>
+    <linearGradient id="akg-node" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#E8FBF1"/>
+    </linearGradient>
+    <radialGradient id="akg-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#00B96B" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#00B96B" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="akg-center-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#5DDE9C" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#5DDE9C" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="akg-shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="4"/>
+      <feOffset dx="0" dy="3"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.2"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- 辉光 -->
+  <circle cx="240" cy="180" r="220" fill="url(#akg-glow)"/>
+
+  <!-- 装饰 -->
+  <circle cx="70" cy="80" r="6" fill="#00B96B" opacity="0.3"/>
+  <circle cx="410" cy="90" r="8" fill="#00B96B" opacity="0.22"/>
+  <circle cx="60" cy="290" r="5" fill="#00B96B" opacity="0.3"/>
+  <circle cx="420" cy="290" r="7" fill="#00B96B" opacity="0.25"/>
+
+  <!-- 落地阴影 -->
+  <ellipse cx="240" cy="320" rx="180" ry="14" fill="#00B96B" opacity="0.1"/>
+
+  <!-- 节点连线 (在节点下面) -->
+  <g stroke="#00B96B" stroke-width="1.8" opacity="0.4" stroke-linecap="round">
+    <!-- 中心向外 -->
+    <line x1="240" y1="180" x2="120" y2="120"/>
+    <line x1="240" y1="180" x2="360" y2="120"/>
+    <line x1="240" y1="180" x2="100" y2="200"/>
+    <line x1="240" y1="180" x2="380" y2="200"/>
+    <line x1="240" y1="180" x2="160" y2="280"/>
+    <line x1="240" y1="180" x2="320" y2="280"/>
+    <line x1="240" y1="180" x2="240" y2="90"/>
+    <!-- 节点之间互联 -->
+    <line x1="120" y1="120" x2="100" y2="200"/>
+    <line x1="360" y1="120" x2="380" y2="200"/>
+    <line x1="100" y1="200" x2="160" y2="280"/>
+    <line x1="380" y1="200" x2="320" y2="280"/>
+    <line x1="120" y1="120" x2="240" y2="90"/>
+    <line x1="360" y1="120" x2="240" y2="90"/>
+  </g>
+
+  <!-- 数据流动小球 -->
+  <g fill="#5DDE9C">
+    <circle cx="180" cy="150" r="3" opacity="0.8"/>
+    <circle cx="300" cy="150" r="3" opacity="0.8"/>
+    <circle cx="170" cy="190" r="3" opacity="0.7"/>
+    <circle cx="310" cy="190" r="3" opacity="0.7"/>
+    <circle cx="200" cy="230" r="3" opacity="0.6"/>
+    <circle cx="280" cy="230" r="3" opacity="0.6"/>
+  </g>
+
+  <!-- 中心节点外发光 -->
+  <circle cx="240" cy="180" r="80" fill="url(#akg-center-glow)"/>
+
+  <!-- ============ 中心节点 (大) ============ -->
+  <g transform="translate(240, 180)" filter="url(#akg-shadow)">
+    <circle cx="0" cy="0" r="44" fill="url(#akg-center)"/>
+    <circle cx="0" cy="0" r="44" fill="none" stroke="#FFFFFF" stroke-width="2" opacity="0.4"/>
+    <!-- 内部 (大脑/数据库混合) -->
+    <g transform="translate(0, 0)">
+      <!-- 圆柱数据库 -->
+      <ellipse cx="0" cy="-10" rx="18" ry="5" fill="#FFFFFF" opacity="0.9"/>
+      <rect x="-18" y="-10" width="36" height="22" fill="#FFFFFF" opacity="0.85"/>
+      <ellipse cx="0" cy="12" rx="18" ry="5" fill="#FFFFFF" opacity="0.7"/>
+      <!-- 数据库条 -->
+      <ellipse cx="0" cy="-3" rx="18" ry="2.5" fill="#00B96B" opacity="0.3"/>
+      <ellipse cx="0" cy="6" rx="18" ry="2.5" fill="#00B96B" opacity="0.3"/>
+      <!-- 小亮点 -->
+      <circle cx="-10" cy="-10" r="1.5" fill="#10B981"/>
+      <circle cx="0" cy="-10" r="1.5" fill="#10B981"/>
+      <circle cx="10" cy="-10" r="1.5" fill="#10B981"/>
+    </g>
+  </g>
+
+  <!-- ============ 子节点 ============ -->
+  <!-- 顶部节点 -->
+  <g transform="translate(240, 90)" filter="url(#akg-shadow)">
+    <circle cx="0" cy="0" r="22" fill="url(#akg-node)" stroke="#00B96B" stroke-width="2"/>
+    <!-- 文档图标 -->
+    <rect x="-7" y="-9" width="14" height="18" rx="1.5" fill="#00B96B"/>
+    <rect x="-5" y="-5" width="10" height="1.5" fill="#FFFFFF"/>
+    <rect x="-5" y="-1" width="8" height="1.5" fill="#FFFFFF"/>
+    <rect x="-5" y="3" width="10" height="1.5" fill="#FFFFFF"/>
+  </g>
+
+  <!-- 左上节点 -->
+  <g transform="translate(120, 120)" filter="url(#akg-shadow)">
+    <circle cx="0" cy="0" r="22" fill="url(#akg-node)" stroke="#00B96B" stroke-width="2"/>
+    <!-- 标签 -->
+    <path d="M-6 -8 L4 -8 L8 0 L4 8 L-6 8 L-10 0 Z" fill="#5DDE9C"/>
+    <circle cx="-3" cy="0" r="1.5" fill="#FFFFFF"/>
+  </g>
+
+  <!-- 右上节点 -->
+  <g transform="translate(360, 120)" filter="url(#akg-shadow)">
+    <circle cx="0" cy="0" r="22" fill="url(#akg-node)" stroke="#00B96B" stroke-width="2"/>
+    <!-- 用户 -->
+    <circle cx="0" cy="-4" r="4" fill="#00B96B"/>
+    <path d="M-7 8 Q-7 2 0 2 Q7 2 7 8 Z" fill="#00B96B"/>
+  </g>
+
+  <!-- 左中节点 -->
+  <g transform="translate(100, 200)" filter="url(#akg-shadow)">
+    <circle cx="0" cy="0" r="20" fill="url(#akg-node)" stroke="#00B96B" stroke-width="2"/>
+    <!-- API -->
+    <text x="0" y="3" font-family="Arial Black" font-size="9" font-weight="900" fill="#00B96B" text-anchor="middle">API</text>
+  </g>
+
+  <!-- 右中节点 -->
+  <g transform="translate(380, 200)" filter="url(#akg-shadow)">
+    <circle cx="0" cy="0" r="20" fill="url(#akg-node)" stroke="#00B96B" stroke-width="2"/>
+    <!-- 函数 -->
+    <text x="0" y="4" font-family="Courier" font-size="13" font-weight="700" fill="#00B96B" text-anchor="middle">f(x)</text>
+  </g>
+
+  <!-- 左下节点 -->
+  <g transform="translate(160, 280)" filter="url(#akg-shadow)">
+    <circle cx="0" cy="0" r="22" fill="url(#akg-node)" stroke="#00B96B" stroke-width="2"/>
+    <!-- 齿轮 -->
+    <g transform="translate(0,0)">
+      <circle cx="0" cy="0" r="5" fill="#00B96B"/>
+      <g fill="#00B96B">
+        <rect x="-1.5" y="-10" width="3" height="4" rx="0.5"/>
+        <rect x="-1.5" y="6" width="3" height="4" rx="0.5"/>
+        <rect x="-10" y="-1.5" width="4" height="3" rx="0.5"/>
+        <rect x="6" y="-1.5" width="4" height="3" rx="0.5"/>
+      </g>
+      <circle cx="0" cy="0" r="2" fill="#FFFFFF"/>
+    </g>
+  </g>
+
+  <!-- 右下节点 -->
+  <g transform="translate(320, 280)" filter="url(#akg-shadow)">
+    <circle cx="0" cy="0" r="22" fill="url(#akg-node)" stroke="#00B96B" stroke-width="2"/>
+    <!-- 图表 -->
+    <g transform="translate(-8, -6)">
+      <rect x="0" y="8" width="3" height="4" rx="0.5" fill="#00B96B" opacity="0.5"/>
+      <rect x="5" y="5" width="3" height="7" rx="0.5" fill="#00B96B" opacity="0.7"/>
+      <rect x="10" y="2" width="3" height="10" rx="0.5" fill="#00B96B"/>
+      <rect x="15" y="6" width="3" height="6" rx="0.5" fill="#5DDE9C"/>
+    </g>
+  </g>
+
+  <!-- 闪光 -->
+  <g fill="#5DDE9C" opacity="0.85">
+    <path d="M200 120 L202 126 L208 128 L202 130 L200 136 L198 130 L192 128 L198 126 Z"/>
+    <path d="M280 240 L282 246 L288 248 L282 250 L280 256 L278 250 L272 248 L278 246 Z"/>
+  </g>
+
+  <!-- 远端粒子 -->
+  <g fill="#00B96B">
+    <circle cx="80" cy="80" r="2" opacity="0.5"/>
+    <circle cx="400" cy="280" r="2.5" opacity="0.6"/>
+    <circle cx="60" cy="250" r="2" opacity="0.4"/>
+    <circle cx="430" cy="70" r="2" opacity="0.5"/>
+  </g>
+</svg>

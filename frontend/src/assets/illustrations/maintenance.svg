@@ -1,0 +1,144 @@
+<svg viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg" fill="none">
+  <defs>
+    <linearGradient id="mt-cone" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FBBF24"/>
+      <stop offset="100%" stop-color="#F59E0B"/>
+    </linearGradient>
+    <linearGradient id="mt-wrench" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#9CA3AF"/>
+      <stop offset="100%" stop-color="#6B7280"/>
+    </linearGradient>
+    <linearGradient id="mt-screw" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5DDE9C"/>
+      <stop offset="100%" stop-color="#00B96B"/>
+    </linearGradient>
+    <radialGradient id="mt-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#F59E0B" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#F59E0B" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="mt-shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="5"/>
+      <feOffset dx="0" dy="4"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.2"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- 辉光 -->
+  <circle cx="240" cy="180" r="200" fill="url(#mt-glow)"/>
+
+  <!-- 装饰 -->
+  <circle cx="70" cy="80" r="6" fill="#F59E0B" opacity="0.3"/>
+  <circle cx="410" cy="90" r="8" fill="#F59E0B" opacity="0.22"/>
+  <circle cx="60" cy="290" r="5" fill="#00B96B" opacity="0.3"/>
+  <circle cx="420" cy="280" r="7" fill="#00B96B" opacity="0.25"/>
+  <g fill="#FBBF24" opacity="0.7">
+    <path d="M120 130 L122 137 L129 139 L122 141 L120 148 L118 141 L111 139 L118 137 Z"/>
+    <path d="M380 230 L382 237 L389 239 L382 241 L380 248 L378 241 L371 239 L378 237 Z"/>
+  </g>
+
+  <!-- 落地阴影 -->
+  <ellipse cx="240" cy="320" rx="140" ry="14" fill="#1F2937" opacity="0.1"/>
+
+  <!-- 警示带 (左) -->
+  <g transform="translate(60, 290)">
+    <rect x="0" y="0" width="100" height="10" rx="2" fill="#FBBF24"/>
+    <g fill="#1F2937">
+      <path d="M0 0 L10 0 L0 10 Z"/>
+      <path d="M16 0 L26 0 L10 16 L0 16 L0 10 Z"/>
+      <path d="M32 0 L42 0 L26 16 L16 16 Z"/>
+      <path d="M48 0 L58 0 L42 16 L32 16 Z"/>
+      <path d="M64 0 L74 0 L58 16 L48 16 Z"/>
+      <path d="M80 0 L90 0 L74 16 L64 16 Z"/>
+      <path d="M96 0 L100 0 L100 8 L90 16 L80 16 Z" opacity="0.0"/>
+      <path d="M96 0 L100 0 L100 8 L94 16 L84 16 L100 0 Z" opacity="0.0"/>
+    </g>
+    <rect x="0" y="0" width="100" height="10" rx="2" fill="url(#mt-tape-stripes)" opacity="0"/>
+  </g>
+  <!-- 警示带条纹 (改用简单矩形堆叠) -->
+  <g transform="translate(60, 290)">
+    <rect x="0" y="0" width="100" height="10" rx="2" fill="#FBBF24"/>
+    <g fill="#1F2937" opacity="0.9">
+      <rect x="6" y="0" width="6" height="10" transform="skewX(-30)"/>
+      <rect x="22" y="0" width="6" height="10" transform="skewX(-30)"/>
+      <rect x="38" y="0" width="6" height="10" transform="skewX(-30)"/>
+      <rect x="54" y="0" width="6" height="10" transform="skewX(-30)"/>
+      <rect x="70" y="0" width="6" height="10" transform="skewX(-30)"/>
+      <rect x="86" y="0" width="6" height="10" transform="skewX(-30)"/>
+    </g>
+  </g>
+  <g transform="translate(320, 290)">
+    <rect x="0" y="0" width="100" height="10" rx="2" fill="#FBBF24"/>
+    <g fill="#1F2937" opacity="0.9">
+      <rect x="6" y="0" width="6" height="10" transform="skewX(-30)"/>
+      <rect x="22" y="0" width="6" height="10" transform="skewX(-30)"/>
+      <rect x="38" y="0" width="6" height="10" transform="skewX(-30)"/>
+      <rect x="54" y="0" width="6" height="10" transform="skewX(-30)"/>
+      <rect x="70" y="0" width="6" height="10" transform="skewX(-30)"/>
+      <rect x="86" y="0" width="6" height="10" transform="skewX(-30)"/>
+    </g>
+  </g>
+
+  <!-- ============ 中央：路障锥 ============ -->
+  <g transform="translate(240, 220)" filter="url(#mt-shadow)">
+    <!-- 锥体 -->
+    <path d="M-50 70 L50 70 L26 -40 L-26 -40 Z" fill="url(#mt-cone)"/>
+    <!-- 锥体高光 -->
+    <path d="M-40 60 L-30 60 L-16 -38 L-22 -38 Z" fill="#FFFFFF" opacity="0.35"/>
+    <!-- 反光条纹 (白) -->
+    <path d="M-43 36 L43 36 L40 26 L-40 26 Z" fill="#FFFFFF" opacity="0.95"/>
+    <path d="M-32 -6 L32 -6 L29 -16 L-29 -16 Z" fill="#FFFFFF" opacity="0.95"/>
+    <!-- 顶帽 -->
+    <ellipse cx="0" cy="-42" rx="26" ry="6" fill="#F59E0B"/>
+    <rect x="-26" y="-44" width="52" height="6" fill="#F59E0B"/>
+    <ellipse cx="0" cy="-44" rx="26" ry="4" fill="#FBBF24"/>
+    <!-- 底座 -->
+    <ellipse cx="0" cy="70" rx="50" ry="10" fill="#D97706"/>
+    <ellipse cx="0" cy="68" rx="46" ry="6" fill="url(#mt-cone)"/>
+  </g>
+
+  <!-- ============ 大扳手 (左侧倾斜) ============ -->
+  <g transform="translate(110, 180) rotate(-30)" filter="url(#mt-shadow)">
+    <!-- 柄 -->
+    <rect x="-7" y="0" width="14" height="80" rx="7" fill="url(#mt-wrench)"/>
+    <rect x="-5" y="4" width="2" height="70" rx="1" fill="#FFFFFF" opacity="0.4"/>
+    <!-- 头部 -->
+    <path d="M-16 -10 L-16 -28 L-8 -28 L-8 -18 L8 -18 L8 -28 L16 -28 L16 -10 L8 -10 L8 4 L-8 4 L-8 -10 Z" fill="url(#mt-wrench)"/>
+    <!-- 内孔 -->
+    <rect x="-5" y="-18" width="10" height="16" fill="#1F2937" opacity="0.25"/>
+  </g>
+
+  <!-- ============ 螺丝刀 (右侧) ============ -->
+  <g transform="translate(370, 170) rotate(30)" filter="url(#mt-shadow)">
+    <!-- 柄 -->
+    <ellipse cx="0" cy="-30" rx="14" ry="22" fill="url(#mt-screw)"/>
+    <!-- 柄装饰带 -->
+    <rect x="-14" y="-38" width="28" height="3" fill="#008550"/>
+    <rect x="-14" y="-28" width="28" height="3" fill="#008550"/>
+    <rect x="-14" y="-18" width="28" height="3" fill="#008550"/>
+    <!-- 杆 -->
+    <rect x="-3" y="-8" width="6" height="50" fill="#D1D5DB"/>
+    <rect x="-3" y="-8" width="2" height="48" fill="#FFFFFF" opacity="0.5"/>
+    <!-- 头 (十字) -->
+    <path d="M-3 42 L3 42 L7 50 L-7 50 Z" fill="#9CA3AF"/>
+    <rect x="-1.5" y="46" width="3" height="6" fill="#1F2937"/>
+  </g>
+
+  <!-- 警示三角 -->
+  <g transform="translate(240, 100)" filter="url(#mt-shadow)">
+    <path d="M0 -24 L26 22 L-26 22 Z" fill="#FBBF24" stroke="#F59E0B" stroke-width="2"/>
+    <text x="0" y="14" font-family="Arial Black, Arial" font-weight="900" font-size="20" fill="#1F2937" text-anchor="middle">!</text>
+  </g>
+
+  <!-- 顶部脉动点 -->
+  <g fill="#F59E0B">
+    <circle cx="200" cy="80" r="3" opacity="0.7"/>
+    <circle cx="280" cy="80" r="3" opacity="0.7"/>
+  </g>
+
+  <!-- 火花 -->
+  <g fill="#FBBF24" opacity="0.85">
+    <path d="M150 110 L152 116 L158 118 L152 120 L150 126 L148 120 L142 118 L148 116 Z"/>
+    <path d="M340 130 L342 136 L348 138 L342 140 L340 146 L338 140 L332 138 L338 136 Z"/>
+  </g>
+</svg>

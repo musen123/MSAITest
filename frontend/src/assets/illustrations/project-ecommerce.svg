@@ -1,0 +1,29 @@
+<svg viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg" fill="none">
+  <defs>
+    <linearGradient id="pe-bag" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5DDE9C"/>
+      <stop offset="100%" stop-color="#00B96B"/>
+    </linearGradient>
+    <linearGradient id="pe-tag" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F87171"/>
+      <stop offset="100%" stop-color="#EF4444"/>
+    </linearGradient>
+  </defs>
+  <!-- 装饰点 -->
+  <circle cx="14" cy="20" r="3" fill="#00B96B" opacity="0.25"/>
+  <circle cx="82" cy="76" r="4" fill="#00B96B" opacity="0.22"/>
+  <!-- 购物袋 -->
+  <path d="M28 36 H68 L64 78 H32 Z" fill="url(#pe-bag)"/>
+  <!-- 袋口提手 -->
+  <path d="M36 36 V28 Q36 18 48 18 Q60 18 60 28 V36" stroke="#00A05E" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <!-- 高光 -->
+  <path d="M34 40 L36 74" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" opacity="0.4"/>
+  <!-- 价签 -->
+  <g transform="translate(56, 52)">
+    <path d="M0 0 L14 -6 L20 0 L6 14 Z" fill="url(#pe-tag)"/>
+    <circle cx="3" cy="3" r="1.5" fill="#FFFFFF"/>
+    <line x1="9" y1="3" x2="14" y2="2" stroke="#FFFFFF" stroke-width="1.4" stroke-linecap="round"/>
+  </g>
+  <!-- 货币符号 -->
+  <text x="42" y="62" font-family="Arial Black" font-weight="900" font-size="18" fill="#FFFFFF" text-anchor="middle">¥</text>
+</svg>

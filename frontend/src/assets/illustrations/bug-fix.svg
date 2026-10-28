@@ -1,0 +1,143 @@
+<svg viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg" fill="none">
+  <defs>
+    <linearGradient id="bf-bug-body" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F87171"/>
+      <stop offset="100%" stop-color="#EF4444"/>
+    </linearGradient>
+    <linearGradient id="bf-wrench" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5DDE9C"/>
+      <stop offset="100%" stop-color="#00B96B"/>
+    </linearGradient>
+    <linearGradient id="bf-card" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#E8FBF1"/>
+    </linearGradient>
+    <radialGradient id="bf-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#00B96B" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#00B96B" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="bf-shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="5"/>
+      <feOffset dx="0" dy="4"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.2"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- 辉光 -->
+  <circle cx="240" cy="180" r="200" fill="url(#bf-glow)"/>
+
+  <!-- 装饰 -->
+  <circle cx="80" cy="80" r="6" fill="#00B96B" opacity="0.3"/>
+  <circle cx="400" cy="90" r="8" fill="#00B96B" opacity="0.22"/>
+  <circle cx="70" cy="280" r="5" fill="#00B96B" opacity="0.3"/>
+  <circle cx="420" cy="280" r="7" fill="#00B96B" opacity="0.25"/>
+  <g fill="#5DDE9C" opacity="0.7">
+    <path d="M380 50 L382 56 L388 58 L382 60 L380 66 L378 60 L372 58 L378 56 Z"/>
+    <path d="M120 220 L122 226 L128 228 L122 230 L120 236 L118 230 L112 228 L118 226 Z"/>
+  </g>
+
+  <!-- 落地阴影 -->
+  <ellipse cx="240" cy="320" rx="140" ry="14" fill="#00B96B" opacity="0.1"/>
+
+  <!-- 代码窗口 -->
+  <g transform="translate(95, 180)" filter="url(#bf-shadow)">
+    <rect x="0" y="0" width="160" height="110" rx="10" fill="#1F2937"/>
+    <!-- 顶部 -->
+    <rect x="0" y="0" width="160" height="20" rx="10" fill="#374151"/>
+    <rect x="0" y="14" width="160" height="6" fill="#374151"/>
+    <circle cx="10" cy="10" r="3" fill="#EF4444"/>
+    <circle cx="22" cy="10" r="3" fill="#FBBF24"/>
+    <circle cx="34" cy="10" r="3" fill="#10B981"/>
+    <!-- 代码行 -->
+    <rect x="10" y="30" width="22" height="3" rx="1.5" fill="#5DDE9C"/>
+    <rect x="36" y="30" width="40" height="3" rx="1.5" fill="#9CA3AF"/>
+    <rect x="80" y="30" width="20" height="3" rx="1.5" fill="#FBBF24"/>
+
+    <rect x="20" y="40" width="40" height="3" rx="1.5" fill="#9CA3AF"/>
+    <rect x="64" y="40" width="60" height="3" rx="1.5" fill="#60A5FA"/>
+
+    <!-- 错误行 (高亮) -->
+    <rect x="2" y="48" width="156" height="8" fill="#EF4444" opacity="0.15"/>
+    <rect x="20" y="50" width="30" height="3" rx="1.5" fill="#F87171"/>
+    <rect x="54" y="50" width="50" height="3" rx="1.5" fill="#9CA3AF"/>
+    <rect x="108" y="50" width="20" height="3" rx="1.5" fill="#EF4444"/>
+
+    <rect x="10" y="60" width="24" height="3" rx="1.5" fill="#5DDE9C"/>
+    <rect x="38" y="60" width="40" height="3" rx="1.5" fill="#9CA3AF"/>
+
+    <rect x="20" y="70" width="50" height="3" rx="1.5" fill="#9CA3AF"/>
+    <rect x="74" y="70" width="35" height="3" rx="1.5" fill="#FBBF24"/>
+
+    <rect x="10" y="80" width="30" height="3" rx="1.5" fill="#5DDE9C"/>
+    <rect x="44" y="80" width="45" height="3" rx="1.5" fill="#9CA3AF"/>
+
+    <rect x="10" y="90" width="6" height="3" rx="1.5" fill="#9CA3AF"/>
+
+    <!-- 光标 -->
+    <rect x="135" y="48" width="2" height="8" fill="#5DDE9C"/>
+  </g>
+
+  <!-- ============ 大虫子 (从代码爬出) ============ -->
+  <g transform="translate(280, 170)" filter="url(#bf-shadow)">
+    <!-- 触角 -->
+    <path d="M-14 -28 Q-22 -38 -28 -42" stroke="#EF4444" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <path d="M14 -28 Q22 -38 28 -42" stroke="#EF4444" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <circle cx="-28" cy="-42" r="3" fill="#EF4444"/>
+    <circle cx="28" cy="-42" r="3" fill="#EF4444"/>
+
+    <!-- 腿 (左) -->
+    <path d="M-30 -6 L-46 -16" stroke="#EF4444" stroke-width="3" stroke-linecap="round"/>
+    <path d="M-32 8 L-50 6" stroke="#EF4444" stroke-width="3" stroke-linecap="round"/>
+    <path d="M-30 22 L-46 32" stroke="#EF4444" stroke-width="3" stroke-linecap="round"/>
+    <!-- 腿 (右) -->
+    <path d="M30 -6 L46 -16" stroke="#EF4444" stroke-width="3" stroke-linecap="round"/>
+    <path d="M32 8 L50 6" stroke="#EF4444" stroke-width="3" stroke-linecap="round"/>
+    <path d="M30 22 L46 32" stroke="#EF4444" stroke-width="3" stroke-linecap="round"/>
+
+    <!-- 身体 -->
+    <ellipse cx="0" cy="6" rx="32" ry="36" fill="url(#bf-bug-body)"/>
+    <!-- 身体高光 -->
+    <ellipse cx="-12" cy="-10" rx="10" ry="14" fill="#FFFFFF" opacity="0.3"/>
+    <!-- 身体纹路 -->
+    <line x1="-28" y1="6" x2="28" y2="6" stroke="#DC2626" stroke-width="1.5" opacity="0.5"/>
+    <line x1="-26" y1="18" x2="26" y2="18" stroke="#DC2626" stroke-width="1.5" opacity="0.5"/>
+    <line x1="-24" y1="30" x2="24" y2="30" stroke="#DC2626" stroke-width="1.5" opacity="0.5"/>
+
+    <!-- 头部 -->
+    <circle cx="0" cy="-24" r="18" fill="url(#bf-bug-body)"/>
+    <!-- 眼睛 (X 表示被修) -->
+    <g stroke="#FFFFFF" stroke-width="2" stroke-linecap="round">
+      <line x1="-9" y1="-29" x2="-3" y2="-23"/>
+      <line x1="-3" y1="-29" x2="-9" y2="-23"/>
+      <line x1="3" y1="-29" x2="9" y2="-23"/>
+      <line x1="9" y1="-29" x2="3" y2="-23"/>
+    </g>
+    <!-- 嘴 -->
+    <path d="M-6 -15 Q0 -19 6 -15" stroke="#FFFFFF" stroke-width="2" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <!-- ============ 扳手 (从右上飞来) ============ -->
+  <g transform="translate(360, 100) rotate(-30)" filter="url(#bf-shadow)">
+    <!-- 扳手柄 -->
+    <rect x="-6" y="0" width="12" height="60" rx="6" fill="url(#bf-wrench)"/>
+    <!-- 高光 -->
+    <rect x="-4" y="4" width="2" height="50" rx="1" fill="#FFFFFF" opacity="0.5"/>
+    <!-- 扳手头 -->
+    <path d="M-14 -8 L-14 -22 L-6 -22 L-6 -14 L6 -14 L6 -22 L14 -22 L14 -8 L6 -8 L6 4 L-6 4 L-6 -8 Z" fill="url(#bf-wrench)"/>
+    <!-- 头部内孔 -->
+    <rect x="-4" y="-14" width="8" height="14" fill="#1F2937" opacity="0.15"/>
+  </g>
+
+  <!-- 修复对勾 -->
+  <g transform="translate(380, 230)" filter="url(#bf-shadow)">
+    <circle cx="0" cy="0" r="20" fill="url(#bf-wrench)"/>
+    <path d="M-8 0 L-2 6 L9 -6" stroke="#FFFFFF" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </g>
+
+  <!-- 火花 -->
+  <g fill="#FBBF24" opacity="0.85">
+    <path d="M320 100 L322 106 L328 108 L322 110 L320 116 L318 110 L312 108 L318 106 Z"/>
+    <path d="M340 140 L342 145 L347 147 L342 149 L340 154 L338 149 L333 147 L338 145 Z"/>
+  </g>
+</svg>

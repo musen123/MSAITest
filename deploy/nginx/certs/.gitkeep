@@ -1,0 +1,1 @@
+# 证书挂载点占位（443/HTTPS 备用）。切 HTTPS 时把 fullchain.pem / privkey.pem 放这里。

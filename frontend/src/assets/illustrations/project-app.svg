@@ -1,0 +1,45 @@
+<svg viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg" fill="none">
+  <defs>
+    <linearGradient id="pa-phone" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5DDE9C"/>
+      <stop offset="100%" stop-color="#00B96B"/>
+    </linearGradient>
+    <linearGradient id="pa-screen" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#E8FBF1"/>
+    </linearGradient>
+  </defs>
+  <!-- 装饰 -->
+  <circle cx="78" cy="20" r="3" fill="#00B96B" opacity="0.3"/>
+  <circle cx="16" cy="80" r="3" fill="#00B96B" opacity="0.25"/>
+  <!-- 手机阴影 -->
+  <ellipse cx="48" cy="86" rx="22" ry="3" fill="#00B96B" opacity="0.18"/>
+  <!-- 手机主体 -->
+  <rect x="30" y="10" width="36" height="74" rx="7" fill="url(#pa-phone)"/>
+  <!-- 屏幕 -->
+  <rect x="34" y="18" width="28" height="56" rx="3" fill="url(#pa-screen)"/>
+  <!-- 屏幕内容：列表行 -->
+  <rect x="38" y="24" width="20" height="2.5" rx="1" fill="#00B96B" opacity="0.7"/>
+  <g transform="translate(38, 32)">
+    <circle cx="3" cy="3" r="2.5" fill="#00B96B"/>
+    <rect x="9" y="1.5" width="13" height="2" rx="1" fill="#94E9BD"/>
+    <rect x="9" y="4.5" width="10" height="1.5" rx="0.75" fill="#C9F4DD"/>
+  </g>
+  <g transform="translate(38, 42)">
+    <circle cx="3" cy="3" r="2.5" fill="#00B96B" opacity="0.5"/>
+    <rect x="9" y="1.5" width="11" height="2" rx="1" fill="#94E9BD"/>
+    <rect x="9" y="4.5" width="13" height="1.5" rx="0.75" fill="#C9F4DD"/>
+  </g>
+  <g transform="translate(38, 52)">
+    <circle cx="3" cy="3" r="2.5" fill="#00B96B" opacity="0.3"/>
+    <rect x="9" y="1.5" width="14" height="2" rx="1" fill="#94E9BD"/>
+    <rect x="9" y="4.5" width="9" height="1.5" rx="0.75" fill="#C9F4DD"/>
+  </g>
+  <!-- 底部 home 键 -->
+  <circle cx="48" cy="80" r="2.5" fill="#FFFFFF" opacity="0.8"/>
+  <!-- 顶部扬声器 -->
+  <rect x="44" y="13" width="8" height="1.5" rx="0.75" fill="#FFFFFF" opacity="0.6"/>
+  <!-- 触摸波纹 -->
+  <circle cx="48" cy="44" r="32" stroke="#00B96B" stroke-width="1.5" fill="none" opacity="0.25"/>
+  <circle cx="48" cy="44" r="40" stroke="#00B96B" stroke-width="1" fill="none" opacity="0.12"/>
+</svg>

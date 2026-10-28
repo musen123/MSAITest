@@ -1,0 +1,175 @@
+/**
+ * SCSS 变量定义
+ *
+ * AI 智能测试平台 - 绿色系主题变量
+ */
+
+// ========================================
+// 主题颜色 - 绿色系
+// ========================================
+
+// 主色
+$primary-color: #22C55E;
+$primary-light: #4ADE80;
+$primary-lighter: #86EFAC;
+$primary-dark: #16A34A;
+$primary-darker: #15803D;
+
+// 辅助色
+$secondary-color: #4ADE80;
+
+// 强调色
+$accent-color: #06B6D4;
+$accent-light: #22D3EE;
+
+// 功能色
+$success-color: #22C55E;
+$warning-color: #FBBF24;
+$danger-color: #EF4444;
+$error-color: #EF4444;
+$info-color: #06B6D4;
+
+// 中性色
+$white: #FFFFFF;
+$black: #000000;
+
+// 背景色
+$bg-color-base: #ECFDF5;
+$bg-color-page: #ECFDF5;
+$bg-color-white: #FFFFFF;
+$bg-color-gray: #D1FAE5;
+
+// 文字颜色
+$text-color-primary: #14532D;
+$text-color-regular: #374151;
+$text-color-secondary: #6B7280;
+$text-color-placeholder: #9CA3AF;
+$text-color-disabled: #E5E7EB;
+
+// 边框颜色
+$border-color-base: #A7F3D0;
+$border-color-light: #D1FAE5;
+$border-color-lighter: #ECFDF5;
+$border-color-extra-light: #F0FDF4;
+
+// 渐变色
+$gradient-primary: linear-gradient(135deg, #22C55E 0%, #4ADE80 100%);
+$gradient-deep: linear-gradient(135deg, #15803D 0%, #22C55E 100%);
+$gradient-accent: linear-gradient(135deg, #06B6D4 0%, #22D3EE 100%);
+
+// ========================================
+// 字体大小
+// ========================================
+
+$font-size-extra-large: 20px;
+$font-size-large: 18px;
+$font-size-medium: 16px;
+$font-size-base: 14px;
+$font-size-small: 13px;
+$font-size-extra-small: 12px;
+
+// 标题字号
+$font-size-h1: 32px;
+$font-size-h2: 24px;
+$font-size-h3: 20px;
+$font-size-h4: 18px;
+$font-size-h5: 16px;
+$font-size-h6: 14px;
+
+// ========================================
+// 字重
+// ========================================
+
+$font-weight-thin: 300;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+// ========================================
+// 行高
+// ========================================
+
+$line-height-base: 1.6;
+$line-height-title: 1.2;
+$line-height-loose: 1.8;
+
+// ========================================
+// 边框圆角
+// ========================================
+
+$border-radius-base: 8px;
+$border-radius-small: 4px;
+$border-radius-large: 12px;
+$border-radius-round: 20px;
+$border-radius-circle: 50%;
+
+// ========================================
+// 间距
+// ========================================
+
+$spacing-xs: 4px;
+$spacing-sm: 8px;
+$spacing-md: 16px;
+$spacing-lg: 24px;
+$spacing-xl: 32px;
+$spacing-2xl: 48px;
+
+// ========================================
+// 阴影
+// ========================================
+
+$box-shadow-xs: 0 2px 8px rgba(34, 197, 94, 0.08);
+$box-shadow-sm: 0 4px 16px rgba(34, 197, 94, 0.12);
+$box-shadow-md: 0 8px 32px rgba(34, 197, 94, 0.16);
+$box-shadow-lg: 0 12px 40px rgba(34, 197, 94, 0.2);
+$box-shadow-xl: 0 16px 48px rgba(34, 197, 94, 0.24);
+
+// 玻璃态阴影
+$glass-shadow: 0 8px 32px rgba(34, 197, 94, 0.1);
+
+// ========================================
+// 过渡
+// ========================================
+
+$transition-base: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+$transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+$transition-slow: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+// ========================================
+// 布局
+// ========================================
+
+$layout-header-height: 60px;
+$layout-sidebar-width: 240px;
+$layout-sidebar-collapsed-width: 64px;
+
+// ========================================
+// Z-Index 层级
+// ========================================
+
+$z-index-base: 1;
+$z-index-dropdown: 1000;
+$z-index-sticky: 1020;
+$z-index-modal-backdrop: 2000;
+$z-index-modal: 2001;
+$z-index-notification: 3000;
+$z-index-tooltip: 4000;
+
+// ========================================
+// 玻璃态效果
+// ========================================
+
+$glass-bg: rgba(255, 255, 255, 0.8);
+$glass-border: 1px solid rgba(167, 243, 208, 0.3);
+$glass-blur: blur(12px);
+
+// ========================================
+// 断点
+// ========================================
+
+$breakpoint-xs: 576px;
+$breakpoint-sm: 768px;
+$breakpoint-md: 992px;
+$breakpoint-lg: 1200px;
+$breakpoint-xl: 1600px;

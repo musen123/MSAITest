@@ -1,0 +1,137 @@
+<svg viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg" fill="none">
+  <defs>
+    <linearGradient id="ta-card" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#F9FAFB"/>
+    </linearGradient>
+    <linearGradient id="ta-server" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5DDE9C"/>
+      <stop offset="100%" stop-color="#00B96B"/>
+    </linearGradient>
+    <radialGradient id="ta-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#00B96B" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#00B96B" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="ta-shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="5"/>
+      <feOffset dx="0" dy="4"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.2"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- 辉光 -->
+  <circle cx="240" cy="180" r="200" fill="url(#ta-glow)"/>
+
+  <!-- 装饰 -->
+  <circle cx="70" cy="80" r="6" fill="#00B96B" opacity="0.3"/>
+  <circle cx="410" cy="90" r="8" fill="#00B96B" opacity="0.22"/>
+  <circle cx="60" cy="290" r="5" fill="#00B96B" opacity="0.3"/>
+  <circle cx="420" cy="290" r="7" fill="#00B96B" opacity="0.25"/>
+  <g fill="#5DDE9C" opacity="0.7">
+    <path d="M380 50 L382 56 L388 58 L382 60 L380 66 L378 60 L372 58 L378 56 Z"/>
+    <path d="M120 230 L122 236 L128 238 L122 240 L120 246 L118 240 L112 238 L118 236 Z"/>
+  </g>
+
+  <!-- 落地阴影 -->
+  <ellipse cx="240" cy="320" rx="170" ry="14" fill="#00B96B" opacity="0.1"/>
+
+  <!-- =========== 左侧客户端请求 =========== -->
+  <g transform="translate(80, 130)" filter="url(#ta-shadow)">
+    <rect x="0" y="0" width="130" height="160" rx="10" fill="url(#ta-card)" stroke="#00B96B" stroke-opacity="0.3"/>
+    <!-- 顶部 -->
+    <rect x="0" y="0" width="130" height="26" rx="10" fill="#1F2937"/>
+    <rect x="0" y="20" width="130" height="6" fill="#1F2937"/>
+    <circle cx="10" cy="13" r="3" fill="#EF4444"/>
+    <circle cx="22" cy="13" r="3" fill="#FBBF24"/>
+    <circle cx="34" cy="13" r="3" fill="#10B981"/>
+    <text x="68" y="17" font-family="sans-serif" font-size="9" font-weight="600" fill="#FFFFFF" text-anchor="middle">Request</text>
+    <!-- POST 标签 -->
+    <rect x="8" y="36" width="32" height="14" rx="3" fill="#00B96B"/>
+    <text x="24" y="46" font-family="Arial Black" font-size="9" font-weight="900" fill="#FFFFFF" text-anchor="middle">POST</text>
+    <rect x="44" y="38" width="78" height="10" rx="3" fill="#F3F4F6"/>
+    <text x="48" y="46" font-family="Courier" font-size="7" font-weight="700" fill="#374151">/api/login</text>
+    <!-- Body label -->
+    <text x="8" y="64" font-family="Courier" font-size="8" fill="#9CA3AF">Body:</text>
+    <rect x="8" y="70" width="114" height="80" rx="4" fill="#F9FAFB"/>
+    <!-- JSON 行 -->
+    <text x="14" y="83" font-family="Courier" font-size="8" fill="#374151">{</text>
+    <text x="20" y="95" font-family="Courier" font-size="8" fill="#8B5CF6">"username"</text>
+    <text x="64" y="95" font-family="Courier" font-size="8" fill="#374151">:</text>
+    <text x="68" y="95" font-family="Courier" font-size="8" fill="#00B96B">"admin"</text>
+    <text x="98" y="95" font-family="Courier" font-size="8" fill="#374151">,</text>
+    <text x="20" y="107" font-family="Courier" font-size="8" fill="#8B5CF6">"password"</text>
+    <text x="64" y="107" font-family="Courier" font-size="8" fill="#374151">:</text>
+    <text x="68" y="107" font-family="Courier" font-size="8" fill="#00B96B">"****"</text>
+    <text x="14" y="119" font-family="Courier" font-size="8" fill="#374151">}</text>
+  </g>
+
+  <!-- =========== 中间数据流动 =========== -->
+  <!-- 请求方向 (向右) -->
+  <g stroke="#00B96B" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-dasharray="6 4">
+    <path d="M214 170 L266 170"/>
+  </g>
+  <polygon points="266,170 256,165 256,175" fill="#00B96B"/>
+  <text x="240" y="160" font-family="Courier" font-size="9" font-weight="700" fill="#00B96B" text-anchor="middle">request</text>
+
+  <!-- 响应方向 (向左) -->
+  <g stroke="#10B981" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-dasharray="6 4">
+    <path d="M266 220 L214 220"/>
+  </g>
+  <polygon points="214,220 224,215 224,225" fill="#10B981"/>
+  <text x="240" y="240" font-family="Courier" font-size="9" font-weight="700" fill="#10B981" text-anchor="middle">200 OK</text>
+
+  <!-- 流动小球 -->
+  <g fill="#5DDE9C">
+    <circle cx="228" cy="170" r="2.5" opacity="0.8"/>
+    <circle cx="244" cy="170" r="2.5" opacity="0.6"/>
+    <circle cx="252" cy="220" r="2.5" opacity="0.7"/>
+  </g>
+
+  <!-- =========== 右侧服务器 =========== -->
+  <g transform="translate(270, 100)" filter="url(#ta-shadow)">
+    <!-- 服务器顶帽 -->
+    <rect x="0" y="0" width="130" height="14" rx="6" fill="url(#ta-server)"/>
+    <circle cx="116" cy="7" r="3" fill="#FFFFFF"/>
+    <text x="14" y="11" font-family="sans-serif" font-size="9" font-weight="700" fill="#FFFFFF">API Server</text>
+
+    <!-- 三层服务器栈 -->
+    <g>
+      <rect x="0" y="20" width="130" height="42" rx="6" fill="url(#ta-card)" stroke="#00B96B" stroke-opacity="0.3"/>
+      <circle cx="14" cy="34" r="3" fill="#10B981"/>
+      <rect x="24" y="31" width="50" height="3" rx="1.5" fill="#374151"/>
+      <rect x="24" y="38" width="60" height="2" rx="1" fill="#9CA3AF"/>
+      <!-- mini chart -->
+      <g stroke="#00B96B" stroke-width="1.5" fill="none">
+        <path d="M92 48 L98 44 L104 50 L110 40 L116 46 L122 38"/>
+      </g>
+      <text x="14" y="56" font-family="Courier" font-size="7" fill="#9CA3AF">auth-service</text>
+    </g>
+    <g>
+      <rect x="0" y="68" width="130" height="42" rx="6" fill="url(#ta-card)" stroke="#00B96B" stroke-opacity="0.3"/>
+      <circle cx="14" cy="82" r="3" fill="#10B981"/>
+      <rect x="24" y="79" width="40" height="3" rx="1.5" fill="#374151"/>
+      <rect x="24" y="86" width="50" height="2" rx="1" fill="#9CA3AF"/>
+      <g stroke="#00B96B" stroke-width="1.5" fill="none">
+        <path d="M92 96 L98 92 L104 98 L110 88 L116 94 L122 90"/>
+      </g>
+      <text x="14" y="104" font-family="Courier" font-size="7" fill="#9CA3AF">user-service</text>
+    </g>
+    <g>
+      <rect x="0" y="116" width="130" height="42" rx="6" fill="url(#ta-card)" stroke="#00B96B" stroke-opacity="0.3"/>
+      <circle cx="14" cy="130" r="3" fill="#FBBF24"/>
+      <rect x="24" y="127" width="48" height="3" rx="1.5" fill="#374151"/>
+      <rect x="24" y="134" width="40" height="2" rx="1" fill="#9CA3AF"/>
+      <g stroke="#00B96B" stroke-width="1.5" fill="none">
+        <path d="M92 144 L98 140 L104 146 L110 136 L116 142 L122 138"/>
+      </g>
+      <text x="14" y="152" font-family="Courier" font-size="7" fill="#9CA3AF">order-service</text>
+    </g>
+  </g>
+
+  <!-- 顶部 API 标签 -->
+  <g transform="translate(240, 70)">
+    <rect x="-32" y="-14" width="64" height="22" rx="11" fill="#00B96B"/>
+    <text x="0" y="2" font-family="Arial Black" font-size="11" font-weight="900" fill="#FFFFFF" text-anchor="middle">{ API }</text>
+  </g>
+</svg>

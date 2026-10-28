@@ -1,0 +1,87 @@
+<svg viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg" fill="none">
+  <defs>
+    <linearGradient id="rq-paper" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#F9FAFB"/>
+    </linearGradient>
+    <linearGradient id="rq-green" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5DDE9C"/>
+      <stop offset="100%" stop-color="#00B96B"/>
+    </linearGradient>
+    <radialGradient id="rq-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#00B96B" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#00B96B" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="rq-shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="5"/>
+      <feOffset dx="0" dy="4"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.2"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- 辉光 -->
+  <circle cx="240" cy="180" r="200" fill="url(#rq-glow)"/>
+
+  <!-- 装饰 -->
+  <circle cx="74" cy="84" r="6" fill="#00B96B" opacity="0.3"/>
+  <circle cx="414" cy="92" r="8" fill="#00B96B" opacity="0.22"/>
+  <circle cx="60" cy="280" r="5" fill="#00B96B" opacity="0.3"/>
+  <circle cx="420" cy="282" r="7" fill="#00B96B" opacity="0.25"/>
+  <g fill="#5DDE9C" opacity="0.7">
+    <path d="M118 130 L120 136 L126 138 L120 140 L118 146 L116 140 L110 138 L116 136 Z"/>
+    <path d="M398 210 L400 216 L406 218 L400 220 L398 226 L396 220 L390 218 L396 216 Z"/>
+  </g>
+
+  <!-- 落地阴影 -->
+  <ellipse cx="240" cy="322" rx="118" ry="14" fill="#00B96B" opacity="0.12"/>
+
+  <!-- 剪贴板 -->
+  <g transform="translate(218, 192)" filter="url(#rq-shadow)">
+    <rect x="-70" y="-104" width="140" height="212" rx="12" fill="url(#rq-green)" opacity="0.25"/>
+    <rect x="-62" y="-96" width="124" height="196" rx="8" fill="url(#rq-paper)"/>
+    <rect x="-28" y="-110" width="56" height="22" rx="8" fill="url(#rq-green)"/>
+    <circle cx="0" cy="-99" r="4" fill="#FFFFFF" opacity="0.7"/>
+
+    <!-- 标题 -->
+    <rect x="-46" y="-66" width="64" height="6" rx="3" fill="#00B96B"/>
+
+    <!-- 清单行 1（完成） -->
+    <circle cx="-36" cy="-30" r="10" fill="url(#rq-green)"/>
+    <path d="M-41 -30 L-37 -26 L-30 -34" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="-18" y="-37" width="60" height="5" rx="2.5" fill="#D1D5DB"/>
+    <rect x="-18" y="-26" width="42" height="4" rx="2" fill="#E5E7EB"/>
+
+    <!-- 清单行 2（完成） -->
+    <circle cx="-36" cy="10" r="10" fill="url(#rq-green)"/>
+    <path d="M-41 10 L-37 14 L-30 6" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="-18" y="3" width="56" height="5" rx="2.5" fill="#D1D5DB"/>
+    <rect x="-18" y="14" width="38" height="4" rx="2" fill="#E5E7EB"/>
+
+    <!-- 清单行 3（待办） -->
+    <circle cx="-36" cy="50" r="10" fill="#FFFFFF" stroke="#D1D5DB" stroke-width="2.5"/>
+    <rect x="-18" y="43" width="62" height="5" rx="2.5" fill="#E5E7EB"/>
+    <rect x="-18" y="54" width="34" height="4" rx="2" fill="#E5E7EB"/>
+  </g>
+
+  <!-- 灯泡（想法） -->
+  <g transform="translate(354, 130)" filter="url(#rq-shadow)">
+    <g stroke="#5DDE9C" stroke-width="2.5" stroke-linecap="round" opacity="0.8">
+      <line x1="-34" y1="-26" x2="-24" y2="-18"/>
+      <line x1="34" y1="-26" x2="24" y2="-18"/>
+      <line x1="0" y1="-42" x2="0" y2="-30"/>
+    </g>
+    <circle cx="0" cy="2" r="24" fill="url(#rq-green)"/>
+    <path d="M-8 0 a8 8 0 0 1 8-8" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" opacity="0.7"/>
+    <rect x="-9" y="24" width="18" height="5" rx="2.5" fill="#94E9BD"/>
+    <rect x="-7" y="32" width="14" height="5" rx="2.5" fill="#94E9BD"/>
+  </g>
+
+  <!-- 铅笔 -->
+  <g transform="translate(118, 236) rotate(40)" filter="url(#rq-shadow)">
+    <rect x="-8" y="-46" width="16" height="64" rx="3" fill="url(#rq-green)"/>
+    <rect x="-8" y="-46" width="16" height="10" rx="3" fill="#94E9BD"/>
+    <path d="M-8 18 L0 38 L8 18 Z" fill="#F9FAFB" stroke="#D1D5DB"/>
+    <path d="M-3 31 L0 38 L3 31 Z" fill="#374151"/>
+  </g>
+</svg>

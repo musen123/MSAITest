@@ -1,0 +1,117 @@
+<svg viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg" fill="none">
+  <defs>
+    <linearGradient id="we-rocket" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5DDE9C"/>
+      <stop offset="100%" stop-color="#00B96B"/>
+    </linearGradient>
+    <linearGradient id="we-fin" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#00A05E"/>
+      <stop offset="100%" stop-color="#008550"/>
+    </linearGradient>
+    <linearGradient id="we-flame" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FBBF24"/>
+      <stop offset="50%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#FB7185" stop-opacity="0.5"/>
+    </linearGradient>
+    <radialGradient id="we-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#00B96B" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#00B96B" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="we-shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="6"/>
+      <feOffset dx="0" dy="5"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.2"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- 辉光 -->
+  <circle cx="240" cy="180" r="220" fill="url(#we-glow)"/>
+
+  <!-- 远景星空 -->
+  <g fill="#5DDE9C">
+    <circle cx="60" cy="70" r="2" opacity="0.8"/>
+    <circle cx="120" cy="40" r="1.5" opacity="0.6"/>
+    <circle cx="420" cy="60" r="2" opacity="0.7"/>
+    <circle cx="380" cy="100" r="1.5" opacity="0.5"/>
+    <circle cx="80" cy="250" r="2" opacity="0.7"/>
+    <circle cx="410" cy="270" r="1.5" opacity="0.6"/>
+    <circle cx="430" cy="180" r="2" opacity="0.6"/>
+    <circle cx="50" cy="180" r="2" opacity="0.6"/>
+  </g>
+  <g fill="#5DDE9C" opacity="0.8">
+    <path d="M380 30 L382 36 L388 38 L382 40 L380 46 L378 40 L372 38 L378 36 Z"/>
+    <path d="M100 100 L102 106 L108 108 L102 110 L100 116 L98 110 L92 108 L98 106 Z"/>
+    <path d="M430 240 L432 246 L438 248 L432 250 L430 256 L428 250 L422 248 L428 246 Z"/>
+  </g>
+  <!-- 流星 -->
+  <g opacity="0.7">
+    <path d="M50 50 Q70 60 90 80" stroke="#5DDE9C" stroke-width="2" stroke-linecap="round" stroke-dasharray="2 4" fill="none"/>
+    <circle cx="90" cy="80" r="3" fill="#00B96B"/>
+  </g>
+
+  <!-- 落地阴影 -->
+  <ellipse cx="240" cy="320" rx="100" ry="10" fill="#00B96B" opacity="0.15"/>
+
+  <!-- 云朵 (装饰) -->
+  <g transform="translate(80, 230)" opacity="0.7">
+    <path d="M0 20 Q0 8 14 6 Q18 -4 30 -2 Q40 -8 48 0 Q60 0 60 12 Q66 14 66 20 Q66 28 56 28 L8 28 Q-2 28 0 20 Z" fill="#E8FBF1"/>
+  </g>
+  <g transform="translate(340, 240)" opacity="0.7">
+    <path d="M0 18 Q0 6 12 4 Q16 -4 26 -2 Q36 -8 44 0 Q56 0 56 12 Q62 14 62 18 Q62 26 52 26 L8 26 Q-2 26 0 18 Z" fill="#E8FBF1"/>
+  </g>
+
+  <!-- ============ 火箭 (倾斜上升) ============ -->
+  <g transform="translate(240, 180) rotate(-12)" filter="url(#we-shadow)">
+    <!-- 尾焰 -->
+    <g transform="translate(0, 90)">
+      <path d="M-12 0 Q-18 25 -8 28 Q-12 38 0 50 Q12 38 8 28 Q18 25 12 0 Z" fill="url(#we-flame)"/>
+      <path d="M-7 5 Q-10 20 -4 24 Q-6 34 0 42 Q6 34 4 24 Q10 20 7 5 Z" fill="#FBBF24"/>
+      <path d="M-3 12 Q-4 22 0 30 Q4 22 3 12 Z" fill="#FFFFFF" opacity="0.8"/>
+    </g>
+
+    <!-- 鳍 (左) -->
+    <path d="M-26 50 L-44 80 L-18 70 Z" fill="url(#we-fin)"/>
+    <!-- 鳍 (右) -->
+    <path d="M26 50 L44 80 L18 70 Z" fill="url(#we-fin)"/>
+
+    <!-- 火箭身体 -->
+    <path d="M-22 -40 Q-22 -85 0 -100 Q22 -85 22 -40 L22 70 L-22 70 Z" fill="url(#we-rocket)"/>
+
+    <!-- 高光 -->
+    <path d="M-16 -38 Q-16 -75 -4 -90 L-4 70 L-16 70 Z" fill="#FFFFFF" opacity="0.3"/>
+
+    <!-- 舷窗 -->
+    <circle cx="0" cy="-20" r="14" fill="#1F2937"/>
+    <circle cx="0" cy="-20" r="12" fill="#5DDE9C" opacity="0.6"/>
+    <circle cx="-4" cy="-24" r="4" fill="#FFFFFF" opacity="0.8"/>
+
+    <!-- 装饰线 -->
+    <rect x="-22" y="40" width="44" height="2" fill="#008550" opacity="0.5"/>
+    <rect x="-22" y="20" width="44" height="2" fill="#008550" opacity="0.3"/>
+  </g>
+
+  <!-- 漂浮装饰 -->
+  <g fill="#00B96B" opacity="0.4">
+    <circle cx="170" cy="110" r="3"/>
+    <circle cx="320" cy="130" r="3"/>
+    <circle cx="160" cy="190" r="2.5"/>
+    <circle cx="330" cy="200" r="2.5"/>
+  </g>
+
+  <!-- 漂浮卡片 (右) -->
+  <g transform="translate(370, 130) rotate(8)" filter="url(#we-shadow)">
+    <rect x="0" y="0" width="50" height="34" rx="6" fill="#FFFFFF"/>
+    <circle cx="13" cy="17" r="6" fill="#00B96B"/>
+    <path d="M9 17 L12 20 L17 14" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" fill="none"/>
+    <rect x="24" y="11" width="20" height="3" rx="1.5" fill="#374151"/>
+    <rect x="24" y="18" width="14" height="2" rx="1" fill="#9CA3AF"/>
+  </g>
+
+  <!-- 漂浮卡片 (左) -->
+  <g transform="translate(60, 140) rotate(-8)" filter="url(#we-shadow)">
+    <rect x="0" y="0" width="50" height="34" rx="6" fill="#FFFFFF"/>
+    <path d="M8 24 L13 14 L18 20 L24 10 L30 22 L38 8" stroke="#00B96B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <rect x="6" y="28" width="38" height="2" rx="1" fill="#E5E7EB"/>
+  </g>
+</svg>

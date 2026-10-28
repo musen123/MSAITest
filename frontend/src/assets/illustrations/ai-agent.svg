@@ -1,0 +1,153 @@
+<svg viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg" fill="none">
+  <defs>
+    <linearGradient id="aa-bot1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5DDE9C"/>
+      <stop offset="100%" stop-color="#00B96B"/>
+    </linearGradient>
+    <linearGradient id="aa-bot2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#A78BFA"/>
+      <stop offset="100%" stop-color="#8B5CF6"/>
+    </linearGradient>
+    <linearGradient id="aa-bot3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#60A5FA"/>
+      <stop offset="100%" stop-color="#3B82F6"/>
+    </linearGradient>
+    <linearGradient id="aa-bot4" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FBBF24"/>
+      <stop offset="100%" stop-color="#F59E0B"/>
+    </linearGradient>
+    <radialGradient id="aa-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#00B96B" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#00B96B" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="aa-shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="5"/>
+      <feOffset dx="0" dy="4"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.2"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- 辉光 -->
+  <circle cx="240" cy="180" r="220" fill="url(#aa-glow)"/>
+
+  <!-- 装饰 -->
+  <circle cx="60" cy="80" r="6" fill="#00B96B" opacity="0.3"/>
+  <circle cx="420" cy="100" r="8" fill="#00B96B" opacity="0.22"/>
+  <circle cx="50" cy="280" r="5" fill="#00B96B" opacity="0.3"/>
+  <circle cx="430" cy="290" r="7" fill="#00B96B" opacity="0.25"/>
+
+  <!-- 落地阴影 -->
+  <ellipse cx="240" cy="320" rx="180" ry="14" fill="#00B96B" opacity="0.1"/>
+
+  <!-- 连接环 (虚) -->
+  <g fill="none" stroke="#00B96B" stroke-width="1.8" stroke-dasharray="4 4" opacity="0.45">
+    <ellipse cx="240" cy="190" rx="160" ry="80"/>
+  </g>
+
+  <!-- 中心目标 -->
+  <g transform="translate(240, 190)" filter="url(#aa-shadow)">
+    <circle cx="0" cy="0" r="34" fill="#FFFFFF" stroke="#00B96B" stroke-width="3"/>
+    <circle cx="0" cy="0" r="24" fill="none" stroke="#00B96B" stroke-width="2" opacity="0.4"/>
+    <circle cx="0" cy="0" r="14" fill="none" stroke="#00B96B" stroke-width="2" opacity="0.6"/>
+    <circle cx="0" cy="0" r="6" fill="#00B96B"/>
+    <!-- 文字 -->
+    <text x="0" y="55" font-family="sans-serif" font-size="10" font-weight="700" fill="#00B96B" text-anchor="middle">TASK</text>
+  </g>
+
+  <!-- 数据流动小球 -->
+  <g fill="#5DDE9C">
+    <circle cx="180" cy="150" r="3" opacity="0.8"/>
+    <circle cx="300" cy="150" r="3" opacity="0.8"/>
+    <circle cx="180" cy="230" r="3" opacity="0.7"/>
+    <circle cx="300" cy="230" r="3" opacity="0.7"/>
+  </g>
+
+  <!-- =========== AGENT 1 (左上) - 绿色（Coordinator） =========== -->
+  <g transform="translate(100, 120)" filter="url(#aa-shadow)">
+    <!-- 天线 -->
+    <line x1="0" y1="-32" x2="0" y2="-40" stroke="#00A05E" stroke-width="2"/>
+    <circle cx="0" cy="-42" r="3" fill="#10B981"/>
+    <!-- 头 -->
+    <rect x="-22" y="-32" width="44" height="34" rx="9" fill="url(#aa-bot1)"/>
+    <ellipse cx="-10" cy="-26" rx="6" ry="4" fill="#FFFFFF" opacity="0.35"/>
+    <!-- 眼 -->
+    <circle cx="-8" cy="-18" r="4" fill="#1F2937"/>
+    <circle cx="8" cy="-18" r="4" fill="#1F2937"/>
+    <circle cx="-6" cy="-20" r="1.5" fill="#FFFFFF"/>
+    <circle cx="10" cy="-20" r="1.5" fill="#FFFFFF"/>
+    <!-- 嘴 -->
+    <path d="M-5 -6 Q0 -2 5 -6" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" fill="none"/>
+    <!-- 身体 -->
+    <rect x="-16" y="4" width="32" height="20" rx="4" fill="url(#aa-bot1)"/>
+    <rect x="-12" y="10" width="24" height="3" rx="1.5" fill="#FFFFFF" opacity="0.5"/>
+    <rect x="-12" y="16" width="20" height="3" rx="1.5" fill="#FFFFFF" opacity="0.5"/>
+    <!-- 名称标签 -->
+    <rect x="-28" y="28" width="56" height="12" rx="6" fill="#FFFFFF" stroke="#00B96B" stroke-width="1.5"/>
+    <text x="0" y="37" font-size="7" font-weight="700" fill="#00B96B" text-anchor="middle">PLANNER</text>
+  </g>
+
+  <!-- =========== AGENT 2 (右上) - 紫色（Generator） =========== -->
+  <g transform="translate(380, 120)" filter="url(#aa-shadow)">
+    <line x1="0" y1="-32" x2="0" y2="-40" stroke="#7C3AED" stroke-width="2"/>
+    <circle cx="0" cy="-42" r="3" fill="#A78BFA"/>
+    <rect x="-22" y="-32" width="44" height="34" rx="9" fill="url(#aa-bot2)"/>
+    <ellipse cx="-10" cy="-26" rx="6" ry="4" fill="#FFFFFF" opacity="0.35"/>
+    <circle cx="-8" cy="-18" r="4" fill="#1F2937"/>
+    <circle cx="8" cy="-18" r="4" fill="#1F2937"/>
+    <circle cx="-6" cy="-20" r="1.5" fill="#FFFFFF"/>
+    <circle cx="10" cy="-20" r="1.5" fill="#FFFFFF"/>
+    <path d="M-5 -6 Q0 -2 5 -6" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" fill="none"/>
+    <rect x="-16" y="4" width="32" height="20" rx="4" fill="url(#aa-bot2)"/>
+    <!-- 内容（不同图） -->
+    <path d="M-8 14 L-3 8 L2 14 L7 6" stroke="#FFFFFF" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="-28" y="28" width="56" height="12" rx="6" fill="#FFFFFF" stroke="#8B5CF6" stroke-width="1.5"/>
+    <text x="0" y="37" font-size="7" font-weight="700" fill="#8B5CF6" text-anchor="middle">EXECUTOR</text>
+  </g>
+
+  <!-- =========== AGENT 3 (左下) - 蓝色（Tester） =========== -->
+  <g transform="translate(100, 260)" filter="url(#aa-shadow)">
+    <line x1="0" y1="-32" x2="0" y2="-40" stroke="#2563EB" stroke-width="2"/>
+    <circle cx="0" cy="-42" r="3" fill="#60A5FA"/>
+    <rect x="-22" y="-32" width="44" height="34" rx="9" fill="url(#aa-bot3)"/>
+    <ellipse cx="-10" cy="-26" rx="6" ry="4" fill="#FFFFFF" opacity="0.35"/>
+    <circle cx="-8" cy="-18" r="4" fill="#1F2937"/>
+    <circle cx="8" cy="-18" r="4" fill="#1F2937"/>
+    <circle cx="-6" cy="-20" r="1.5" fill="#FFFFFF"/>
+    <circle cx="10" cy="-20" r="1.5" fill="#FFFFFF"/>
+    <path d="M-5 -6 Q0 -2 5 -6" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" fill="none"/>
+    <rect x="-16" y="4" width="32" height="20" rx="4" fill="url(#aa-bot3)"/>
+    <!-- 内容（对勾） -->
+    <circle cx="0" cy="14" r="6" fill="#FFFFFF"/>
+    <path d="M-3 14 L-1 16 L3 12" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" fill="none"/>
+    <rect x="-28" y="28" width="56" height="12" rx="6" fill="#FFFFFF" stroke="#3B82F6" stroke-width="1.5"/>
+    <text x="0" y="37" font-size="7" font-weight="700" fill="#3B82F6" text-anchor="middle">CRITIC</text>
+  </g>
+
+  <!-- =========== AGENT 4 (右下) - 橙色（Reporter） =========== -->
+  <g transform="translate(380, 260)" filter="url(#aa-shadow)">
+    <line x1="0" y1="-32" x2="0" y2="-40" stroke="#D97706" stroke-width="2"/>
+    <circle cx="0" cy="-42" r="3" fill="#FBBF24"/>
+    <rect x="-22" y="-32" width="44" height="34" rx="9" fill="url(#aa-bot4)"/>
+    <ellipse cx="-10" cy="-26" rx="6" ry="4" fill="#FFFFFF" opacity="0.35"/>
+    <circle cx="-8" cy="-18" r="4" fill="#1F2937"/>
+    <circle cx="8" cy="-18" r="4" fill="#1F2937"/>
+    <circle cx="-6" cy="-20" r="1.5" fill="#FFFFFF"/>
+    <circle cx="10" cy="-20" r="1.5" fill="#FFFFFF"/>
+    <path d="M-5 -6 Q0 -2 5 -6" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" fill="none"/>
+    <rect x="-16" y="4" width="32" height="20" rx="4" fill="url(#aa-bot4)"/>
+    <!-- 内容（柱图） -->
+    <rect x="-10" y="14" width="3" height="6" rx="0.5" fill="#FFFFFF" opacity="0.6"/>
+    <rect x="-5" y="10" width="3" height="10" rx="0.5" fill="#FFFFFF" opacity="0.8"/>
+    <rect x="0" y="6" width="3" height="14" rx="0.5" fill="#FFFFFF"/>
+    <rect x="5" y="11" width="3" height="9" rx="0.5" fill="#FFFFFF" opacity="0.7"/>
+    <rect x="-28" y="28" width="56" height="12" rx="6" fill="#FFFFFF" stroke="#F59E0B" stroke-width="1.5"/>
+    <text x="0" y="37" font-size="7" font-weight="700" fill="#F59E0B" text-anchor="middle">REPORTER</text>
+  </g>
+
+  <!-- 闪光 -->
+  <g fill="#5DDE9C" opacity="0.85">
+    <path d="M240 90 L242 96 L248 98 L242 100 L240 106 L238 100 L232 98 L238 96 Z"/>
+    <path d="M240 280 L242 286 L248 288 L242 290 L240 296 L238 290 L232 288 L238 286 Z"/>
+  </g>
+</svg>

@@ -1,0 +1,99 @@
+<svg viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg" fill="none">
+  <defs>
+    <linearGradient id="sd-check" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5DDE9C"/>
+      <stop offset="100%" stop-color="#00B96B"/>
+    </linearGradient>
+    <linearGradient id="sd-trophy" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FBBF24"/>
+      <stop offset="100%" stop-color="#F59E0B"/>
+    </linearGradient>
+    <radialGradient id="sd-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#00B96B" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#00B96B" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="sd-shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="6"/>
+      <feOffset dx="0" dy="5"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.22"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- 辉光 -->
+  <circle cx="240" cy="180" r="200" fill="url(#sd-glow)"/>
+
+  <!-- 庆祝彩纸 -->
+  <g>
+    <rect x="80" y="60" width="8" height="4" rx="1" fill="#00B96B" transform="rotate(30 84 62)"/>
+    <rect x="120" y="40" width="6" height="3" rx="1" fill="#FBBF24" transform="rotate(-20 123 41)"/>
+    <rect x="380" y="50" width="8" height="4" rx="1" fill="#00B96B" transform="rotate(45 384 52)"/>
+    <rect x="420" y="100" width="6" height="3" rx="1" fill="#EC4899" transform="rotate(-30 423 101)"/>
+    <rect x="50" y="120" width="6" height="3" rx="1" fill="#FBBF24" transform="rotate(60 53 121)"/>
+    <rect x="430" y="220" width="8" height="4" rx="1" fill="#00B96B" transform="rotate(-45 434 222)"/>
+    <rect x="60" y="250" width="6" height="3" rx="1" fill="#EC4899" transform="rotate(15 63 251)"/>
+    <rect x="400" y="280" width="7" height="3" rx="1" fill="#FBBF24" transform="rotate(-25 403 281)"/>
+    <circle cx="100" cy="180" r="3" fill="#FBBF24"/>
+    <circle cx="380" cy="160" r="3" fill="#EC4899"/>
+    <circle cx="380" cy="320" r="3" fill="#00B96B"/>
+    <circle cx="90" cy="320" r="3" fill="#FBBF24"/>
+  </g>
+  <g fill="#5DDE9C" opacity="0.8">
+    <path d="M150 80 L152 86 L158 88 L152 90 L150 96 L148 90 L142 88 L148 86 Z"/>
+    <path d="M340 90 L342 96 L348 98 L342 100 L340 106 L338 100 L332 98 L338 96 Z"/>
+    <path d="M230 50 L232 56 L238 58 L232 60 L230 66 L228 60 L222 58 L228 56 Z"/>
+  </g>
+
+  <!-- 落地阴影 -->
+  <ellipse cx="240" cy="320" rx="140" ry="14" fill="#00B96B" opacity="0.15"/>
+
+  <!-- 奖杯底座 -->
+  <g transform="translate(240, 290)" filter="url(#sd-shadow)">
+    <rect x="-30" y="0" width="60" height="14" rx="3" fill="#00A05E"/>
+    <rect x="-44" y="14" width="88" height="8" rx="2" fill="#008550"/>
+  </g>
+
+  <!-- 奖杯 -->
+  <g transform="translate(240, 200)" filter="url(#sd-shadow)">
+    <!-- 杯身 -->
+    <path d="M-44 -50 Q-44 50 0 70 Q44 50 44 -50 Z" fill="url(#sd-trophy)"/>
+    <!-- 杯身高光 -->
+    <path d="M-36 -45 Q-36 30 -16 55 L-12 60 Q-40 38 -40 -45 Z" fill="#FFFFFF" opacity="0.35"/>
+    <!-- 奖杯口（椭圆） -->
+    <ellipse cx="0" cy="-50" rx="44" ry="10" fill="#FBBF24"/>
+    <ellipse cx="0" cy="-52" rx="40" ry="6" fill="#FFFFFF" opacity="0.4"/>
+
+    <!-- 左耳 -->
+    <path d="M-44 -34 Q-72 -28 -72 -8 Q-72 8 -56 12 L-50 4 Q-58 0 -58 -8 Q-58 -16 -44 -18 Z" fill="url(#sd-trophy)"/>
+    <!-- 右耳 -->
+    <path d="M44 -34 Q72 -28 72 -8 Q72 8 56 12 L50 4 Q58 0 58 -8 Q58 -16 44 -18 Z" fill="url(#sd-trophy)"/>
+
+    <!-- 中央 ⭐️ -->
+    <g transform="translate(0, 0)">
+      <circle cx="0" cy="0" r="22" fill="#FFFFFF" opacity="0.35"/>
+      <path d="M0 -18 L5 -6 L18 -4 L9 4 L12 17 L0 10 L-12 17 L-9 4 L-18 -4 L-5 -6 Z" fill="#FFFFFF"/>
+      <path d="M0 -16 L4 -5 L15 -3 L7 4 L10 14 L0 8 L-10 14 L-7 4 L-15 -3 L-4 -5 Z" fill="#FBBF24" opacity="0.85"/>
+    </g>
+  </g>
+
+  <!-- 漂浮对勾 -->
+  <g transform="translate(135, 180)" filter="url(#sd-shadow)">
+    <circle cx="0" cy="0" r="22" fill="url(#sd-check)"/>
+    <path d="M-9 0 L-3 6 L9 -6" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </g>
+
+  <!-- 漂浮对勾 (右) -->
+  <g transform="translate(345, 180)" filter="url(#sd-shadow)">
+    <circle cx="0" cy="0" r="22" fill="url(#sd-check)"/>
+    <path d="M-9 0 L-3 6 L9 -6" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </g>
+
+  <!-- 顶部光线 -->
+  <g stroke="#FBBF24" stroke-width="3" stroke-linecap="round" opacity="0.6">
+    <line x1="240" y1="100" x2="240" y2="80"/>
+    <line x1="210" y1="105" x2="200" y2="90"/>
+    <line x1="270" y1="105" x2="280" y2="90"/>
+    <line x1="185" y1="118" x2="170" y2="110"/>
+    <line x1="295" y1="118" x2="310" y2="110"/>
+  </g>
+</svg>

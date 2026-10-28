@@ -1,0 +1,14 @@
+{
+  "tasks": [
+    {"type":"Planning","subType":"Locate","param":{"prompt":"左上角返回箭头"}},
+    {"type":"Action Space","subType":"Tap","status":"finished","param":{}},
+    {"type":"Planning","subType":"Locate","param":{"prompt":"设置入口"}},
+    {"type":"Action Space","subType":"Tap","status":"finished","param":{}},
+    {"type":"Planning","subType":"Locate","param":{"prompt":"网络选项"}},
+    {"type":"Action Space","subType":"Tap","status":"finished","param":{}},
+    {"type":"Planning","subType":"Locate","param":{"prompt":"高级设置"}},
+    {"type":"Action Space","subType":"Tap","status":"finished","param":{}},
+    {"type":"Planning","subType":"Locate","param":{"prompt":"确认按钮"}},
+    {"type":"Action Space","subType":"Tap","status":"finished","param":{}}
+  ]
+}

@@ -1,0 +1,18 @@
+<svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+  <!-- 渐变定义 -->
+  <defs>
+    <linearGradient id="gradMS" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#22C55E;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#16A34A;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000000" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+  <!-- 背景圆 -->
+  <circle cx="60" cy="60" r="55" fill="url(#gradMS)" opacity="0.1"/>
+  <!-- 字母 M -->
+  <path d="M30 85 L30 35 L45 65 L60 35 L60 85" stroke="url(#gradMS)" stroke-width="10" fill="none" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow)"/>
+  <!-- 字母 S -->
+  <path d="M70 35 C70 35, 95 35, 95 60 C95 85, 70 85, 70 85" stroke="url(#gradMS)" stroke-width="10" fill="none" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow)"/>
+</svg>

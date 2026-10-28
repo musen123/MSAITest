@@ -1,0 +1,128 @@
+<svg viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg" fill="none">
+  <defs>
+    <linearGradient id="rp-paper" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#F9FAFB"/>
+    </linearGradient>
+    <linearGradient id="rp-chart-bar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5DDE9C"/>
+      <stop offset="100%" stop-color="#00B96B"/>
+    </linearGradient>
+    <linearGradient id="rp-fold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#C9F4DD"/>
+      <stop offset="100%" stop-color="#94E9BD"/>
+    </linearGradient>
+    <radialGradient id="rp-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#00B96B" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#00B96B" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="rp-shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="5"/>
+      <feOffset dx="0" dy="4"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.2"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- 辉光 -->
+  <circle cx="240" cy="180" r="200" fill="url(#rp-glow)"/>
+
+  <!-- 装饰 -->
+  <circle cx="70" cy="80" r="6" fill="#00B96B" opacity="0.3"/>
+  <circle cx="410" cy="90" r="8" fill="#00B96B" opacity="0.22"/>
+  <circle cx="60" cy="290" r="5" fill="#00B96B" opacity="0.3"/>
+  <circle cx="420" cy="280" r="7" fill="#00B96B" opacity="0.25"/>
+  <g fill="#5DDE9C" opacity="0.7">
+    <path d="M380 50 L382 56 L388 58 L382 60 L380 66 L378 60 L372 58 L378 56 Z"/>
+    <path d="M120 220 L122 226 L128 228 L122 230 L120 236 L118 230 L112 228 L118 226 Z"/>
+  </g>
+
+  <!-- 落地阴影 -->
+  <ellipse cx="240" cy="320" rx="120" ry="14" fill="#00B96B" opacity="0.12"/>
+
+  <!-- 后方文档 -->
+  <g transform="translate(140, 110) rotate(-6)" filter="url(#rp-shadow)" opacity="0.7">
+    <path d="M0 0 L80 0 L100 20 L100 130 L0 130 Z" fill="url(#rp-paper)"/>
+    <rect x="10" y="40" width="50" height="3" rx="1.5" fill="#E5E7EB"/>
+    <rect x="10" y="50" width="68" height="3" rx="1.5" fill="#E5E7EB"/>
+    <rect x="10" y="60" width="60" height="3" rx="1.5" fill="#E5E7EB"/>
+  </g>
+
+  <!-- ============ 中央报告 ============ -->
+  <g transform="translate(240, 200)" filter="url(#rp-shadow)">
+    <!-- 主文档 -->
+    <path d="M-60 -100 L36 -100 L60 -76 L60 100 L-60 100 Z" fill="url(#rp-paper)" stroke="#00B96B" stroke-opacity="0.25"/>
+    <!-- 折角 -->
+    <path d="M36 -100 L36 -76 L60 -76 Z" fill="url(#rp-fold)"/>
+    <path d="M36 -100 L60 -76" stroke="#00B96B" stroke-opacity="0.3"/>
+
+    <!-- 标题 -->
+    <rect x="-50" y="-86" width="60" height="6" rx="3" fill="#00B96B"/>
+    <rect x="-50" y="-74" width="40" height="3" rx="1.5" fill="#9CA3AF"/>
+
+    <!-- 中间圆环图 -->
+    <g transform="translate(-26, -36)">
+      <circle r="22" fill="none" stroke="#E5E7EB" stroke-width="6"/>
+      <path d="M 0 -22 A 22 22 0 0 1 19 -10" fill="none" stroke="#00B96B" stroke-width="6" stroke-linecap="round"/>
+      <path d="M 19 -10 A 22 22 0 0 1 11 19" fill="none" stroke="#5DDE9C" stroke-width="6" stroke-linecap="round"/>
+      <text y="4" font-family="sans-serif" font-weight="800" font-size="11" fill="#00B96B" text-anchor="middle">98%</text>
+    </g>
+
+    <!-- 右侧 mini 柱图 -->
+    <g transform="translate(10, -58)">
+      <rect x="0" y="34" width="6" height="14" rx="2" fill="#00B96B" opacity="0.4"/>
+      <rect x="10" y="26" width="6" height="22" rx="2" fill="#00B96B" opacity="0.6"/>
+      <rect x="20" y="14" width="6" height="34" rx="2" fill="#00B96B"/>
+      <rect x="30" y="20" width="6" height="28" rx="2" fill="#00B96B" opacity="0.7"/>
+      <rect x="40" y="8" width="6" height="40" rx="2" fill="url(#rp-chart-bar)"/>
+    </g>
+
+    <!-- 底部柱图 (大) -->
+    <g transform="translate(-50, 8)">
+      <!-- 坐标网格 -->
+      <line x1="0" y1="76" x2="100" y2="76" stroke="#E5E7EB" stroke-width="1"/>
+      <line x1="0" y1="56" x2="100" y2="56" stroke="#E5E7EB" stroke-width="1" stroke-dasharray="2 2" opacity="0.6"/>
+      <line x1="0" y1="36" x2="100" y2="36" stroke="#E5E7EB" stroke-width="1" stroke-dasharray="2 2" opacity="0.6"/>
+
+      <!-- 折线 -->
+      <path d="M5 50 L20 38 L35 48 L50 26 L65 32 L80 14 L95 22"
+            stroke="url(#rp-chart-bar)" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <!-- 折线填充 -->
+      <path d="M5 50 L20 38 L35 48 L50 26 L65 32 L80 14 L95 22 L95 76 L5 76 Z"
+            fill="url(#rp-chart-bar)" opacity="0.15"/>
+      <!-- 数据点 -->
+      <g fill="#00B96B">
+        <circle cx="5" cy="50" r="3"/>
+        <circle cx="20" cy="38" r="3"/>
+        <circle cx="35" cy="48" r="3"/>
+        <circle cx="50" cy="26" r="3"/>
+        <circle cx="65" cy="32" r="3"/>
+        <circle cx="80" cy="14" r="3"/>
+        <circle cx="95" cy="22" r="3"/>
+      </g>
+    </g>
+
+    <!-- 底部小标签 -->
+    <rect x="-50" y="92" width="20" height="4" rx="2" fill="#E5E7EB"/>
+    <rect x="-26" y="92" width="20" height="4" rx="2" fill="#E5E7EB"/>
+    <rect x="-2" y="92" width="20" height="4" rx="2" fill="#E5E7EB"/>
+    <rect x="22" y="92" width="20" height="4" rx="2" fill="#E5E7EB"/>
+  </g>
+
+  <!-- 下载箭头 -->
+  <g transform="translate(370, 240)" filter="url(#rp-shadow)">
+    <circle cx="0" cy="0" r="24" fill="url(#rp-chart-bar)"/>
+    <path d="M0 -10 L0 8 M-7 1 L0 9 L7 1" stroke="#FFFFFF" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="-9" y="10" width="18" height="3" rx="1.5" fill="#FFFFFF"/>
+  </g>
+
+  <!-- 漂浮小卡（数据） -->
+  <g transform="translate(70, 200) rotate(-10)" filter="url(#rp-shadow)">
+    <rect x="0" y="0" width="56" height="38" rx="6" fill="#FFFFFF"/>
+    <rect x="6" y="6" width="20" height="3" rx="1.5" fill="#9CA3AF"/>
+    <text x="6" y="26" font-family="Arial Black" font-size="14" font-weight="900" fill="#00B96B">2,560</text>
+    <rect x="40" y="22" width="3" height="6" rx="1" fill="#00B96B" opacity="0.5"/>
+    <rect x="45" y="18" width="3" height="10" rx="1" fill="#00B96B" opacity="0.7"/>
+    <rect x="50" y="14" width="3" height="14" rx="1" fill="#00B96B"/>
+  </g>
+</svg>

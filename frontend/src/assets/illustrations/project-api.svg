@@ -1,0 +1,32 @@
+<svg viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg" fill="none">
+  <defs>
+    <linearGradient id="pi-box" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5DDE9C"/>
+      <stop offset="100%" stop-color="#00B96B"/>
+    </linearGradient>
+    <linearGradient id="pi-globe" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#60A5FA"/>
+      <stop offset="100%" stop-color="#3B82F6"/>
+    </linearGradient>
+  </defs>
+  <!-- 装饰 -->
+  <circle cx="14" cy="22" r="3" fill="#3B82F6" opacity="0.3"/>
+  <circle cx="82" cy="78" r="4" fill="#00B96B" opacity="0.25"/>
+  <!-- 左节点 -->
+  <circle cx="22" cy="48" r="9" fill="url(#pi-box)"/>
+  <text x="22" y="52" font-family="Arial Black" font-weight="900" font-size="10" fill="#FFFFFF" text-anchor="middle">{ }</text>
+  <!-- 右节点 -->
+  <circle cx="74" cy="48" r="9" fill="url(#pi-globe)"/>
+  <circle cx="74" cy="48" r="5" fill="none" stroke="#FFFFFF" stroke-width="1.2"/>
+  <line x1="69" y1="48" x2="79" y2="48" stroke="#FFFFFF" stroke-width="1.2"/>
+  <line x1="74" y1="43" x2="74" y2="53" stroke="#FFFFFF" stroke-width="1.2"/>
+  <!-- 连接线 -->
+  <path d="M31 48 Q48 32 65 48" stroke="#00A05E" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-dasharray="0"/>
+  <path d="M31 48 Q48 64 65 48" stroke="#00A05E" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.5" stroke-dasharray="3 3"/>
+  <!-- 数据包 -->
+  <rect x="42" y="22" width="12" height="8" rx="2" fill="#00B96B"/>
+  <text x="48" y="28" font-family="monospace" font-weight="700" font-size="6" fill="#FFFFFF" text-anchor="middle">API</text>
+  <!-- 装饰星 -->
+  <path d="M48 8 L49 11 L52 12 L49 13 L48 16 L47 13 L44 12 L47 11 Z" fill="#5DDE9C" opacity="0.7"/>
+  <path d="M14 76 L15 78 L17 79 L15 80 L14 82 L13 80 L11 79 L13 78 Z" fill="#5DDE9C" opacity="0.5"/>
+</svg>

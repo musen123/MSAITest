@@ -1,0 +1,43 @@
+{
+  "executions": [
+    {
+      "tasks": [
+        {
+          "type": "Action Space",
+          "subType": "AndroidHomeButton",
+          "status": "finished"
+        },
+        {
+          "type": "Action Space",
+          "subType": "Swipe",
+          "status": "finished",
+          "param": {
+            "direction": "up",
+            "distance": 800
+          }
+        },
+        {
+          "type": "Planning",
+          "subType": "Locate",
+          "param": {
+            "prompt": "Clock应用图标"
+          }
+        },
+        {
+          "type": "Action Space",
+          "subType": "Tap",
+          "status": "finished",
+          "param": {}
+        },
+        {
+          "type": "Action Space",
+          "subType": "Sleep",
+          "status": "finished",
+          "param": {
+            "timeMs": 1500
+          }
+        }
+      ]
+    }
+  ]
+}

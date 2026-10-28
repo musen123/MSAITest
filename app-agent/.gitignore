@@ -1,0 +1,14 @@
+# agent.config.json 含明文 token，禁止入库（配置模板见 agent.config.example.json）
+agent.config.json
+node_modules/
+dist/
+# Midscene 运行产物（报告 HTML 含设备截图，禁入库——上传走平台鉴权端点）
+midscene_run/
+# 随包分发的 SDK 二进制（adb/hdc，~40MB，重下即可，不污染 git 历史；
+# 拷贝目录到目标机时随盘带、git clone 的新副本跑 scripts/populate-sdks.mjs 填充）
+# 保留目录 README 与结构说明入库
+vendor/platform-tools/*/adb
+vendor/platform-tools/*/adb.exe
+vendor/platform-tools/*/*.dll
+vendor/hdc/*/hdc
+vendor/hdc/*/hdc.exe

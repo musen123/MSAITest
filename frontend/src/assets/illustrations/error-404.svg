@@ -1,0 +1,87 @@
+<svg viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg" fill="none">
+  <defs>
+    <linearGradient id="e4-num" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5DDE9C"/>
+      <stop offset="100%" stop-color="#00B96B"/>
+    </linearGradient>
+    <linearGradient id="e4-planet" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#5DDE9C"/>
+      <stop offset="100%" stop-color="#008550"/>
+    </linearGradient>
+    <radialGradient id="e4-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#00B96B" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#00B96B" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="e4-shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="5"/>
+      <feOffset dx="0" dy="4"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.18"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- 辉光 -->
+  <circle cx="240" cy="180" r="200" fill="url(#e4-glow)"/>
+
+  <!-- 远处小星星 -->
+  <g fill="#5DDE9C">
+    <circle cx="60" cy="80" r="2" opacity="0.7"/>
+    <circle cx="100" cy="50" r="1.5" opacity="0.6"/>
+    <circle cx="420" cy="70" r="2" opacity="0.7"/>
+    <circle cx="380" cy="120" r="1.5" opacity="0.5"/>
+    <circle cx="80" cy="280" r="2" opacity="0.7"/>
+    <circle cx="410" cy="290" r="1.5" opacity="0.6"/>
+    <circle cx="40" cy="180" r="2" opacity="0.6"/>
+  </g>
+  <g fill="#5DDE9C" opacity="0.7">
+    <path d="M120 130 L122 137 L129 139 L122 141 L120 148 L118 141 L111 139 L118 137 Z"/>
+    <path d="M360 220 L362 226 L368 228 L362 230 L360 236 L358 230 L352 228 L358 226 Z"/>
+    <path d="M380 30 L382 36 L388 38 L382 40 L380 46 L378 40 L372 38 L378 36 Z"/>
+  </g>
+
+  <!-- 落地阴影 -->
+  <ellipse cx="240" cy="320" rx="150" ry="14" fill="#00B96B" opacity="0.1"/>
+
+  <!-- "4" 字 (左) -->
+  <text x="100" y="240" font-family="Arial Black, Arial" font-weight="900" font-size="180" fill="url(#e4-num)" opacity="0.92" filter="url(#e4-shadow)">4</text>
+
+  <!-- "4" 字 (右) -->
+  <text x="320" y="240" font-family="Arial Black, Arial" font-weight="900" font-size="180" fill="url(#e4-num)" opacity="0.92" filter="url(#e4-shadow)">4</text>
+
+  <!-- 中央漂浮小星球 (代替 0) -->
+  <g transform="translate(240, 175)" filter="url(#e4-shadow)">
+    <!-- 星球环 (后) -->
+    <ellipse cx="0" cy="0" rx="68" ry="14" fill="none" stroke="#00B96B" stroke-width="3" opacity="0.45" transform="rotate(-20)"/>
+    <!-- 星球本体 -->
+    <circle cx="0" cy="0" r="50" fill="url(#e4-planet)"/>
+    <!-- 星球高光 -->
+    <ellipse cx="-15" cy="-18" rx="18" ry="10" fill="#FFFFFF" opacity="0.35" transform="rotate(-25)"/>
+    <!-- 星球表面 -->
+    <ellipse cx="10" cy="12" rx="14" ry="6" fill="#008550" opacity="0.4"/>
+    <ellipse cx="-12" cy="18" rx="10" ry="4" fill="#008550" opacity="0.4"/>
+    <ellipse cx="22" cy="-10" rx="8" ry="3" fill="#008550" opacity="0.5"/>
+    <!-- 星球环 (前) -->
+    <path d="M -68 0 A 68 14 0 0 0 68 0" fill="none" stroke="#00B96B" stroke-width="3" opacity="0.7" transform="rotate(-20)"/>
+
+    <!-- 表情：迷茫脸 -->
+    <circle cx="-13" cy="-4" r="3" fill="#FFFFFF"/>
+    <circle cx="13" cy="-4" r="3" fill="#FFFFFF"/>
+    <circle cx="-13" cy="-4" r="1.5" fill="#1F2937"/>
+    <circle cx="13" cy="-4" r="1.5" fill="#1F2937"/>
+    <path d="M -12 14 Q 0 8 12 14" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+  </g>
+
+  <!-- 漂浮小飞船 -->
+  <g transform="translate(340, 100) rotate(30)" filter="url(#e4-shadow)">
+    <ellipse cx="0" cy="0" rx="18" ry="8" fill="#FFFFFF" stroke="#00B96B" stroke-width="2"/>
+    <ellipse cx="0" cy="-3" rx="8" ry="5" fill="#00B96B"/>
+    <circle cx="0" cy="-3" r="3" fill="#E8FBF1"/>
+    <!-- 尾焰 -->
+    <path d="M-18 0 L-30 -3 L-26 0 L-30 3 Z" fill="#5DDE9C" opacity="0.8"/>
+  </g>
+
+  <!-- "迷路了" 提示 SVG 内 -->
+  <g transform="translate(240, 290)">
+    <text font-family="sans-serif" font-size="14" font-weight="600" fill="#00B96B" text-anchor="middle" opacity="0.8">Oops · Page Lost in Space</text>
+  </g>
+</svg>

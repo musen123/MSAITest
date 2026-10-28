@@ -1,0 +1,86 @@
+<svg viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg" fill="none">
+  <defs>
+    <linearGradient id="ed-box-top" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5DDE9C"/>
+      <stop offset="100%" stop-color="#00B96B"/>
+    </linearGradient>
+    <linearGradient id="ed-box-front" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#C9F4DD"/>
+      <stop offset="100%" stop-color="#94E9BD"/>
+    </linearGradient>
+    <linearGradient id="ed-paper" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#F3F4F6"/>
+    </linearGradient>
+    <filter id="ed-shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="4"/>
+      <feOffset dx="0" dy="3"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.15"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- 装饰 -->
+  <circle cx="80" cy="60" r="6" fill="#00B96B" opacity="0.25"/>
+  <circle cx="400" cy="80" r="8" fill="#00B96B" opacity="0.2"/>
+  <circle cx="60" cy="280" r="5" fill="#00B96B" opacity="0.3"/>
+  <circle cx="420" cy="270" r="7" fill="#00B96B" opacity="0.22"/>
+  <g fill="#5DDE9C" opacity="0.6">
+    <path d="M120 90 L122 96 L128 98 L122 100 L120 106 L118 100 L112 98 L118 96 Z"/>
+    <path d="M380 130 L382 136 L388 138 L382 140 L380 146 L378 140 L372 138 L378 136 Z"/>
+  </g>
+
+  <!-- 落地阴影 -->
+  <ellipse cx="240" cy="310" rx="140" ry="14" fill="#00B96B" opacity="0.1"/>
+
+  <!-- 漂浮的纸张 (背景) -->
+  <g transform="translate(140, 130) rotate(-8)" filter="url(#ed-shadow)" opacity="0.85">
+    <rect x="0" y="0" width="80" height="100" rx="6" fill="url(#ed-paper)"/>
+    <rect x="10" y="14" width="40" height="4" rx="2" fill="#D1D5DB"/>
+    <rect x="10" y="24" width="60" height="3" rx="1.5" fill="#E5E7EB"/>
+    <rect x="10" y="32" width="50" height="3" rx="1.5" fill="#E5E7EB"/>
+  </g>
+  <g transform="translate(260, 125) rotate(6)" filter="url(#ed-shadow)" opacity="0.85">
+    <rect x="0" y="0" width="80" height="100" rx="6" fill="url(#ed-paper)"/>
+    <rect x="10" y="14" width="50" height="4" rx="2" fill="#D1D5DB"/>
+    <rect x="10" y="24" width="60" height="3" rx="1.5" fill="#E5E7EB"/>
+    <rect x="10" y="32" width="40" height="3" rx="1.5" fill="#E5E7EB"/>
+  </g>
+
+  <!-- ========== 中央纸箱 ========== -->
+  <g transform="translate(240, 240)" filter="url(#ed-shadow)">
+    <!-- 箱体 -->
+    <path d="M-80 -40 L80 -40 L70 80 L-70 80 Z" fill="url(#ed-box-front)"/>
+    <!-- 顶面（菱形开口） -->
+    <path d="M-80 -40 L-90 -50 L90 -50 L80 -40 Z" fill="url(#ed-box-top)"/>
+    <!-- 内部阴影 -->
+    <path d="M-80 -40 L80 -40 L75 -20 L-75 -20 Z" fill="#1F2937" opacity="0.15"/>
+    <!-- 箱子腰带 -->
+    <rect x="-72" y="20" width="144" height="14" fill="#00A05E" opacity="0.4"/>
+    <!-- 中间纵向胶带 -->
+    <rect x="-8" y="-40" width="16" height="120" fill="#00A05E" opacity="0.35"/>
+    <!-- 高光 -->
+    <path d="M-70 -38 L-65 -38 L-55 78 L-60 78 Z" fill="#FFFFFF" opacity="0.3"/>
+  </g>
+
+  <!-- ========== 中央放大镜 ========== -->
+  <g transform="translate(240, 180)" filter="url(#ed-shadow)">
+    <!-- 镜柄 -->
+    <line x1="22" y1="22" x2="44" y2="44" stroke="#00A05E" stroke-width="8" stroke-linecap="round"/>
+    <!-- 镜框 -->
+    <circle cx="0" cy="0" r="32" fill="#FFFFFF" stroke="#00B96B" stroke-width="5"/>
+    <!-- 镜片反光 -->
+    <circle cx="0" cy="0" r="28" fill="#E8FBF1" opacity="0.7"/>
+    <path d="M-18 -8 Q-22 -22 -10 -22" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.9"/>
+    <!-- 问号 -->
+    <text x="0" y="8" font-family="Arial Black, Arial" font-weight="900" font-size="32" fill="#00B96B" text-anchor="middle" opacity="0.7">?</text>
+  </g>
+
+  <!-- 漂浮羽毛/灰尘 -->
+  <g fill="#00B96B" opacity="0.4">
+    <circle cx="160" cy="200" r="3"/>
+    <circle cx="320" cy="200" r="3"/>
+    <circle cx="200" cy="155" r="2"/>
+    <circle cx="280" cy="155" r="2"/>
+  </g>
+</svg>

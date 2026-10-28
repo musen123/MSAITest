@@ -1,0 +1,161 @@
+<svg viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg" fill="none">
+  <defs>
+    <linearGradient id="ai-bot-body" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5DDE9C"/>
+      <stop offset="100%" stop-color="#00B96B"/>
+    </linearGradient>
+    <linearGradient id="ai-bot-head" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#94E9BD"/>
+      <stop offset="100%" stop-color="#00B96B"/>
+    </linearGradient>
+    <linearGradient id="ai-bubble" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#E8FBF1"/>
+    </linearGradient>
+    <radialGradient id="ai-eye" cx="0.3" cy="0.3" r="0.7">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="60%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#E5E7EB"/>
+    </radialGradient>
+    <radialGradient id="ai-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#00B96B" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#00B96B" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="ai-shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="6"/>
+      <feOffset dx="0" dy="5"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.2"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- 辉光 -->
+  <circle cx="240" cy="200" r="200" fill="url(#ai-glow)"/>
+
+  <!-- 装饰 -->
+  <circle cx="80" cy="70" r="6" fill="#00B96B" opacity="0.3"/>
+  <circle cx="400" cy="90" r="8" fill="#00B96B" opacity="0.22"/>
+  <circle cx="60" cy="280" r="5" fill="#00B96B" opacity="0.3"/>
+  <circle cx="420" cy="290" r="7" fill="#00B96B" opacity="0.25"/>
+
+  <!-- 思维点阵 (神经网络感) -->
+  <g fill="#00B96B" opacity="0.5">
+    <circle cx="100" cy="120" r="3"/>
+    <circle cx="130" cy="80" r="3"/>
+    <circle cx="160" cy="110" r="3"/>
+    <circle cx="350" cy="120" r="3"/>
+    <circle cx="380" cy="90" r="3"/>
+    <circle cx="410" cy="130" r="3"/>
+  </g>
+  <g stroke="#00B96B" stroke-width="1.2" opacity="0.3" fill="none">
+    <line x1="100" y1="120" x2="130" y2="80"/>
+    <line x1="130" y1="80" x2="160" y2="110"/>
+    <line x1="100" y1="120" x2="160" y2="110"/>
+    <line x1="350" y1="120" x2="380" y2="90"/>
+    <line x1="380" y1="90" x2="410" y2="130"/>
+    <line x1="350" y1="120" x2="410" y2="130"/>
+  </g>
+
+  <!-- 落地阴影 -->
+  <ellipse cx="240" cy="320" rx="120" ry="12" fill="#00B96B" opacity="0.12"/>
+
+  <!-- 思维气泡 (左) -->
+  <g transform="translate(95, 170)" filter="url(#ai-shadow)">
+    <ellipse cx="0" cy="0" rx="32" ry="22" fill="url(#ai-bubble)" stroke="#00B96B" stroke-opacity="0.3" stroke-width="1.5"/>
+    <circle cx="26" cy="18" r="6" fill="url(#ai-bubble)" stroke="#00B96B" stroke-opacity="0.3" stroke-width="1.5"/>
+    <circle cx="32" cy="28" r="3" fill="url(#ai-bubble)" stroke="#00B96B" stroke-opacity="0.3" stroke-width="1.5"/>
+    <!-- 内容 -->
+    <text x="0" y="6" font-family="Arial" font-weight="900" font-size="22" fill="#00B96B" text-anchor="middle" opacity="0.7">{ }</text>
+  </g>
+
+  <!-- 思维气泡 (右) -->
+  <g transform="translate(385, 170)" filter="url(#ai-shadow)">
+    <ellipse cx="0" cy="0" rx="32" ry="22" fill="url(#ai-bubble)" stroke="#00B96B" stroke-opacity="0.3" stroke-width="1.5"/>
+    <circle cx="-26" cy="18" r="6" fill="url(#ai-bubble)" stroke="#00B96B" stroke-opacity="0.3" stroke-width="1.5"/>
+    <circle cx="-32" cy="28" r="3" fill="url(#ai-bubble)" stroke="#00B96B" stroke-opacity="0.3" stroke-width="1.5"/>
+    <!-- 内容（柱图） -->
+    <g transform="translate(-12, -6)">
+      <rect x="0" y="6" width="4" height="6" rx="1" fill="#00B96B" opacity="0.6"/>
+      <rect x="7" y="2" width="4" height="10" rx="1" fill="#00B96B" opacity="0.8"/>
+      <rect x="14" y="-2" width="4" height="14" rx="1" fill="#00B96B"/>
+      <rect x="21" y="0" width="4" height="12" rx="1" fill="#5DDE9C"/>
+    </g>
+  </g>
+
+  <!-- ============ 中央 AI 机器人 ============ -->
+  <g transform="translate(240, 200)" filter="url(#ai-shadow)">
+    <!-- 天线 -->
+    <line x1="0" y1="-78" x2="0" y2="-92" stroke="#00A05E" stroke-width="3"/>
+    <circle cx="0" cy="-94" r="6" fill="#10B981"/>
+    <circle cx="0" cy="-94" r="3" fill="#FFFFFF" opacity="0.8"/>
+    <!-- 顶部环 -->
+    <ellipse cx="0" cy="-94" rx="14" ry="4" fill="none" stroke="#00B96B" stroke-width="2" opacity="0.5"/>
+
+    <!-- 身体 -->
+    <rect x="-32" y="-10" width="64" height="80" rx="14" fill="url(#ai-bot-body)"/>
+    <!-- 身体高光 -->
+    <rect x="-28" y="-6" width="6" height="60" rx="3" fill="#FFFFFF" opacity="0.3"/>
+
+    <!-- 屏幕（胸前显示器） -->
+    <rect x="-22" y="10" width="44" height="32" rx="6" fill="#1F2937"/>
+    <!-- 屏幕波形 -->
+    <g stroke="#5DDE9C" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.9">
+      <path d="M-16 26 L-10 22 L-4 30 L2 18 L8 28 L16 24"/>
+    </g>
+    <!-- 屏幕信号点 -->
+    <circle cx="-14" cy="38" r="1.5" fill="#10B981"/>
+    <circle cx="-6" cy="38" r="1.5" fill="#10B981" opacity="0.6"/>
+    <circle cx="2" cy="38" r="1.5" fill="#10B981" opacity="0.3"/>
+
+    <!-- 头 -->
+    <ellipse cx="0" cy="-40" rx="44" ry="40" fill="url(#ai-bot-head)"/>
+    <!-- 头部高光 -->
+    <ellipse cx="-22" cy="-58" rx="14" ry="10" fill="#FFFFFF" opacity="0.35"/>
+
+    <!-- 眼睛 (大眼) -->
+    <g>
+      <circle cx="-15" cy="-42" r="11" fill="#1F2937"/>
+      <circle cx="15" cy="-42" r="11" fill="#1F2937"/>
+      <!-- 眼神光 -->
+      <circle cx="-12" cy="-45" r="4" fill="#FFFFFF"/>
+      <circle cx="18" cy="-45" r="4" fill="#FFFFFF"/>
+      <circle cx="-18" cy="-39" r="2" fill="#FFFFFF" opacity="0.7"/>
+      <circle cx="12" cy="-39" r="2" fill="#FFFFFF" opacity="0.7"/>
+    </g>
+
+    <!-- 嘴/思考点 -->
+    <g transform="translate(0, -22)">
+      <circle cx="-8" cy="0" r="2" fill="#FFFFFF" opacity="0.8"/>
+      <circle cx="0" cy="0" r="2" fill="#FFFFFF" opacity="0.8"/>
+      <circle cx="8" cy="0" r="2" fill="#FFFFFF" opacity="0.8"/>
+    </g>
+
+    <!-- 脸颊腮红 -->
+    <ellipse cx="-30" cy="-30" rx="6" ry="4" fill="#FBBF24" opacity="0.5"/>
+    <ellipse cx="30" cy="-30" rx="6" ry="4" fill="#FBBF24" opacity="0.5"/>
+
+    <!-- 耳侧 -->
+    <rect x="-50" y="-46" width="6" height="14" rx="3" fill="url(#ai-bot-body)"/>
+    <rect x="44" y="-46" width="6" height="14" rx="3" fill="url(#ai-bot-body)"/>
+
+    <!-- 手臂 -->
+    <g>
+      <rect x="-44" y="2" width="14" height="32" rx="7" fill="url(#ai-bot-body)"/>
+      <circle cx="-37" cy="38" r="9" fill="url(#ai-bot-head)"/>
+    </g>
+    <g>
+      <rect x="30" y="2" width="14" height="32" rx="7" fill="url(#ai-bot-body)"/>
+      <circle cx="37" cy="38" r="9" fill="url(#ai-bot-head)"/>
+    </g>
+
+    <!-- 底座 -->
+    <ellipse cx="0" cy="74" rx="40" ry="6" fill="#008550"/>
+  </g>
+
+  <!-- 闪烁星 -->
+  <g fill="#5DDE9C" opacity="0.7">
+    <path d="M150 90 L152 96 L158 98 L152 100 L150 106 L148 100 L142 98 L148 96 Z"/>
+    <path d="M330 90 L332 96 L338 98 L332 100 L330 106 L328 100 L322 98 L328 96 Z"/>
+    <path d="M240 70 L242 76 L248 78 L242 80 L240 86 L238 80 L232 78 L238 76 Z"/>
+  </g>
+</svg>

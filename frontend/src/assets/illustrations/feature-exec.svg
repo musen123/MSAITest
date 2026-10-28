@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <defs>
+    <linearGradient id="execBg" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#E8FBF1"/>
+      <stop offset="1" stop-color="#C9F4DD"/>
+    </linearGradient>
+  </defs>
+  <rect width="32" height="32" rx="8" fill="url(#execBg)"/>
+  <!-- 循环箭头 -->
+  <path d="M16 7 A9 9 0 1 1 7 16" stroke="#00B96B" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+  <path d="M16 7 L11 6 L13 11 Z" fill="#00B96B"/>
+  <path d="M16 25 A9 9 0 1 1 25 16" stroke="#00A05E" stroke-width="2.4" stroke-linecap="round" fill="none" opacity="0.45"/>
+  <path d="M16 25 L21 26 L19 21 Z" fill="#00A05E" opacity="0.45"/>
+  <!-- 中心播放 -->
+  <path d="M13 13 L20 16 L13 19 Z" fill="#00B96B"/>
+</svg>

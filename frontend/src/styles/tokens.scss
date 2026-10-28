@@ -1,0 +1,359 @@
+/**
+ * 设计 Token - AutoTest Platform 视觉系统
+ *
+ * 所有组件通过 CSS 变量引用，便于未来主题切换
+ * 命名约定参考 Tailwind / Linear / Vercel
+ */
+
+:root {
+  /* ===========================
+   * 🟢 品牌色 Brand
+   * ========================= */
+  --brand-50:  #E8FBF1;
+  --brand-100: #C9F4DD;
+  --brand-200: #94E9BD;
+  --brand-300: #5DDE9C;
+  --brand-400: #2DCC7E;
+  --brand-500: #00B96B;  /* 主色 */
+  --brand-600: #00A05E;
+  --brand-700: #008550;
+  --brand-800: #006B40;
+  --brand-900: #00552F;
+
+  --brand-glow-strong: rgba(0, 185, 107, 0.25);
+  --brand-glow-soft:   rgba(0, 185, 107, 0.08);
+  --brand-glow-faint:  rgba(0, 185, 107, 0.04);
+
+  /* ===========================
+   * 🎨 语义色 Semantic
+   * ========================= */
+  --color-success-50:  #D1FAE5;
+  --color-success-500: #10B981;
+  --color-success-600: #059669;
+
+  --color-warning-50:  #FEF3C7;
+  --color-warning-500: #F59E0B;
+  --color-warning-600: #D97706;
+
+  --color-danger-50:   #FEE2E2;
+  --color-danger-500:  #EF4444;
+  --color-danger-600:  #DC2626;
+
+  --color-info-50:     #DBEAFE;
+  --color-info-500:    #3B82F6;
+  --color-info-600:    #2563EB;
+
+  --color-purple-50:   #EDE9FE;
+  --color-purple-500:  #8B5CF6;
+  --color-purple-600:  #7C3AED;
+
+  --color-cyan-50:     #CFFAFE;
+  --color-cyan-500:    #06B6D4;
+  --color-cyan-600:    #0891B2;
+
+  --color-pink-50:     #FCE7F3;
+  --color-pink-500:    #EC4899;
+  --color-pink-600:    #DB2777;
+
+  --color-orange-50:   #FED7AA;
+  --color-orange-500:  #F97316;
+  --color-orange-600:  #EA580C;
+
+  /* ===========================
+   * ⚫️ 中性色 Neutral
+   * ========================= */
+  --gray-50:  #F9FAFB;
+  --gray-100: #F3F4F6;
+  --gray-200: #EEF1F4;
+  --gray-300: #D1D5DB;
+  --gray-400: #9CA3AF;
+  --gray-500: #6B7280;
+  --gray-600: #4B5563;
+  --gray-700: #374151;
+  --gray-800: #1F2937;
+  --gray-900: #111827;
+
+  /* ===========================
+   * 📝 文字 Text
+   * ========================= */
+  --text-primary:     #1F2937;
+  --text-regular:     #374151;
+  --text-secondary:   #6B7280;
+  --text-placeholder: #9CA3AF;
+  --text-disabled:    #D1D5DB;
+  --text-inverse:     #FFFFFF;
+  --text-link:        var(--brand-500);
+
+  /* ===========================
+   * 🖼 背景 Background
+   * ========================= */
+  --bg-page:    #F7F9FB;
+  --bg-card:    #FFFFFF;
+  --bg-sidebar: #FFFFFF;
+  --bg-header:  #FFFFFF;
+  --bg-hover:   #F9FAFB;
+  --bg-active:  var(--brand-50);
+  --bg-mask:    rgba(0, 0, 0, 0.45);
+
+  /* 页面辉光（极淡品牌色径向） */
+  --bg-glow: radial-gradient(
+    circle at 0% 0%, rgba(0, 185, 107, 0.05), transparent 50%
+  ), radial-gradient(
+    circle at 100% 100%, rgba(0, 185, 107, 0.03), transparent 50%
+  );
+
+  /* ===========================
+   * 🟫 边框 Border
+   * ========================= */
+  --border-base:    #EEF1F4;
+  --border-light:   #F3F4F6;
+  --border-strong:  #D1D5DB;
+  --border-brand:   var(--brand-500);
+
+  /* ===========================
+   * 📐 形状 Radius
+   * ========================= */
+  --radius-xs:   4px;
+  --radius-sm:   6px;
+  --radius-md:   8px;   /* 默认 */
+  --radius-lg:   12px;  /* 卡片 */
+  --radius-xl:   16px;  /* 大卡片 */
+  --radius-2xl:  20px;
+  --radius-full: 9999px;
+
+  /* ===========================
+   * 🌑 阴影 Shadow
+   * ========================= */
+  --shadow-xs:    0 1px 2px rgba(16, 24, 40, 0.04);
+  --shadow-sm:    0 1px 2px rgba(16, 24, 40, 0.04), 0 1px 3px rgba(16, 24, 40, 0.06);
+  --shadow-md:    0 4px 8px rgba(16, 24, 40, 0.04), 0 2px 6px rgba(16, 24, 40, 0.06);
+  --shadow-lg:    0 8px 24px rgba(16, 24, 40, 0.08);
+  --shadow-xl:    0 20px 48px rgba(16, 24, 40, 0.12);
+  --shadow-2xl:   0 24px 64px rgba(16, 24, 40, 0.16);
+  --shadow-card:  var(--shadow-sm);
+  --shadow-hover: var(--shadow-lg);
+  --shadow-brand: 0 4px 12px var(--brand-glow-strong);
+  --shadow-inner: inset 0 2px 4px rgba(16, 24, 40, 0.04);
+
+  /* 登录主卡专用柔阴影 */
+  --shadow-soft-brand: 0 20px 60px rgba(0, 185, 107, 0.08);
+
+  /* ===========================
+   * 📏 间距 Spacing (4px 基准)
+   * ========================= */
+  --space-0: 0;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-7: 28px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+
+  /* ===========================
+   * 🔤 排版 Typography
+   * ========================= */
+  --font-sans: -apple-system, BlinkMacSystemFont, "PingFang SC",
+               "HarmonyOS Sans SC", "Microsoft YaHei",
+               "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "JetBrains Mono", "Fira Code", "SF Mono",
+               Menlo, Consolas, "Liberation Mono", monospace;
+
+  --font-size-xs:   12px;
+  --font-size-sm:   13px;
+  --font-size-base: 14px;
+  --font-size-md:   15px;
+  --font-size-lg:   16px;
+  --font-size-xl:   18px;
+  --font-size-2xl:  20px;
+  --font-size-3xl:  24px;
+  --font-size-4xl:  28px;
+  --font-size-5xl:  32px;
+  --font-size-6xl:  40px;
+  --font-size-7xl:  48px;
+
+  --font-weight-regular:  400;
+  --font-weight-medium:   500;
+  --font-weight-semibold: 600;
+  --font-weight-bold:     700;
+
+  --line-height-tight:   1.25;
+  --line-height-snug:    1.375;
+  --line-height-normal:  1.5;
+  --line-height-relaxed: 1.625;
+  --line-height-loose:   2;
+
+  /* ===========================
+   * 🧱 布局 Layout
+   * ========================= */
+  --layout-sidebar-w:        200px;
+  --layout-sidebar-collapse: 64px;
+  --layout-header-h:         56px;
+  --layout-content-pad:      24px;
+  --layout-card-gap:         16px;
+
+  /* ===========================
+   * 🎬 过渡 Transition
+   * ========================= */
+  --ease-out:  cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-in:   cubic-bezier(0.4, 0, 1, 1);
+  --ease-snap: cubic-bezier(0.32, 0.72, 0, 1);
+
+  --duration-fast:   150ms;
+  --duration-normal: 250ms;
+  --duration-slow:   400ms;
+
+  --transition-base:  all var(--duration-normal) var(--ease-out);
+  --transition-fast:  all var(--duration-fast)   var(--ease-out);
+  --transition-snap:  all var(--duration-fast)   var(--ease-snap);
+
+  /* ===========================
+   * 🪟 Z-Index 层级
+   * ========================= */
+  --z-base:         1;
+  --z-dropdown:     1000;
+  --z-sticky:       1020;
+  --z-fixed:        1030;
+  --z-mask:         2000;
+  --z-modal:        2001;
+  --z-drawer:       2010;
+  --z-popover:      2050;
+  --z-notification: 3000;
+  --z-tooltip:      4000;
+  --z-max:          9999;
+}
+
+/* ==============================================================
+ * 🌙 深色主题 Dark Theme
+ *
+ * 通过 [data-theme='dark'] 选择器覆盖所有颜色相关变量
+ * 间距、排版、形状、布局、z-index 等不随主题变化，无需覆盖
+ * ============================================================== */
+
+[data-theme='dark'] {
+  /* ===========================
+   * 🟢 品牌色 Brand（深色模式下提亮浅色阶）
+   * ========================= */
+  --brand-50:  #0A2E1C;
+  --brand-100: #0F3D27;
+  --brand-200: #14532D;
+  --brand-300: #1A6B3A;
+  --brand-400: #22884D;
+  --brand-500: #2DD478;  /* 深色主色，比浅色稍亮 */
+  --brand-600: #34D883;
+  --brand-700: #4ADE8E;
+  --brand-800: #6EE7A8;
+  --brand-900: #A7F3C4;
+
+  --brand-glow-strong: rgba(45, 212, 120, 0.30);
+  --brand-glow-soft:   rgba(45, 212, 120, 0.10);
+  --brand-glow-faint:  rgba(45, 212, 120, 0.05);
+
+  /* ===========================
+   * 🎨 语义色 Semantic（深色底需要降低亮度的 50 阶）
+   * ========================= */
+  --color-success-50:  #052E16;
+  --color-success-500: #34D399;
+  --color-success-600: #6EE7B7;
+
+  --color-warning-50:  #2A1F0A;
+  --color-warning-500: #FBBF24;
+  --color-warning-600: #FCD34D;
+
+  --color-danger-50:   #2A0F0F;
+  --color-danger-500:  #F87171;
+  --color-danger-600:  #FCA5A5;
+
+  --color-info-50:     #0F1F3A;
+  --color-info-500:    #60A5FA;
+  --color-info-600:    #93C5FD;
+
+  --color-purple-50:   #1E1338;
+  --color-purple-500:  #A78BFA;
+  --color-purple-600:  #C4B5FD;
+
+  --color-cyan-50:     #0A2530;
+  --color-cyan-500:    #22D3EE;
+  --color-cyan-600:    #67E8F9;
+
+  --color-pink-50:     #2A1020;
+  --color-pink-500:    #F472B6;
+  --color-pink-600:    #F9A8D4;
+
+  --color-orange-50:   #2A1A0A;
+  --color-orange-500:  #FB923C;
+  --color-orange-600:  #FDBA74;
+
+  /* ===========================
+   * ⚫️ 中性色 Neutral（反转：深底浅字）
+   * ========================= */
+  --gray-50:  #1A1D23;
+  --gray-100: #22252C;
+  --gray-200: #2A2E36;
+  --gray-300: #3A3F4B;
+  --gray-400: #525868;
+  --gray-500: #6B7280;
+  --gray-600: #9CA3AF;
+  --gray-700: #B0B7C3;
+  --gray-800: #D1D5DB;
+  --gray-900: #F3F4F6;
+
+  /* ===========================
+   * 📝 文字 Text
+   * ========================= */
+  --text-primary:     #F1F3F5;
+  --text-regular:     #C9CDD4;
+  --text-secondary:   #8B929E;
+  --text-placeholder: #5C6370;
+  --text-disabled:    #3A3F4B;
+  --text-inverse:     #111827;
+  --text-link:        var(--brand-500);
+
+  /* ===========================
+   * 🖼 背景 Background
+   * ========================= */
+  --bg-page:    #12141A;
+  --bg-card:    #1A1D23;
+  --bg-sidebar: #16181E;
+  --bg-header:  #16181E;
+  --bg-hover:   #22252C;
+  --bg-active:  var(--brand-50);
+  --bg-mask:    rgba(0, 0, 0, 0.65);
+
+  /* 页面辉光（深色下更微妙的绿色辉光） */
+  --bg-glow: radial-gradient(
+    circle at 0% 0%, rgba(45, 212, 120, 0.06), transparent 50%
+  ), radial-gradient(
+    circle at 100% 100%, rgba(45, 212, 120, 0.03), transparent 50%
+  );
+
+  /* ===========================
+   * 🟫 边框 Border
+   * ========================= */
+  --border-base:    #2A2E36;
+  --border-light:   #22252C;
+  --border-strong:  #3A3F4B;
+  --border-brand:   var(--brand-500);
+
+  /* ===========================
+   * 🌑 阴影 Shadow（深色下用黑底阴影）
+   * ========================= */
+  --shadow-xs:    0 1px 2px rgba(0, 0, 0, 0.20);
+  --shadow-sm:    0 1px 2px rgba(0, 0, 0, 0.20), 0 1px 3px rgba(0, 0, 0, 0.25);
+  --shadow-md:    0 4px 8px rgba(0, 0, 0, 0.20), 0 2px 6px rgba(0, 0, 0, 0.25);
+  --shadow-lg:    0 8px 24px rgba(0, 0, 0, 0.30);
+  --shadow-xl:    0 20px 48px rgba(0, 0, 0, 0.40);
+  --shadow-2xl:   0 24px 64px rgba(0, 0, 0, 0.50);
+  --shadow-card:  var(--shadow-sm);
+  --shadow-hover: var(--shadow-lg);
+  --shadow-brand: 0 4px 16px var(--brand-glow-strong);
+  --shadow-inner: inset 0 2px 4px rgba(0, 0, 0, 0.20);
+
+  /* 登录主卡专用柔阴影 */
+  --shadow-soft-brand: 0 20px 60px rgba(45, 212, 120, 0.12);
+}

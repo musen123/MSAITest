@@ -1,0 +1,46 @@
+<svg viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg" fill="none">
+  <defs>
+    <linearGradient id="pp-rocket" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FBBF24"/>
+      <stop offset="100%" stop-color="#F97316"/>
+    </linearGradient>
+    <linearGradient id="pp-flame" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F87171"/>
+      <stop offset="100%" stop-color="#EF4444"/>
+    </linearGradient>
+    <linearGradient id="pp-flame2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FCD34D"/>
+      <stop offset="100%" stop-color="#F59E0B"/>
+    </linearGradient>
+  </defs>
+  <!-- 装饰 -->
+  <circle cx="14" cy="20" r="3" fill="#F97316" opacity="0.3"/>
+  <circle cx="82" cy="22" r="2" fill="#FBBF24" opacity="0.5"/>
+  <circle cx="80" cy="78" r="3" fill="#F97316" opacity="0.25"/>
+  <!-- 速度线 -->
+  <g stroke="#FBBF24" stroke-width="2" stroke-linecap="round" opacity="0.5">
+    <line x1="20" y1="36" x2="32" y2="36"/>
+    <line x1="16" y1="48" x2="34" y2="48"/>
+    <line x1="22" y1="60" x2="32" y2="60"/>
+  </g>
+  <!-- 火箭主体 -->
+  <g transform="translate(48, 44)">
+    <!-- 火焰 -->
+    <path d="M-6 28 Q-4 38 0 44 Q4 38 6 28 Z" fill="url(#pp-flame)"/>
+    <path d="M-3 28 Q-2 34 0 38 Q2 34 3 28 Z" fill="url(#pp-flame2)"/>
+    <!-- 机身 -->
+    <path d="M-10 -20 Q-10 -28 0 -34 Q10 -28 10 -20 V20 L0 28 L-10 20 Z" fill="url(#pp-rocket)"/>
+    <!-- 窗户 -->
+    <circle cx="0" cy="-10" r="6" fill="#FFFFFF"/>
+    <circle cx="0" cy="-10" r="4" fill="#3B82F6"/>
+    <circle cx="-1.5" cy="-11.5" r="1.5" fill="#FFFFFF"/>
+    <!-- 翅膀 -->
+    <path d="M-10 4 L-20 22 L-10 18 Z" fill="#F97316"/>
+    <path d="M10 4 L20 22 L10 18 Z" fill="#F97316"/>
+    <!-- 高光 -->
+    <path d="M-6 -16 L-6 16" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+  </g>
+  <!-- 星星 -->
+  <path d="M18 70 L19 73 L22 74 L19 75 L18 78 L17 75 L14 74 L17 73 Z" fill="#FBBF24" opacity="0.7"/>
+  <path d="M78 32 L79 35 L82 36 L79 37 L78 40 L77 37 L74 36 L77 35 Z" fill="#FBBF24" opacity="0.6"/>
+</svg>

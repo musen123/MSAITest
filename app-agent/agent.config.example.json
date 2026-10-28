@@ -1,0 +1,6 @@
+{
+  "PLATFORM_WS_URL": "wss://your-platform.example.com/api/v1/app/agents/ws",
+  "AGENT_TOKEN": "replace-with-plaintext-token-from-POST-/api/v1/app/agents",
+  "HOST_FINGERPRINT": "",
+  "ADB_PATH": "adb"
+}

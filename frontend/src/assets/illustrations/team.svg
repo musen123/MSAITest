@@ -1,0 +1,144 @@
+<svg viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg" fill="none">
+  <defs>
+    <linearGradient id="tm-card-1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#E8FBF1"/>
+    </linearGradient>
+    <linearGradient id="tm-avatar-1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5DDE9C"/>
+      <stop offset="100%" stop-color="#00B96B"/>
+    </linearGradient>
+    <linearGradient id="tm-avatar-2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FBBF24"/>
+      <stop offset="100%" stop-color="#F59E0B"/>
+    </linearGradient>
+    <linearGradient id="tm-avatar-3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#A78BFA"/>
+      <stop offset="100%" stop-color="#8B5CF6"/>
+    </linearGradient>
+    <linearGradient id="tm-avatar-4" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#60A5FA"/>
+      <stop offset="100%" stop-color="#3B82F6"/>
+    </linearGradient>
+    <radialGradient id="tm-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#00B96B" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#00B96B" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="tm-shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="5"/>
+      <feOffset dx="0" dy="4"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.2"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- 辉光 -->
+  <circle cx="240" cy="180" r="200" fill="url(#tm-glow)"/>
+
+  <!-- 装饰 -->
+  <circle cx="70" cy="80" r="6" fill="#00B96B" opacity="0.3"/>
+  <circle cx="410" cy="90" r="8" fill="#00B96B" opacity="0.22"/>
+  <circle cx="60" cy="290" r="5" fill="#00B96B" opacity="0.3"/>
+  <circle cx="420" cy="280" r="7" fill="#00B96B" opacity="0.25"/>
+  <g fill="#5DDE9C" opacity="0.7">
+    <path d="M120 50 L122 56 L128 58 L122 60 L120 66 L118 60 L112 58 L118 56 Z"/>
+    <path d="M380 220 L382 226 L388 228 L382 230 L380 236 L378 230 L372 228 L378 226 Z"/>
+  </g>
+
+  <!-- 落地阴影 -->
+  <ellipse cx="240" cy="320" rx="160" ry="14" fill="#00B96B" opacity="0.1"/>
+
+  <!-- 连接线 (从中央向各卡片) -->
+  <g stroke="#00B96B" stroke-width="2" stroke-dasharray="3 4" fill="none" opacity="0.4">
+    <path d="M240 180 L130 130"/>
+    <path d="M240 180 L350 130"/>
+    <path d="M240 180 L100 250"/>
+    <path d="M240 180 L380 250"/>
+  </g>
+
+  <!-- ============ 中央团队卡 ============ -->
+  <g transform="translate(240, 180)" filter="url(#tm-shadow)">
+    <rect x="-60" y="-44" width="120" height="88" rx="14" fill="#FFFFFF" stroke="#00B96B" stroke-opacity="0.4" stroke-width="2"/>
+    <!-- 头部 -->
+    <rect x="-50" y="-32" width="32" height="6" rx="3" fill="#00B96B"/>
+    <rect x="-50" y="-22" width="50" height="3" rx="1.5" fill="#9CA3AF"/>
+    <!-- 三个头像并排（轻微重叠） -->
+    <g transform="translate(0, 6)">
+      <circle cx="-22" cy="0" r="14" fill="url(#tm-avatar-1)" stroke="#FFFFFF" stroke-width="2"/>
+      <text x="-22" y="4" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle">A</text>
+
+      <circle cx="0" cy="0" r="14" fill="url(#tm-avatar-2)" stroke="#FFFFFF" stroke-width="2"/>
+      <text x="0" y="4" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle">B</text>
+
+      <circle cx="22" cy="0" r="14" fill="url(#tm-avatar-3)" stroke="#FFFFFF" stroke-width="2"/>
+      <text x="22" y="4" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle">C</text>
+
+      <circle cx="44" cy="0" r="14" fill="#F3F4F6" stroke="#FFFFFF" stroke-width="2"/>
+      <text x="44" y="4" font-size="10" font-weight="700" fill="#6B7280" text-anchor="middle">+9</text>
+    </g>
+    <!-- 底部状态 -->
+    <rect x="-50" y="28" width="50" height="3" rx="1.5" fill="#E5E7EB"/>
+    <circle cx="40" cy="30" r="3" fill="#10B981"/>
+  </g>
+
+  <!-- ============ 4 个成员卡 ============ -->
+
+  <!-- 左上 -->
+  <g transform="translate(80, 100) rotate(-6)" filter="url(#tm-shadow)">
+    <rect x="0" y="0" width="100" height="62" rx="12" fill="url(#tm-card-1)" stroke="#00B96B" stroke-opacity="0.3"/>
+    <circle cx="22" cy="22" r="14" fill="url(#tm-avatar-1)"/>
+    <circle cx="20" cy="20" r="4" fill="#FFFFFF" opacity="0.5"/>
+    <text x="22" y="27" font-size="12" font-weight="700" fill="#FFFFFF" text-anchor="middle">张</text>
+    <rect x="44" y="14" width="44" height="5" rx="2.5" fill="#374151"/>
+    <rect x="44" y="24" width="34" height="3" rx="1.5" fill="#9CA3AF"/>
+    <!-- 角色 -->
+    <rect x="14" y="44" width="28" height="10" rx="5" fill="#00B96B" opacity="0.15"/>
+    <text x="28" y="51" font-size="6" font-weight="700" fill="#00B96B" text-anchor="middle">ADMIN</text>
+    <!-- 在线点 -->
+    <circle cx="34" cy="34" r="4" fill="#10B981" stroke="#FFFFFF" stroke-width="2"/>
+  </g>
+
+  <!-- 右上 -->
+  <g transform="translate(300, 96) rotate(6)" filter="url(#tm-shadow)">
+    <rect x="0" y="0" width="100" height="62" rx="12" fill="url(#tm-card-1)" stroke="#00B96B" stroke-opacity="0.3"/>
+    <circle cx="22" cy="22" r="14" fill="url(#tm-avatar-2)"/>
+    <text x="22" y="27" font-size="12" font-weight="700" fill="#FFFFFF" text-anchor="middle">李</text>
+    <rect x="44" y="14" width="44" height="5" rx="2.5" fill="#374151"/>
+    <rect x="44" y="24" width="38" height="3" rx="1.5" fill="#9CA3AF"/>
+    <rect x="14" y="44" width="32" height="10" rx="5" fill="#F59E0B" opacity="0.15"/>
+    <text x="30" y="51" font-size="6" font-weight="700" fill="#F59E0B" text-anchor="middle">TESTER</text>
+    <circle cx="34" cy="34" r="4" fill="#10B981" stroke="#FFFFFF" stroke-width="2"/>
+  </g>
+
+  <!-- 左下 -->
+  <g transform="translate(50, 230) rotate(7)" filter="url(#tm-shadow)">
+    <rect x="0" y="0" width="100" height="62" rx="12" fill="url(#tm-card-1)" stroke="#00B96B" stroke-opacity="0.3"/>
+    <circle cx="22" cy="22" r="14" fill="url(#tm-avatar-3)"/>
+    <text x="22" y="27" font-size="12" font-weight="700" fill="#FFFFFF" text-anchor="middle">王</text>
+    <rect x="44" y="14" width="38" height="5" rx="2.5" fill="#374151"/>
+    <rect x="44" y="24" width="40" height="3" rx="1.5" fill="#9CA3AF"/>
+    <rect x="14" y="44" width="24" height="10" rx="5" fill="#8B5CF6" opacity="0.15"/>
+    <text x="26" y="51" font-size="6" font-weight="700" fill="#8B5CF6" text-anchor="middle">DEV</text>
+    <circle cx="34" cy="34" r="4" fill="#9CA3AF" stroke="#FFFFFF" stroke-width="2"/>
+  </g>
+
+  <!-- 右下 -->
+  <g transform="translate(330, 226) rotate(-6)" filter="url(#tm-shadow)">
+    <rect x="0" y="0" width="100" height="62" rx="12" fill="url(#tm-card-1)" stroke="#00B96B" stroke-opacity="0.3"/>
+    <circle cx="22" cy="22" r="14" fill="url(#tm-avatar-4)"/>
+    <text x="22" y="27" font-size="12" font-weight="700" fill="#FFFFFF" text-anchor="middle">赵</text>
+    <rect x="44" y="14" width="40" height="5" rx="2.5" fill="#374151"/>
+    <rect x="44" y="24" width="34" height="3" rx="1.5" fill="#9CA3AF"/>
+    <rect x="14" y="44" width="28" height="10" rx="5" fill="#3B82F6" opacity="0.15"/>
+    <text x="28" y="51" font-size="6" font-weight="700" fill="#3B82F6" text-anchor="middle">VIEWER</text>
+    <circle cx="34" cy="34" r="4" fill="#10B981" stroke="#FFFFFF" stroke-width="2"/>
+  </g>
+
+  <!-- 心形/对话泡 (协作感) -->
+  <g transform="translate(150, 80)" opacity="0.7">
+    <path d="M0 5 Q-6 -2 0 -8 Q6 -2 0 5 Z" fill="#EC4899"/>
+  </g>
+  <g transform="translate(340, 280)" opacity="0.7">
+    <path d="M0 5 Q-6 -2 0 -8 Q6 -2 0 5 Z" fill="#EC4899"/>
+  </g>
+</svg>

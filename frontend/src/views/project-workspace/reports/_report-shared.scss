@@ -1,0 +1,228 @@
+/* 数据报表中心三页共享样式(高密度布局) */
+
+.report-page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: var(--space-3);
+}
+.grid-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: var(--space-3);
+}
+@media (max-width: 1100px) {
+  .grid-2,
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.chart-md {
+  width: 100%;
+  height: 200px;
+}
+.chart-sm {
+  width: 100%;
+  height: 150px;
+}
+.chart-pie {
+  width: 130px;
+  height: 130px;
+  flex-shrink: 0;
+}
+
+.pie-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--space-5);
+}
+.pie-legend {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  min-width: 0;
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--font-size-xs);
+  }
+  .dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .lg-label {
+    color: var(--text-regular);
+    white-space: nowrap;
+  }
+  .lg-num {
+    margin-left: var(--space-2);
+    color: var(--text-primary);
+    font-weight: var(--font-weight-semibold);
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+.bar-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+.bar-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--font-size-xs);
+}
+.bar-label {
+  width: 64px;
+  flex-shrink: 0;
+  color: var(--text-secondary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.bar-track {
+  flex: 1;
+  height: 10px;
+  border-radius: 5px;
+  background: var(--gray-100);
+  overflow: hidden;
+}
+.bar-fill {
+  height: 100%;
+  border-radius: 5px;
+  transition: width 0.8s var(--ease-out);
+}
+.bar-num {
+  width: 38px;
+  flex-shrink: 0;
+  text-align: right;
+  color: var(--text-primary);
+  font-weight: var(--font-weight-medium);
+  font-variant-numeric: tabular-nums;
+}
+
+.panel-note {
+  margin-top: var(--space-2);
+  font-size: 11px;
+  color: var(--text-placeholder);
+}
+.muted-tag {
+  font-size: 10px;
+  padding: 1px 8px;
+  border-radius: var(--radius-full);
+  background: var(--gray-100);
+  color: var(--text-secondary);
+}
+.panel-empty {
+  padding: var(--space-6) 0;
+  text-align: center;
+  font-size: var(--font-size-sm);
+  color: var(--text-placeholder);
+}
+
+/* 堆叠条(评审状态) */
+.stack-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+.stack-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--font-size-xs);
+}
+.stack-label {
+  width: 56px;
+  flex-shrink: 0;
+  color: var(--text-secondary);
+}
+.stack-track {
+  flex: 1;
+  display: flex;
+  height: 12px;
+  border-radius: 6px;
+  overflow: hidden;
+  background: var(--gray-100);
+}
+.stack-seg {
+  height: 100%;
+}
+.stack-nums {
+  width: 86px;
+  flex-shrink: 0;
+  text-align: right;
+  color: var(--text-placeholder);
+  font-variant-numeric: tabular-nums;
+}
+.stack-legend {
+  display: flex;
+  gap: var(--space-3);
+  margin-top: var(--space-2);
+  font-size: 10px;
+  color: var(--text-secondary);
+
+  .dot {
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    border-radius: 2px;
+    margin-right: 3px;
+    vertical-align: 0;
+  }
+}
+
+/* 覆盖率环 */
+.ring-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-3);
+}
+@media (max-width: 900px) {
+  .ring-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.ring-card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+}
+.ring-svg {
+  width: 66px;
+  height: 66px;
+  flex-shrink: 0;
+}
+.ring-meta {
+  min-width: 0;
+}
+.ring-title {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-primary);
+}
+.ring-sub {
+  margin-top: 2px;
+  font-size: 11px;
+  color: var(--text-placeholder);
+}

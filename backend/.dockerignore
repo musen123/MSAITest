@@ -1,0 +1,110 @@
+# ============================================================================
+# backend/.dockerignore — 精简 docker build 上下文
+# ----------------------------------------------------------------------------
+# 作用：构建后端单镜像（init / backend-api / celery-worker-ai /
+#       celery-worker-test / celery-beat 五角色复用）时，排除虚拟环境、
+#       缓存、git、运行时数据卷内容、本地密钥等，缩小上下文、加快构建、
+#       并防止把本机的 .venv / 浏览器缓存 / 明文 .env 烘焙进镜像。
+#
+# 运行时持久化目录由 compose 命名卷在容器内挂载，不应进构建上下文：
+#   app-data      → /app/data          （uploads / chroma / checkpoints / logs）
+#   app-archives  → /app/archives       （AI 事件归档 gzip）
+#   web-results   → /app/app/ai_core/results     （Web 截图 + 报告 JSON）
+#   web-testcases → /app/app/ai_core/test_cases   （Web 用例脚本数据）
+#   aicore-data   → /app/app/ai_core/data         （case_rag checkpoints.db）
+# 这些目录的本地内容一律忽略，由卷在运行期提供，避免把本机数据带进镜像。
+# ============================================================================
+
+# ---- Python 虚拟环境与字节码缓存（体积大，且与镜像内 uv sync 结果无关）----
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+*.egg
+.eggs/
+build/
+dist/
+
+# ---- 版本控制 ----
+.git/
+.gitignore
+.gitattributes
+
+# ---- IDE / 编辑器 / 系统文件 ----
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+**/.DS_Store
+
+# ---- 测试与覆盖率产物（镜像不跑测试）----
+tests/
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+.tox/
+
+# ---- 本地密钥 / 环境文件（绝不进镜像；生产经 compose env 注入）----
+.env
+.env.*
+*.env
+
+# ============================================================================
+# 运行时数据 / 卷内容（由命名卷在容器内挂载，本地内容不进上下文）
+# ============================================================================
+
+# app-data → /app/data（uploads / 头像 / chroma / checkpoints / logs）
+data/
+
+# app-archives → /app/archives（AI 任务事件归档）
+archives/
+
+# web-results → /app/app/ai_core/results（Web 自动化截图 + 报告 JSON）
+app/ai_core/results/
+
+# web-testcases → /app/app/ai_core/test_cases（Web 用例脚本数据）
+app/ai_core/test_cases/
+
+# aicore-data → /app/app/ai_core/data（case_rag checkpoints.db）
+app/ai_core/data/
+
+# ---- 上传文件（历史散落于 data/uploads；防止本机已有附件被带入）----
+uploads/
+
+# ---- 日志（运行期落到 app-data 卷；本地日志不入镜像）----
+logs/
+*.log
+
+# ---- Celery beat 调度状态文件（运行期生成于 /app/data，本地副本忽略）----
+celerybeat-schedule
+celerybeat-schedule-*
+celerybeat.pid
+
+# ---- 本机 Playwright CLI / 浏览器缓存（镜像 build 期自行安装钉死版本）----
+.playwright-cli/
+
+# ---- LightRAG / RAG 本地存储与日志（运行期数据，不入镜像）----
+inputs/
+rag_storage/
+rag_storage.bak*/
+lightrag*.log
+
+# ---- 杂项打包 / 备份产物 ----
+*.zip
+*.tar
+*.tar.gz
+*.bak
+*.tmp
+*~
+
+# ---- 文档（构建镜像不需要；按需保留可删除此段）----
+*.md

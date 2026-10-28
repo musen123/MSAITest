@@ -1,0 +1,214 @@
+<svg viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg" fill="none">
+  <defs>
+    <linearGradient id="tap-phone" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1F2937"/>
+      <stop offset="100%" stop-color="#111827"/>
+    </linearGradient>
+    <linearGradient id="tap-screen" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#E8FBF1"/>
+      <stop offset="100%" stop-color="#FFFFFF"/>
+    </linearGradient>
+    <linearGradient id="tap-btn" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5DDE9C"/>
+      <stop offset="100%" stop-color="#00B96B"/>
+    </linearGradient>
+    <radialGradient id="tap-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#00B96B" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#00B96B" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="tap-shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="6"/>
+      <feOffset dx="0" dy="5"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.22"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- 辉光 -->
+  <circle cx="240" cy="180" r="200" fill="url(#tap-glow)"/>
+
+  <!-- 装饰 -->
+  <circle cx="70" cy="80" r="6" fill="#00B96B" opacity="0.3"/>
+  <circle cx="410" cy="90" r="8" fill="#00B96B" opacity="0.22"/>
+  <circle cx="60" cy="290" r="5" fill="#00B96B" opacity="0.3"/>
+  <circle cx="420" cy="290" r="7" fill="#00B96B" opacity="0.25"/>
+  <g fill="#5DDE9C" opacity="0.7">
+    <path d="M80 180 L82 186 L88 188 L82 190 L80 196 L78 190 L72 188 L78 186 Z"/>
+    <path d="M400 180 L402 186 L408 188 L402 190 L400 196 L398 190 L392 188 L398 186 Z"/>
+  </g>
+
+  <!-- 落地阴影 -->
+  <ellipse cx="240" cy="330" rx="100" ry="12" fill="#00B96B" opacity="0.12"/>
+
+  <!-- ============ 中央手机 ============ -->
+  <g transform="translate(240, 180)" filter="url(#tap-shadow)">
+    <!-- 外壳 -->
+    <rect x="-66" y="-130" width="132" height="260" rx="20" fill="url(#tap-phone)"/>
+    <!-- 屏幕 -->
+    <rect x="-58" y="-118" width="116" height="236" rx="10" fill="url(#tap-screen)"/>
+    <!-- 顶部听筒 -->
+    <rect x="-12" y="-122" width="24" height="4" rx="2" fill="#374151"/>
+    <circle cx="-22" cy="-120" r="2" fill="#374151"/>
+    <!-- 状态栏 -->
+    <text x="-50" y="-104" font-family="sans-serif" font-size="7" font-weight="700" fill="#1F2937">9:41</text>
+    <g transform="translate(48, -107)">
+      <rect x="-12" y="0" width="2" height="4" rx="0.5" fill="#1F2937"/>
+      <rect x="-8" y="-2" width="2" height="6" rx="0.5" fill="#1F2937"/>
+      <rect x="-4" y="-4" width="2" height="8" rx="0.5" fill="#1F2937"/>
+      <rect x="0" y="-1" width="2" height="5" rx="0.5" fill="#1F2937" opacity="0.5"/>
+    </g>
+
+    <!-- App 头部 -->
+    <rect x="-58" y="-94" width="116" height="40" fill="url(#tap-btn)"/>
+    <text x="0" y="-72" font-family="sans-serif" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle">购物 App</text>
+    <circle cx="-44" cy="-74" r="6" fill="#FFFFFF" opacity="0.3"/>
+    <path d="M-46 -76 L-42 -72 M-46 -72 L-42 -76" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round"/>
+
+    <!-- 商品卡片 1 -->
+    <g transform="translate(0, -36)">
+      <rect x="-50" y="0" width="100" height="34" rx="6" fill="#FFFFFF" stroke="#E5E7EB"/>
+      <rect x="-44" y="6" width="22" height="22" rx="3" fill="#E8FBF1"/>
+      <rect x="-40" y="10" width="14" height="3" rx="1" fill="#00B96B"/>
+      <rect x="-40" y="16" width="10" height="3" rx="1" fill="#5DDE9C"/>
+      <rect x="-16" y="8" width="46" height="3" rx="1.5" fill="#374151"/>
+      <rect x="-16" y="14" width="36" height="2" rx="1" fill="#9CA3AF"/>
+      <rect x="-16" y="22" width="22" height="6" rx="2" fill="#00B96B"/>
+      <text x="-5" y="27" font-family="sans-serif" font-size="6" font-weight="700" fill="#FFFFFF" text-anchor="middle">¥99</text>
+    </g>
+
+    <!-- 商品卡片 2 (高亮，自动测试点击对象) -->
+    <g transform="translate(0, 4)">
+      <rect x="-52" y="-2" width="104" height="38" rx="7" fill="none" stroke="#00B96B" stroke-width="2" stroke-dasharray="3 3"/>
+      <rect x="-50" y="0" width="100" height="34" rx="6" fill="#FFFFFF" stroke="#00B96B" stroke-width="1.5"/>
+      <rect x="-44" y="6" width="22" height="22" rx="3" fill="#FEF3C7"/>
+      <text x="-33" y="22" font-size="14">📱</text>
+      <rect x="-16" y="8" width="46" height="3" rx="1.5" fill="#374151"/>
+      <rect x="-16" y="14" width="40" height="2" rx="1" fill="#9CA3AF"/>
+      <rect x="-16" y="22" width="22" height="6" rx="2" fill="#EF4444"/>
+      <text x="-5" y="27" font-family="sans-serif" font-size="6" font-weight="700" fill="#FFFFFF" text-anchor="middle">¥1599</text>
+    </g>
+
+    <!-- 商品卡片 3 -->
+    <g transform="translate(0, 44)">
+      <rect x="-50" y="0" width="100" height="34" rx="6" fill="#FFFFFF" stroke="#E5E7EB"/>
+      <rect x="-44" y="6" width="22" height="22" rx="3" fill="#EDE9FE"/>
+      <text x="-33" y="22" font-size="14">👟</text>
+      <rect x="-16" y="8" width="46" height="3" rx="1.5" fill="#374151"/>
+      <rect x="-16" y="14" width="34" height="2" rx="1" fill="#9CA3AF"/>
+      <rect x="-16" y="22" width="22" height="6" rx="2" fill="#00B96B"/>
+      <text x="-5" y="27" font-family="sans-serif" font-size="6" font-weight="700" fill="#FFFFFF" text-anchor="middle">¥299</text>
+    </g>
+
+    <!-- 底部 Tab Bar -->
+    <rect x="-58" y="92" width="116" height="26" fill="#F9FAFB"/>
+    <g fill="#00B96B">
+      <circle cx="-38" cy="105" r="3"/>
+      <rect x="-44" y="110" width="12" height="2" rx="1" opacity="0.6"/>
+    </g>
+    <g fill="#9CA3AF">
+      <circle cx="-12" cy="105" r="3"/>
+      <rect x="-18" y="110" width="12" height="2" rx="1" opacity="0.6"/>
+    </g>
+    <g fill="#9CA3AF">
+      <circle cx="14" cy="105" r="3"/>
+      <rect x="8" y="110" width="12" height="2" rx="1" opacity="0.6"/>
+    </g>
+    <g fill="#9CA3AF">
+      <circle cx="40" cy="105" r="3"/>
+      <rect x="34" y="110" width="12" height="2" rx="1" opacity="0.6"/>
+    </g>
+
+    <!-- 底部 Home 条 -->
+    <rect x="-22" y="122" width="44" height="3" rx="1.5" fill="#374151"/>
+  </g>
+
+  <!-- ============ 手势/手指 ============ -->
+  <g transform="translate(250, 200) rotate(20)" filter="url(#tap-shadow)">
+    <!-- 触摸波纹 -->
+    <circle cx="0" cy="0" r="20" fill="none" stroke="#00B96B" stroke-width="2.5" opacity="0.7"/>
+    <circle cx="0" cy="0" r="28" fill="none" stroke="#00B96B" stroke-width="2" opacity="0.4"/>
+    <circle cx="0" cy="0" r="36" fill="none" stroke="#00B96B" stroke-width="1.5" opacity="0.2"/>
+    <!-- 手指 -->
+    <g transform="translate(8, 8)">
+      <path d="M0 0 Q-2 -10 4 -16 Q12 -22 18 -18 L22 -14 L22 14 Q22 24 14 24 L4 24 Q-2 24 -2 18 Z"
+            fill="#FBBF24" stroke="#F59E0B" stroke-width="1.5"/>
+      <!-- 高光 -->
+      <path d="M6 -10 Q10 -16 16 -14" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.6"/>
+    </g>
+  </g>
+
+  <!-- ============ 录制 / 工具栏 (左侧) ============ -->
+  <g transform="translate(80, 130)" filter="url(#tap-shadow)">
+    <rect x="0" y="0" width="80" height="120" rx="10" fill="#FFFFFF" stroke="#00B96B" stroke-opacity="0.3"/>
+    <text x="40" y="16" font-size="8" font-weight="700" fill="#00B96B" text-anchor="middle">控制台</text>
+    <line x1="10" y1="22" x2="70" y2="22" stroke="#E5E7EB"/>
+
+    <!-- 录制按钮 -->
+    <circle cx="40" cy="36" r="12" fill="#EF4444"/>
+    <circle cx="40" cy="36" r="6" fill="#FFFFFF"/>
+    <text x="40" y="55" font-size="6" font-weight="700" fill="#EF4444" text-anchor="middle">RECORD</text>
+
+    <!-- 步骤列表 -->
+    <g transform="translate(0, 66)">
+      <circle cx="14" cy="0" r="3" fill="#10B981"/>
+      <path d="M12 0 L13.5 1.5 L16 -1.5" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round" fill="none"/>
+      <rect x="22" y="-2" width="40" height="2" rx="1" fill="#374151"/>
+      <rect x="22" y="2" width="30" height="1.5" rx="0.75" fill="#9CA3AF"/>
+    </g>
+    <g transform="translate(0, 78)">
+      <circle cx="14" cy="0" r="3" fill="#10B981"/>
+      <path d="M12 0 L13.5 1.5 L16 -1.5" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round" fill="none"/>
+      <rect x="22" y="-2" width="36" height="2" rx="1" fill="#374151"/>
+      <rect x="22" y="2" width="26" height="1.5" rx="0.75" fill="#9CA3AF"/>
+    </g>
+    <g transform="translate(0, 90)">
+      <circle cx="14" cy="0" r="3" fill="#FBBF24"/>
+      <rect x="22" y="-2" width="42" height="2" rx="1" fill="#374151"/>
+      <rect x="22" y="2" width="30" height="1.5" rx="0.75" fill="#9CA3AF"/>
+    </g>
+    <g transform="translate(0, 102)">
+      <circle cx="14" cy="0" r="3" fill="#E5E7EB"/>
+      <rect x="22" y="-2" width="38" height="2" rx="1" fill="#9CA3AF"/>
+    </g>
+  </g>
+
+  <!-- ============ 设备列表 (右侧) ============ -->
+  <g transform="translate(335, 130)" filter="url(#tap-shadow)">
+    <rect x="0" y="0" width="80" height="120" rx="10" fill="#FFFFFF" stroke="#00B96B" stroke-opacity="0.3"/>
+    <text x="40" y="16" font-size="8" font-weight="700" fill="#00B96B" text-anchor="middle">设备池</text>
+    <line x1="10" y1="22" x2="70" y2="22" stroke="#E5E7EB"/>
+
+    <g transform="translate(0, 32)">
+      <rect x="8" y="0" width="64" height="22" rx="4" fill="#E8FBF1"/>
+      <rect x="14" y="4" width="14" height="14" rx="2" fill="#00B96B"/>
+      <rect x="17" y="7" width="8" height="8" rx="1" fill="#FFFFFF"/>
+      <rect x="32" y="6" width="36" height="3" rx="1.5" fill="#374151"/>
+      <rect x="32" y="12" width="28" height="2" rx="1" fill="#9CA3AF"/>
+      <circle cx="65" cy="6" r="2" fill="#10B981"/>
+    </g>
+
+    <g transform="translate(0, 60)">
+      <rect x="8" y="0" width="64" height="22" rx="4" fill="#FAFAFA"/>
+      <rect x="14" y="4" width="14" height="14" rx="2" fill="#9CA3AF"/>
+      <rect x="17" y="7" width="8" height="8" rx="1" fill="#FFFFFF"/>
+      <rect x="32" y="6" width="36" height="3" rx="1.5" fill="#374151"/>
+      <rect x="32" y="12" width="22" height="2" rx="1" fill="#9CA3AF"/>
+      <circle cx="65" cy="6" r="2" fill="#9CA3AF"/>
+    </g>
+
+    <g transform="translate(0, 88)">
+      <rect x="8" y="0" width="64" height="22" rx="4" fill="#E8FBF1"/>
+      <rect x="14" y="4" width="14" height="14" rx="2" fill="#00B96B"/>
+      <rect x="17" y="7" width="8" height="8" rx="1" fill="#FFFFFF"/>
+      <rect x="32" y="6" width="32" height="3" rx="1.5" fill="#374151"/>
+      <rect x="32" y="12" width="26" height="2" rx="1" fill="#9CA3AF"/>
+      <circle cx="65" cy="6" r="2" fill="#10B981"/>
+    </g>
+  </g>
+
+  <!-- 顶部录制提示 -->
+  <g transform="translate(240, 50)">
+    <circle cx="-30" cy="0" r="4" fill="#EF4444"/>
+    <text x="0" y="3" font-size="10" font-weight="700" fill="#EF4444" text-anchor="middle">App 录制中</text>
+  </g>
+</svg>

@@ -1,0 +1,67 @@
+<svg viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg" fill="none">
+  <defs>
+    <linearGradient id="pai-brain" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#A78BFA"/>
+      <stop offset="100%" stop-color="#7C3AED"/>
+    </linearGradient>
+    <linearGradient id="pai-core" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5DDE9C"/>
+      <stop offset="100%" stop-color="#00B96B"/>
+    </linearGradient>
+  </defs>
+  <!-- 装饰 -->
+  <circle cx="16" cy="18" r="3" fill="#8B5CF6" opacity="0.3"/>
+  <circle cx="80" cy="80" r="3" fill="#00B96B" opacity="0.3"/>
+  <!-- 神经网络节点 (左下) -->
+  <g stroke="#8B5CF6" stroke-width="1.2" opacity="0.45" fill="none">
+    <line x1="14" y1="60" x2="28" y2="48"/>
+    <line x1="14" y1="74" x2="28" y2="60"/>
+    <line x1="28" y1="48" x2="42" y2="58"/>
+    <line x1="28" y1="60" x2="42" y2="58"/>
+  </g>
+  <g fill="#8B5CF6">
+    <circle cx="14" cy="60" r="3" opacity="0.7"/>
+    <circle cx="14" cy="74" r="3" opacity="0.7"/>
+    <circle cx="28" cy="48" r="3" opacity="0.85"/>
+    <circle cx="28" cy="60" r="3" opacity="0.85"/>
+  </g>
+  <!-- 神经网络节点 (右上) -->
+  <g stroke="#00B96B" stroke-width="1.2" opacity="0.45" fill="none">
+    <line x1="82" y1="18" x2="68" y2="32"/>
+    <line x1="82" y1="32" x2="68" y2="44"/>
+    <line x1="68" y1="32" x2="54" y2="38"/>
+    <line x1="68" y1="44" x2="54" y2="48"/>
+  </g>
+  <g fill="#00B96B">
+    <circle cx="82" cy="18" r="3" opacity="0.7"/>
+    <circle cx="82" cy="32" r="3" opacity="0.7"/>
+    <circle cx="68" cy="32" r="3" opacity="0.85"/>
+    <circle cx="68" cy="44" r="3" opacity="0.85"/>
+  </g>
+  <!-- 中央球体 -->
+  <circle cx="48" cy="48" r="22" fill="url(#pai-brain)"/>
+  <!-- 内层 -->
+  <circle cx="48" cy="48" r="16" fill="url(#pai-core)" opacity="0.9"/>
+  <!-- 内部芯片 -->
+  <g transform="translate(48, 48)">
+    <rect x="-8" y="-8" width="16" height="16" rx="2" fill="#FFFFFF" opacity="0.95"/>
+    <rect x="-4" y="-4" width="8" height="8" rx="1" fill="#00B96B"/>
+    <!-- 芯片引脚 -->
+    <g stroke="#FFFFFF" stroke-width="1.2" stroke-linecap="round">
+      <line x1="-4" y1="-10" x2="-4" y2="-12"/>
+      <line x1="0" y1="-10" x2="0" y2="-12"/>
+      <line x1="4" y1="-10" x2="4" y2="-12"/>
+      <line x1="-4" y1="10" x2="-4" y2="12"/>
+      <line x1="0" y1="10" x2="0" y2="12"/>
+      <line x1="4" y1="10" x2="4" y2="12"/>
+      <line x1="-10" y1="-4" x2="-12" y2="-4"/>
+      <line x1="-10" y1="0" x2="-12" y2="0"/>
+      <line x1="-10" y1="4" x2="-12" y2="4"/>
+      <line x1="10" y1="-4" x2="12" y2="-4"/>
+      <line x1="10" y1="0" x2="12" y2="0"/>
+      <line x1="10" y1="4" x2="12" y2="4"/>
+    </g>
+  </g>
+  <!-- 闪光 -->
+  <path d="M48 18 L49 22 L53 23 L49 24 L48 28 L47 24 L43 23 L47 22 Z" fill="#FFFFFF" opacity="0.9"/>
+</svg>

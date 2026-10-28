@@ -1,0 +1,34 @@
+{
+  "name": "app-agent",
+  "version": "0.1.0",
+  "private": true,
+  "description": "宿主机 Agent：出站连平台网关，adb 设备发现 + 控制隧道 RPC（APP 自动化 P1）",
+  "type": "module",
+  "engines": {
+    "node": ">=20.6"
+  },
+  "scripts": {
+    "start": "tsx src/index.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "node --import tsx --test test/frames.test.ts test/devices.test.ts test/hdc_devices.test.ts test/ios_devices.test.ts test/scrcpy.test.ts test/scrcpy_dataplane.test.ts test/scrcpy_manager.test.ts test/harmony_cast.test.ts test/recover.test.ts test/automation_manager.test.ts test/trim_error.test.ts test/automation_progress.test.ts test/manual_record.test.ts test/report_cleaner.test.ts test/wda.test.ts test/ios_cast.test.ts test/device_touch.test.ts test/config.test.ts"
+  },
+  "dependencies": {
+    "@midscene/android": "^1.10.0",
+    "@midscene/core": "^1.10.0",
+    "@midscene/harmony": "^1.10.2",
+    "@midscene/ios": "^1.10.2",
+    "@yume-chan/scrcpy": "^2.3.0",
+    "@yume-chan/stream-extra": "^2.6.1",
+    "hdckit": "^0.12.1",
+    "jpeg-js": "^0.4.4",
+    "pngjs": "^7.0.0",
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "@types/pngjs": "^6.0.5",
+    "@types/ws": "^8.5.13",
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.0"
+  }
+}

@@ -1,0 +1,91 @@
+/**
+ * 全局对话框样式（参考样板：新建测试计划弹窗）
+ *
+ * 规范要点：
+ * - 弹框 header：标题 + 灰色副标题
+ * - label 在 input 上方（label-position: top），必填项 * 主色
+ * - 表单为平层，不再用分组卡片（form-section）
+ * - 底部按钮：取消在左、主操作按钮在右、主色填充
+ * - 留白宽松、圆角 8px
+ */
+
+.app-dialog {
+  // 头部
+  :deep(.el-dialog__header) {
+    padding: 24px 28px 16px;
+    margin: 0;
+    border-bottom: 1px solid var(--border-light);
+    background: var(--bg-card);
+  }
+
+  :deep(.el-dialog__title) {
+    display: none; // 由 header slot 自定义标题
+  }
+
+  .dialog-header {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .dialog-title {
+    font-size: 17px;
+    font-weight: var(--font-weight-semibold);
+    color: var(--text-primary);
+    line-height: 1.4;
+    margin: 0;
+  }
+
+  .dialog-desc {
+    font-size: 13px;
+    color: var(--text-placeholder);
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  // 主体
+  :deep(.el-dialog__body) {
+    padding: 20px 28px 24px;
+    background: var(--bg-card);
+  }
+
+  // 底部
+  :deep(.el-dialog__footer) {
+    padding: 14px 28px 20px;
+    border-top: 1px solid var(--border-light);
+    background: var(--bg-card);
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+
+  // 弹框整体圆角
+  :deep(.el-dialog) {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+  }
+
+  // 表单通用（label-position: top）
+  :deep(.el-form-item__label) {
+    font-weight: var(--font-weight-medium);
+    color: var(--text-primary);
+    padding-bottom: 6px;
+    line-height: 1.4;
+  }
+
+  :deep(.el-form-item.is-required) {
+    .el-form-item__label::before {
+      color: var(--brand-500);
+      margin-right: 4px;
+    }
+  }
+
+  // input 圆角统一 8px
+  :deep(.el-input__wrapper) {
+    border-radius: 8px;
+  }
+
+  :deep(.el-textarea__inner) {
+    border-radius: 8px;
+  }
+}

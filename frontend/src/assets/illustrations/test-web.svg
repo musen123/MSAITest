@@ -1,0 +1,129 @@
+<svg viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg" fill="none">
+  <defs>
+    <linearGradient id="tw-browser" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#F3F4F6"/>
+    </linearGradient>
+    <linearGradient id="tw-rec" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5DDE9C"/>
+      <stop offset="100%" stop-color="#00B96B"/>
+    </linearGradient>
+    <radialGradient id="tw-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#00B96B" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#00B96B" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="tw-shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="5"/>
+      <feOffset dx="0" dy="4"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.22"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- 辉光 -->
+  <circle cx="240" cy="180" r="200" fill="url(#tw-glow)"/>
+
+  <!-- 装饰 -->
+  <circle cx="70" cy="80" r="6" fill="#00B96B" opacity="0.3"/>
+  <circle cx="410" cy="90" r="8" fill="#00B96B" opacity="0.22"/>
+  <circle cx="60" cy="290" r="5" fill="#00B96B" opacity="0.3"/>
+  <circle cx="420" cy="290" r="7" fill="#00B96B" opacity="0.25"/>
+  <g fill="#5DDE9C" opacity="0.7">
+    <path d="M50 200 L52 206 L58 208 L52 210 L50 216 L48 210 L42 208 L48 206 Z"/>
+    <path d="M420 180 L422 186 L428 188 L422 190 L420 196 L418 190 L412 188 L418 186 Z"/>
+  </g>
+
+  <!-- 落地阴影 -->
+  <ellipse cx="240" cy="320" rx="170" ry="14" fill="#00B96B" opacity="0.1"/>
+
+  <!-- ============ 浏览器窗口 ============ -->
+  <g transform="translate(60, 80)" filter="url(#tw-shadow)">
+    <!-- 主窗口 -->
+    <rect x="0" y="0" width="360" height="220" rx="12" fill="url(#tw-browser)"/>
+    <!-- 顶栏 -->
+    <rect x="0" y="0" width="360" height="32" rx="12" fill="#F3F4F6"/>
+    <rect x="0" y="22" width="360" height="10" fill="#F3F4F6"/>
+    <!-- 红黄绿 -->
+    <circle cx="14" cy="16" r="4" fill="#EF4444"/>
+    <circle cx="28" cy="16" r="4" fill="#FBBF24"/>
+    <circle cx="42" cy="16" r="4" fill="#10B981"/>
+    <!-- 标签页 -->
+    <path d="M60 32 L60 14 Q60 8 66 8 L160 8 Q166 8 168 14 L168 32" fill="#FFFFFF"/>
+    <rect x="68" y="14" width="4" height="4" rx="2" fill="#00B96B"/>
+    <rect x="76" y="13" width="50" height="6" rx="2" fill="#374151"/>
+    <path d="M168 32 L168 16 Q168 12 172 12 L240 12 Q244 12 244 16 L244 32" fill="#E5E7EB" opacity="0.6"/>
+    <text x="206" y="24" font-size="8" fill="#6B7280" text-anchor="middle">+ 新标签</text>
+    <!-- 地址栏 -->
+    <rect x="60" y="40" width="280" height="20" rx="10" fill="#FFFFFF" stroke="#E5E7EB"/>
+    <circle cx="74" cy="50" r="4" fill="#10B981"/>
+    <path d="M71 50 L73 52 L77 48" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+    <text x="86" y="54" font-family="Courier" font-size="9" font-weight="600" fill="#00B96B">https://app.test.com/login</text>
+    <!-- 刷新 -->
+    <circle cx="46" cy="50" r="8" fill="#E5E7EB" opacity="0.5"/>
+    <path d="M44 46 Q41 49 44 52 Q47 55 51 53 M44 46 L46 47 M44 46 L43 48" stroke="#6B7280" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+
+    <!-- 内容区 -->
+    <rect x="0" y="68" width="360" height="152" fill="#FAFAFA"/>
+
+    <!-- 网页内容：登录表单 -->
+    <g transform="translate(120, 86)">
+      <text x="60" y="14" font-family="sans-serif" font-size="14" font-weight="700" fill="#1F2937" text-anchor="middle">欢迎登录</text>
+      <!-- 用户名输入框 -->
+      <rect x="0" y="26" width="120" height="20" rx="4" fill="#FFFFFF" stroke="#D1D5DB"/>
+      <circle cx="10" cy="36" r="4" fill="#9CA3AF"/>
+      <text x="22" y="40" font-family="sans-serif" font-size="8" fill="#6B7280">admin</text>
+      <!-- 高亮红框（自动操作目标） -->
+      <rect x="-3" y="50" width="126" height="24" rx="6" fill="none" stroke="#00B96B" stroke-width="2" stroke-dasharray="3 3"/>
+      <!-- 密码 -->
+      <rect x="0" y="52" width="120" height="20" rx="4" fill="#FFFFFF" stroke="#00B96B" stroke-width="1.5"/>
+      <circle cx="10" cy="62" r="4" fill="#9CA3AF"/>
+      <text x="22" y="66" font-family="sans-serif" font-size="8" fill="#374151">●●●●●●</text>
+      <!-- 登录按钮 -->
+      <rect x="0" y="80" width="120" height="22" rx="11" fill="#00B96B"/>
+      <text x="60" y="95" font-family="sans-serif" font-size="10" font-weight="700" fill="#FFFFFF" text-anchor="middle">登 录</text>
+    </g>
+  </g>
+
+  <!-- ============ 鼠标光标 (定位到密码框) ============ -->
+  <g transform="translate(218, 195)" filter="url(#tw-shadow)">
+    <path d="M0 0 L0 22 L6 16 L11 28 L14 26 L9 14 L18 14 Z" fill="#1F2937" stroke="#FFFFFF" stroke-width="1.5"/>
+    <!-- 点击波纹 -->
+    <circle cx="2" cy="2" r="14" fill="none" stroke="#00B96B" stroke-width="2" opacity="0.6"/>
+    <circle cx="2" cy="2" r="22" fill="none" stroke="#00B96B" stroke-width="1.5" opacity="0.3"/>
+  </g>
+
+  <!-- ============ 录制按钮 (右上角) ============ -->
+  <g transform="translate(380, 80)" filter="url(#tw-shadow)">
+    <circle cx="0" cy="0" r="28" fill="url(#tw-rec)"/>
+    <circle cx="0" cy="0" r="28" fill="none" stroke="#FFFFFF" stroke-width="3" opacity="0.5"/>
+    <circle cx="0" cy="0" r="12" fill="#FFFFFF"/>
+    <circle cx="0" cy="0" r="9" fill="#EF4444"/>
+    <text x="0" y="42" font-size="9" font-weight="700" fill="#00B96B" text-anchor="middle">REC</text>
+    <!-- 闪光环 -->
+    <circle cx="0" cy="0" r="34" fill="none" stroke="#00B96B" stroke-width="2" stroke-dasharray="4 4" opacity="0.6"/>
+  </g>
+
+  <!-- ============ 步骤卡片（右下） ============ -->
+  <g transform="translate(380, 220)" filter="url(#tw-shadow)">
+    <rect x="-50" y="-30" width="80" height="60" rx="8" fill="#FFFFFF" stroke="#00B96B" stroke-opacity="0.4"/>
+    <text x="-10" y="-16" font-size="8" font-weight="700" fill="#00B96B" text-anchor="middle">步骤 3/8</text>
+    <!-- 步骤点 -->
+    <g>
+      <circle cx="-40" cy="-2" r="3" fill="#00B96B"/>
+      <circle cx="-30" cy="-2" r="3" fill="#00B96B"/>
+      <circle cx="-20" cy="-2" r="3" fill="#00B96B"/>
+      <circle cx="-10" cy="-2" r="3" fill="#5DDE9C"/>
+      <circle cx="0" cy="-2" r="3" fill="#E5E7EB"/>
+      <circle cx="10" cy="-2" r="3" fill="#E5E7EB"/>
+      <circle cx="20" cy="-2" r="3" fill="#E5E7EB"/>
+    </g>
+    <rect x="-44" y="12" width="68" height="3" rx="1.5" fill="#9CA3AF"/>
+    <rect x="-44" y="18" width="44" height="3" rx="1.5" fill="#9CA3AF" opacity="0.6"/>
+  </g>
+
+  <!-- 顶部录制中提示 -->
+  <g transform="translate(150, 60)">
+    <circle cx="0" cy="0" r="4" fill="#EF4444"/>
+    <text x="12" y="3" font-size="10" font-weight="700" fill="#EF4444">录制中</text>
+  </g>
+</svg>

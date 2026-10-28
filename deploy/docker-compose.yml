@@ -1,0 +1,350 @@
+x-backend-build: &id001
+  context: ../backend
+  dockerfile: Dockerfile
+x-aicore-volumes:
+- app-data:/app/data
+- app-archives:/app/archives
+- aicore-data:/app/app/ai_core/data
+x-backend-env:
+  db_host: ${db_host:-mysql}
+  db_port: ${db_port:-3306}
+  db_user: ${db_user}
+  db_password: ${db_password}
+  database: ${database:-ai_test_platform}
+  SECRET_KEY: ${SECRET_KEY}
+  REDIS_URL: ${REDIS_URL}
+  CELERY_BROKER_URL: ${CELERY_BROKER_URL}
+  CELERY_RESULT_BACKEND: ${CELERY_RESULT_BACKEND}
+  ENV: ${ENV:-production}
+  TIMEZONE: ${TIMEZONE:-Asia/Shanghai}
+  LOG_LEVEL: ${LOG_LEVEL:-INFO}
+  DB_POOL_SIZE: ${DB_POOL_SIZE:-10}
+  DB_MAX_OVERFLOW: ${DB_MAX_OVERFLOW:-5}
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: aitest-mysql
+    restart: unless-stopped
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_0900_ai_ci --max-connections=300 --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE:-ai_test_platform}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    ports:
+    - 127.0.0.1:3307:3306
+    volumes:
+    - mysql-data:/var/lib/mysql
+    healthcheck:
+      test:
+      - CMD-SHELL
+      - mysqladmin ping -h 127.0.0.1 -uroot -p$$MYSQL_ROOT_PASSWORD || exit 1
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 40s
+    deploy:
+      resources:
+        limits:
+          cpus: '2.0'
+          memory: 3g
+  redis:
+    image: redis:7-alpine
+    container_name: aitest-redis
+    restart: unless-stopped
+    command:
+    - sh
+    - -c
+    - exec redis-server --requirepass "$$REDIS_PASSWORD" --appendonly yes --appendfsync everysec --save "" --maxmemory 1gb
+      --maxmemory-policy noeviction
+    environment:
+      REDIS_PASSWORD: ${REDIS_PASSWORD}
+    ports:
+    - 127.0.0.1:6380:6379
+    volumes:
+    - redis-data:/data
+    healthcheck:
+      test:
+      - CMD-SHELL
+      - redis-cli -a $$REDIS_PASSWORD ping | grep PONG
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    deploy:
+      resources:
+        limits:
+          cpus: '1.0'
+          memory: 1.5g
+  init:
+    build: *id001
+    image: aitest-backend:latest
+    container_name: aitest-init
+    restart: 'no'
+    command: sh -lc 'until uv run python -c "import pymysql,os; pymysql.connect(host=os.environ[\"db_host\"],port=int(os.environ[\"db_port\"]),user=os.environ[\"db_user\"],password=os.environ[\"db_password\"])"
+      2>/dev/null; do echo waiting mysql; sleep 2; done; uv run alembic upgrade head && uv run python -m app.db.init_db'
+    env_file:
+    - .env
+    environment:
+      db_host: ${db_host:-mysql}
+      db_port: ${db_port:-3306}
+      db_user: ${db_user}
+      db_password: ${db_password}
+      database: ${database:-ai_test_platform}
+      SECRET_KEY: ${SECRET_KEY}
+      REDIS_URL: ${REDIS_URL}
+      CELERY_BROKER_URL: ${CELERY_BROKER_URL}
+      CELERY_RESULT_BACKEND: ${CELERY_RESULT_BACKEND}
+      ENV: ${ENV:-production}
+      TIMEZONE: ${TIMEZONE:-Asia/Shanghai}
+      LOG_LEVEL: ${LOG_LEVEL:-INFO}
+      DB_POOL_SIZE: ${DB_POOL_SIZE:-10}
+      DB_MAX_OVERFLOW: ${DB_MAX_OVERFLOW:-5}
+      admin_username: ${admin_username:-admin}
+      admin_password: ${admin_password}
+      admin_email: ${admin_email:-admin@yourorg.com}
+    volumes:
+    - app-data:/app/data
+    - app-archives:/app/archives
+    depends_on:
+      mysql:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    deploy:
+      resources:
+        limits:
+          cpus: '1.0'
+          memory: 1g
+  backend-api:
+    build: *id001
+    image: aitest-backend:latest
+    container_name: aitest-backend-api
+    restart: unless-stopped
+    command: uv run gunicorn main:app -k uvicorn.workers.UvicornWorker -w 4 -b 0.0.0.0:8888 --timeout 600 --graceful-timeout
+      30 --keep-alive 65 --access-logfile -
+    env_file:
+    - .env
+    environment:
+      db_host: ${db_host:-mysql}
+      db_port: ${db_port:-3306}
+      db_user: ${db_user}
+      db_password: ${db_password}
+      database: ${database:-ai_test_platform}
+      SECRET_KEY: ${SECRET_KEY}
+      REDIS_URL: ${REDIS_URL}
+      CELERY_BROKER_URL: ${CELERY_BROKER_URL}
+      CELERY_RESULT_BACKEND: ${CELERY_RESULT_BACKEND}
+      ENV: ${ENV:-production}
+      TIMEZONE: ${TIMEZONE:-Asia/Shanghai}
+      LOG_LEVEL: ${LOG_LEVEL:-INFO}
+      DB_POOL_SIZE: ${DB_POOL_SIZE:-10}
+      DB_MAX_OVERFLOW: ${DB_MAX_OVERFLOW:-5}
+      admin_username: ${admin_username:-admin}
+      admin_password: ${admin_password}
+      admin_email: ${admin_email:-admin@yourorg.com}
+      DEBUG: ${DEBUG:-false}
+      SQL_ECHO: ${SQL_ECHO:-false}
+      BACKEND_CORS_ORIGINS: ${BACKEND_CORS_ORIGINS:-}
+      MAX_UPLOAD_SIZE: ${MAX_UPLOAD_SIZE:-100}
+    ports:
+    - 127.0.0.1:8888:8888
+    volumes:
+    - app-data:/app/data
+    - app-archives:/app/archives
+    - aicore-data:/app/app/ai_core/data
+    depends_on:
+      mysql:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      init:
+        condition: service_completed_successfully
+    healthcheck:
+      test:
+      - CMD-SHELL
+      - wget -qO- http://127.0.0.1:8888/api/v1/health || curl -fsS http://127.0.0.1:8888/docs || exit 1
+      interval: 15s
+      timeout: 5s
+      retries: 5
+      start_period: 40s
+    deploy:
+      resources:
+        limits:
+          cpus: '2.0'
+          memory: 2.5g
+  celery-worker-ai:
+    build: *id001
+    image: aitest-backend:latest
+    restart: unless-stopped
+    command: uv run celery -A app.tasks.celery_app worker -Q ai_tasks --concurrency=4 -n ai@%h --prefetch-multiplier=1 -l
+      info
+    env_file:
+    - .env
+    environment:
+      db_host: ${db_host:-mysql}
+      db_port: ${db_port:-3306}
+      db_user: ${db_user}
+      db_password: ${db_password}
+      database: ${database:-ai_test_platform}
+      SECRET_KEY: ${SECRET_KEY}
+      REDIS_URL: ${REDIS_URL}
+      CELERY_BROKER_URL: ${CELERY_BROKER_URL}
+      CELERY_RESULT_BACKEND: ${CELERY_RESULT_BACKEND}
+      ENV: ${ENV:-production}
+      TIMEZONE: ${TIMEZONE:-Asia/Shanghai}
+      LOG_LEVEL: ${LOG_LEVEL:-INFO}
+      DB_POOL_SIZE: ${DB_POOL_SIZE:-10}
+      DB_MAX_OVERFLOW: ${DB_MAX_OVERFLOW:-5}
+      AGENT_BROWSER_HEADED: ${AGENT_BROWSER_HEADED:-false}
+    volumes:
+    - app-data:/app/data
+    - app-archives:/app/archives
+    - aicore-data:/app/app/ai_core/data
+    depends_on:
+      mysql:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      init:
+        condition: service_completed_successfully
+    healthcheck:
+      test:
+      - CMD-SHELL
+      - celery -A app.tasks.celery_app inspect ping -d ai@$$HOSTNAME || exit 1
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+    shm_size: 1gb
+    deploy:
+      resources:
+        limits:
+          cpus: '2.0'
+          memory: 4g
+  celery-beat:
+    build: *id001
+    image: aitest-backend:latest
+    container_name: aitest-celery-beat
+    restart: unless-stopped
+    command: uv run celery -A app.tasks.celery_app beat -l info --schedule /app/data/celerybeat-schedule
+    env_file:
+    - .env
+    environment:
+      db_host: ${db_host:-mysql}
+      db_port: ${db_port:-3306}
+      db_user: ${db_user}
+      db_password: ${db_password}
+      database: ${database:-ai_test_platform}
+      SECRET_KEY: ${SECRET_KEY}
+      REDIS_URL: ${REDIS_URL}
+      CELERY_BROKER_URL: ${CELERY_BROKER_URL}
+      CELERY_RESULT_BACKEND: ${CELERY_RESULT_BACKEND}
+      ENV: ${ENV:-production}
+      TIMEZONE: ${TIMEZONE:-Asia/Shanghai}
+      LOG_LEVEL: ${LOG_LEVEL:-INFO}
+      DB_POOL_SIZE: ${DB_POOL_SIZE:-10}
+      DB_MAX_OVERFLOW: ${DB_MAX_OVERFLOW:-5}
+    volumes:
+    - app-data:/app/data
+    - app-archives:/app/archives
+    depends_on:
+      mysql:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      init:
+        condition: service_completed_successfully
+    healthcheck:
+      test:
+      - CMD-SHELL
+      - grep -q beat /proc/1/cmdline || exit 1
+      interval: 30s
+      timeout: 5s
+      retries: 3
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 512m
+  nginx:
+    build:
+      context: ../frontend
+      dockerfile: Dockerfile
+    image: aitest-frontend:latest
+    container_name: aitest-nginx
+    restart: unless-stopped
+    ports:
+    - 80:80
+    - 443:443
+    volumes:
+    - ./nginx/certs:/etc/nginx/certs:ro
+    depends_on:
+      backend-api:
+        condition: service_healthy
+    healthcheck:
+      test:
+      - CMD-SHELL
+      - wget -qO- http://127.0.0.1/healthz || exit 1
+      interval: 15s
+      timeout: 5s
+      retries: 5
+    deploy:
+      resources:
+        limits:
+          cpus: '1.0'
+          memory: 512m
+  celery-worker-app:
+    build: *id001
+    image: aitest-backend:latest
+    restart: unless-stopped
+    command: uv run celery -A app.tasks.celery_app worker -Q app_tasks --concurrency=2 -n test@%h --prefetch-multiplier=1
+      -l info
+    env_file:
+    - .env
+    environment:
+      db_host: ${db_host:-mysql}
+      db_port: ${db_port:-3306}
+      db_user: ${db_user}
+      db_password: ${db_password}
+      database: ${database:-ai_test_platform}
+      SECRET_KEY: ${SECRET_KEY}
+      REDIS_URL: ${REDIS_URL}
+      CELERY_BROKER_URL: ${CELERY_BROKER_URL}
+      CELERY_RESULT_BACKEND: ${CELERY_RESULT_BACKEND}
+      ENV: ${ENV:-production}
+      TIMEZONE: ${TIMEZONE:-Asia/Shanghai}
+      LOG_LEVEL: ${LOG_LEVEL:-INFO}
+      DB_POOL_SIZE: ${DB_POOL_SIZE:-10}
+      DB_MAX_OVERFLOW: ${DB_MAX_OVERFLOW:-5}
+      AGENT_BROWSER_HEADED: ${AGENT_BROWSER_HEADED:-false}
+    volumes:
+    - app-data:/app/data
+    - app-archives:/app/archives
+    - aicore-data:/app/app/ai_core/data
+    depends_on:
+      mysql:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      init:
+        condition: service_completed_successfully
+    healthcheck:
+      test:
+      - CMD-SHELL
+      - celery -A app.tasks.celery_app inspect ping -d test@$$HOSTNAME || exit 1
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+    shm_size: 1gb
+    deploy:
+      resources:
+        limits:
+          cpus: '2.0'
+          memory: 3g
+volumes:
+  mysql-data: null
+  redis-data: null
+  app-data: null
+  app-archives: null
+  aicore-data: null

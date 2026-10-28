@@ -1,0 +1,91 @@
+<svg viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg" fill="none">
+  <defs>
+    <linearGradient id="md-paper" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#F9FAFB"/>
+    </linearGradient>
+    <linearGradient id="md-green" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5DDE9C"/>
+      <stop offset="100%" stop-color="#00B96B"/>
+    </linearGradient>
+    <radialGradient id="md-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#00B96B" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#00B96B" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="md-shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="5"/>
+      <feOffset dx="0" dy="4"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.2"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- 辉光 -->
+  <circle cx="240" cy="180" r="200" fill="url(#md-glow)"/>
+
+  <!-- 装饰 -->
+  <circle cx="70" cy="88" r="6" fill="#00B96B" opacity="0.3"/>
+  <circle cx="414" cy="86" r="8" fill="#00B96B" opacity="0.22"/>
+  <circle cx="64" cy="284" r="5" fill="#00B96B" opacity="0.3"/>
+  <circle cx="420" cy="278" r="7" fill="#00B96B" opacity="0.25"/>
+  <g fill="#5DDE9C" opacity="0.7">
+    <path d="M380 168 L382 174 L388 176 L382 178 L380 184 L378 178 L372 176 L378 174 Z"/>
+    <path d="M98 178 L100 184 L106 186 L100 188 L98 194 L96 188 L90 186 L96 184 Z"/>
+  </g>
+
+  <!-- 落地阴影 -->
+  <ellipse cx="240" cy="320" rx="124" ry="14" fill="#00B96B" opacity="0.12"/>
+
+  <!-- 连接线（树状） -->
+  <g stroke="#00B96B" stroke-width="2.5" stroke-dasharray="2 7" stroke-linecap="round" opacity="0.6">
+    <path d="M240 138 V162 M240 162 H160 V190 M240 162 H320 V190 M240 162 V190"/>
+  </g>
+
+  <!-- 顶层模块（文件夹） -->
+  <g transform="translate(240, 102)" filter="url(#md-shadow)">
+    <rect x="-36" y="-34" width="72" height="68" rx="12" fill="url(#md-green)"/>
+    <path d="M-16 -8 H-4 L0 -3 H16 A3 3 0 0 1 19 0 V12 A3 3 0 0 1 16 15 H-16 A3 3 0 0 1 -19 12 V-5 A3 3 0 0 1 -16 -8 Z"
+          fill="#FFFFFF" opacity="0.9"/>
+  </g>
+
+  <!-- 子模块 1（代码） -->
+  <g transform="translate(160, 226)" filter="url(#md-shadow)">
+    <rect x="-32" y="-32" width="64" height="64" rx="11" fill="url(#md-paper)" stroke="#00B96B" stroke-opacity="0.3"/>
+    <path d="M-10 -8 L-18 0 L-10 8" stroke="#00B96B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M10 -8 L18 0 L10 8" stroke="#5DDE9C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <line x1="4" y1="-10" x2="-4" y2="10" stroke="#9CA3AF" stroke-width="2.5" stroke-linecap="round"/>
+  </g>
+
+  <!-- 子模块 2（组件块） -->
+  <g transform="translate(240, 236)" filter="url(#md-shadow)">
+    <rect x="-32" y="-32" width="64" height="64" rx="11" fill="url(#md-paper)" stroke="#00B96B" stroke-opacity="0.3"/>
+    <rect x="-16" y="-16" width="14" height="14" rx="3" fill="url(#md-green)"/>
+    <rect x="2" y="-16" width="14" height="14" rx="3" fill="#94E9BD"/>
+    <rect x="-16" y="2" width="14" height="14" rx="3" fill="#94E9BD"/>
+    <rect x="2" y="2" width="14" height="14" rx="3" fill="#C9F4DD"/>
+  </g>
+
+  <!-- 子模块 3（齿轮） -->
+  <g transform="translate(320, 226)" filter="url(#md-shadow)">
+    <rect x="-32" y="-32" width="64" height="64" rx="11" fill="url(#md-paper)" stroke="#00B96B" stroke-opacity="0.3"/>
+    <g fill="none" stroke="#00B96B" stroke-width="3" stroke-linecap="round">
+      <circle r="9"/>
+      <g>
+        <line x1="0" y1="-17" x2="0" y2="-13"/>
+        <line x1="0" y1="13" x2="0" y2="17"/>
+        <line x1="-17" y1="0" x2="-13" y2="0"/>
+        <line x1="13" y1="0" x2="17" y2="0"/>
+        <line x1="-12" y1="-12" x2="-9.2" y2="-9.2"/>
+        <line x1="9.2" y1="9.2" x2="12" y2="12"/>
+        <line x1="-12" y1="12" x2="-9.2" y2="9.2"/>
+        <line x1="9.2" y1="-9.2" x2="12" y2="-12"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- 漂浮加号 -->
+  <g transform="translate(386, 140)" filter="url(#md-shadow)">
+    <circle r="17" fill="url(#md-green)"/>
+    <path d="M-7 0 H7 M0 -7 V7" stroke="#FFFFFF" stroke-width="3.5" stroke-linecap="round"/>
+  </g>
+</svg>

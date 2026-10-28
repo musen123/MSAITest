@@ -1,0 +1,109 @@
+<svg viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg" fill="none">
+  <defs>
+    <linearGradient id="en-cloud" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#E8FBF1"/>
+    </linearGradient>
+    <linearGradient id="en-cloud2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F3F4F6"/>
+      <stop offset="100%" stop-color="#E5E7EB"/>
+    </linearGradient>
+    <linearGradient id="en-server" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5DDE9C"/>
+      <stop offset="100%" stop-color="#00B96B"/>
+    </linearGradient>
+    <radialGradient id="en-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#00B96B" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#00B96B" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="en-shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="5"/>
+      <feOffset dx="0" dy="4"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.18"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- 辉光 -->
+  <circle cx="240" cy="180" r="200" fill="url(#en-glow)"/>
+
+  <!-- 装饰 -->
+  <circle cx="80" cy="80" r="5" fill="#00B96B" opacity="0.3"/>
+  <circle cx="400" cy="100" r="7" fill="#00B96B" opacity="0.22"/>
+  <circle cx="60" cy="280" r="5" fill="#00B96B" opacity="0.3"/>
+  <circle cx="420" cy="280" r="6" fill="#00B96B" opacity="0.25"/>
+
+  <!-- 落地阴影 -->
+  <ellipse cx="240" cy="320" rx="140" ry="14" fill="#00B96B" opacity="0.1"/>
+
+  <!-- 远端云 -->
+  <g transform="translate(100, 80)" filter="url(#en-shadow)">
+    <path d="M0 25 Q0 10 18 8 Q22 -5 38 -2 Q50 -10 60 0 Q72 0 72 12 Q80 14 80 25 Q80 35 70 35 L8 35 Q-2 35 0 25 Z" fill="url(#en-cloud)" stroke="#00B96B" stroke-opacity="0.2" stroke-width="1"/>
+  </g>
+
+  <!-- 近端云 - 大 (左下) -->
+  <g transform="translate(80, 200)" filter="url(#en-shadow)">
+    <path d="M0 40 Q0 20 25 18 Q30 -8 55 -4 Q72 -16 86 0 Q105 -4 108 18 Q120 22 120 40 Q120 56 100 56 L12 56 Q-4 56 0 40 Z" fill="url(#en-cloud)" stroke="#00B96B" stroke-opacity="0.35" stroke-width="1.5"/>
+    <!-- 云上的小信号 -->
+    <g transform="translate(60, 30)">
+      <path d="M-10 0 Q-10 -8 0 -8 Q10 -8 10 0" fill="none" stroke="#00B96B" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+      <circle cx="0" cy="2" r="2" fill="#00B96B" opacity="0.8"/>
+    </g>
+  </g>
+
+  <!-- 近端云 (右下) -->
+  <g transform="translate(280, 220)" filter="url(#en-shadow)">
+    <path d="M0 35 Q0 18 20 15 Q24 -5 45 -2 Q58 -12 70 -2 Q88 -4 90 14 Q104 18 104 34 Q104 48 88 48 L10 48 Q-4 48 0 35 Z" fill="url(#en-cloud2)" stroke="#9CA3AF" stroke-opacity="0.4" stroke-width="1.5"/>
+  </g>
+
+  <!-- ====== 中央断开的链路 ====== -->
+  <g transform="translate(240, 170)">
+    <!-- 左半个 ☁️ -->
+    <g transform="translate(-90, 0)" filter="url(#en-shadow)">
+      <path d="M0 20 Q0 5 18 3 Q22 -8 38 -5 Q50 -14 60 -5 L60 35 L8 35 Q-2 35 0 20 Z" fill="url(#en-cloud)" stroke="#00B96B" stroke-opacity="0.45" stroke-width="1.5"/>
+      <!-- 断开的电线 -->
+      <line x1="56" y1="20" x2="68" y2="14" stroke="#00B96B" stroke-width="3.5" stroke-linecap="round"/>
+      <circle cx="68" cy="14" r="3" fill="#00B96B"/>
+    </g>
+
+    <!-- 右半个 ☁️ -->
+    <g transform="translate(20, 0)" filter="url(#en-shadow)">
+      <path d="M62 20 Q62 5 44 3 Q40 -8 24 -5 Q14 -14 2 -5 L2 35 L54 35 Q64 35 62 20 Z" fill="url(#en-cloud)" stroke="#EF4444" stroke-opacity="0.45" stroke-width="1.5"/>
+      <line x1="6" y1="20" x2="-6" y2="14" stroke="#EF4444" stroke-width="3.5" stroke-linecap="round"/>
+      <circle cx="-6" cy="14" r="3" fill="#EF4444"/>
+    </g>
+
+    <!-- 中央闪电断开标记 -->
+    <g transform="translate(0, -10)">
+      <path d="M-4 -16 L8 -2 L0 0 L6 16 L-8 0 L0 -2 Z" fill="#EF4444" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
+    </g>
+
+    <!-- 信号小波 (隐形) -->
+    <g stroke="#9CA3AF" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.5">
+      <path d="M-100 38 L-92 38" stroke-dasharray="2 4"/>
+      <path d="M-78 38 L-70 38" stroke-dasharray="2 4"/>
+      <path d="M70 38 L78 38" stroke-dasharray="2 4"/>
+      <path d="M92 38 L100 38" stroke-dasharray="2 4"/>
+    </g>
+  </g>
+
+  <!-- 下方设备 (Server / 电脑) -->
+  <g transform="translate(150, 270)" filter="url(#en-shadow)">
+    <rect x="0" y="0" width="60" height="42" rx="6" fill="url(#en-server)"/>
+    <rect x="6" y="6" width="48" height="3" rx="1.5" fill="#FFFFFF" opacity="0.5"/>
+    <rect x="6" y="13" width="48" height="3" rx="1.5" fill="#FFFFFF" opacity="0.5"/>
+    <circle cx="50" cy="32" r="3" fill="#10B981"/>
+  </g>
+  <g transform="translate(270, 270)" filter="url(#en-shadow)">
+    <rect x="0" y="0" width="60" height="42" rx="6" fill="url(#en-server)"/>
+    <rect x="6" y="6" width="48" height="3" rx="1.5" fill="#FFFFFF" opacity="0.5"/>
+    <rect x="6" y="13" width="48" height="3" rx="1.5" fill="#FFFFFF" opacity="0.5"/>
+    <circle cx="50" cy="32" r="3" fill="#EF4444"/>
+  </g>
+
+  <!-- 装饰星 -->
+  <g fill="#5DDE9C" opacity="0.6">
+    <path d="M40 150 L42 156 L48 158 L42 160 L40 166 L38 160 L32 158 L38 156 Z"/>
+    <path d="M440 200 L442 206 L448 208 L442 210 L440 216 L438 210 L432 208 L438 206 Z"/>
+  </g>
+</svg>

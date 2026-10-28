@@ -1,0 +1,95 @@
+<svg viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg" fill="none">
+  <defs>
+    <linearGradient id="nn-bell" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5DDE9C"/>
+      <stop offset="100%" stop-color="#00B96B"/>
+    </linearGradient>
+    <linearGradient id="nn-bell-base" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#00A05E"/>
+      <stop offset="100%" stop-color="#008550"/>
+    </linearGradient>
+    <radialGradient id="nn-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#00B96B" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#00B96B" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="nn-shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="5"/>
+      <feOffset dx="0" dy="4"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.2"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- 辉光 -->
+  <circle cx="240" cy="180" r="200" fill="url(#nn-glow)"/>
+
+  <!-- 装饰 -->
+  <circle cx="70" cy="80" r="6" fill="#00B96B" opacity="0.3"/>
+  <circle cx="410" cy="100" r="8" fill="#00B96B" opacity="0.22"/>
+  <circle cx="60" cy="290" r="5" fill="#00B96B" opacity="0.3"/>
+  <circle cx="420" cy="290" r="7" fill="#00B96B" opacity="0.25"/>
+
+  <!-- 月亮 (Z) -->
+  <g transform="translate(100, 110)" opacity="0.7">
+    <text font-family="Arial" font-size="22" font-weight="700" fill="#5DDE9C">z</text>
+  </g>
+  <g transform="translate(120, 90)" opacity="0.85">
+    <text font-family="Arial" font-size="28" font-weight="700" fill="#5DDE9C">Z</text>
+  </g>
+  <g transform="translate(148, 65)" opacity="0.95">
+    <text font-family="Arial" font-size="34" font-weight="800" fill="#00B96B">Z</text>
+  </g>
+
+  <g fill="#5DDE9C" opacity="0.7">
+    <path d="M380 100 L382 106 L388 108 L382 110 L380 116 L378 110 L372 108 L378 106 Z"/>
+    <path d="M360 230 L362 236 L368 238 L362 240 L360 246 L358 240 L352 238 L358 236 Z"/>
+  </g>
+
+  <!-- 落地阴影 -->
+  <ellipse cx="240" cy="320" rx="130" ry="14" fill="#00B96B" opacity="0.1"/>
+
+  <!-- ============ 大铃铛 ============ -->
+  <g transform="translate(240, 190)" filter="url(#nn-shadow)">
+    <!-- 顶部小球 -->
+    <rect x="-4" y="-80" width="8" height="12" rx="2" fill="url(#nn-bell-base)"/>
+    <circle cx="0" cy="-84" r="6" fill="url(#nn-bell-base)"/>
+
+    <!-- 铃身 -->
+    <path d="M-46 30 Q-46 -50 0 -68 Q46 -50 46 30 Z" fill="url(#nn-bell)"/>
+
+    <!-- 铃身高光 -->
+    <path d="M-36 25 Q-36 -45 -16 -60 L-12 -55 Q-30 -40 -30 25 Z" fill="#FFFFFF" opacity="0.3"/>
+
+    <!-- 底部边缘 -->
+    <ellipse cx="0" cy="30" rx="46" ry="8" fill="url(#nn-bell-base)"/>
+    <ellipse cx="0" cy="29" rx="40" ry="4" fill="#5DDE9C" opacity="0.4"/>
+
+    <!-- 铃舌 -->
+    <line x1="0" y1="34" x2="0" y2="46" stroke="#008550" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="0" cy="50" r="6" fill="url(#nn-bell-base)"/>
+
+    <!-- 关闭斜线 (穿过铃铛，表示静音) -->
+    <line x1="-58" y1="-50" x2="58" y2="50" stroke="#EF4444" stroke-width="4" stroke-linecap="round" opacity="0.85"/>
+    <line x1="-58" y1="-50" x2="58" y2="50" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+  </g>
+
+  <!-- 远端"静音"波纹（向外淡） -->
+  <g fill="none" stroke="#9CA3AF" stroke-width="2" stroke-linecap="round" stroke-dasharray="2 6">
+    <path d="M120 190 Q100 180 90 170" opacity="0.5"/>
+    <path d="M360 190 Q380 180 390 170" opacity="0.5"/>
+    <path d="M120 220 Q100 230 90 240" opacity="0.4"/>
+    <path d="M360 220 Q380 230 390 240" opacity="0.4"/>
+  </g>
+
+  <!-- "0" 通知数 -->
+  <g transform="translate(305, 130)" filter="url(#nn-shadow)">
+    <circle cx="0" cy="0" r="20" fill="#FFFFFF" stroke="#00B96B" stroke-width="2.5"/>
+    <text x="0" y="6" font-family="Arial Black, Arial" font-weight="900" font-size="20" fill="#00B96B" text-anchor="middle">0</text>
+  </g>
+
+  <!-- 装饰小元素 -->
+  <g fill="#00B96B" opacity="0.5">
+    <circle cx="170" cy="280" r="3"/>
+    <circle cx="310" cy="280" r="3"/>
+  </g>
+</svg>
