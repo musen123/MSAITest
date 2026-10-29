@@ -16,9 +16,11 @@
 </div>
 
 
-
 > 本仓库提供开源版源码，具体功能范围见[版本对比](#开源版与商业版)。
-> **[立即体验商业版 →](https://www.mstest.vip)https://www.mstest.vip　商业版付费购买咨询微信：`python771`**
+
+> **[立即体验商业版 →](https://www.mstest.vip)https://www.mstest.vip
+> 
+> 商业版付费购买咨询微信：`python771`**
 
 ![MSAITest 商业版项目概览：完整菜单、测试资产、执行趋势与最近执行](assets/screenshots/commercial-overview.jpg)
 
